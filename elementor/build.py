@@ -48,7 +48,8 @@ def inline_icons(html: str) -> str:
     return re.sub(r"\{\{icon:([a-z0-9-]+)\}\}", lambda m: icons[m.group(1)], html)
 
 
-PREVIEW_LINKS = {"/": "home.html", "/ac-repair/": "ac-repair.html", "/ac-replacement/": "ac-replacement.html"}
+PREVIEW_LINKS = {"/": "home.html", "/ac-repair/": "ac-repair.html", "/ac-replacement/": "ac-replacement.html",
+                 "/heating-repair/": "heating-repair.html"}
 
 base = FONTS + "<style>\n" + (ROOT / "preview" / "_base.css").read_text() + "</style>\n<style>\n" + css + "</style>\n"
 for src in sorted((ROOT / "preview").glob("*.src.html")):

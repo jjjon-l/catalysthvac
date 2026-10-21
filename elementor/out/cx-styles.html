@@ -327,14 +327,16 @@ p.cx-eyebrow::before, .cx-eyebrow .elementor-heading-title::before {
    Canvas page. Theme Builder takes over at launch.
    ========================================================================== */
 .cx-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.97); backdrop-filter: saturate(1.4) blur(8px); border-bottom: 1px solid var(--cx-border); }
-.cx-header__bar { display: flex; align-items: center; gap: 28px; min-height: 84px; max-width: var(--cx-max); margin-inline: auto; padding-inline: var(--cx-gutter); }
+/* Content width matches page sections (max + gutters) so the logo lines up with
+   section text and the Request button with the right edge of section content. */
+.cx-header__bar { display: flex; align-items: center; gap: 28px; min-height: 84px; max-width: calc(var(--cx-max) + 2 * var(--cx-gutter)); margin-inline: auto; padding-inline: var(--cx-gutter); }
 .cx-header__logo img { height: 60px; width: auto; display: block; }
-.cx-nav { display: flex; gap: 2px; margin: 0 0 0 auto; padding: 0; list-style: none; }
+.cx-nav { display: flex; gap: 2px; margin: 0 0 0 12px; padding: 0; list-style: none; }
 .cx-nav > li { position: relative; }
 .cx-nav > li > a, .cx-nav > li > button {
   display: flex; align-items: center; gap: 7px; min-height: 48px; padding: 0 14px;
   font: 600 16px/1 var(--cx-font-body); color: var(--cx-navy); text-decoration: none;
-  background: none; border: 0; cursor: pointer; border-radius: 6px;
+  background: none; border: 0; cursor: pointer; border-radius: 6px; white-space: nowrap;
 }
 .cx-nav > li > a:hover, .cx-nav > li > button:hover { background: var(--cx-surface); }
 .cx-nav > li > button::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-3px); }
@@ -344,11 +346,11 @@ p.cx-eyebrow::before, .cx-eyebrow .elementor-heading-title::before {
 .cx-nav ul a { display: block; padding: 10px 12px; border-radius: 6px; color: var(--cx-text); text-decoration: none; font-size: 16px; }
 .cx-nav ul a:hover { background: var(--cx-surface); color: var(--cx-navy); }
 .cx-nav ul li.is-overview a { border-top: 1px solid var(--cx-silver); margin-top: 6px; padding-top: 14px; font-weight: 600; color: var(--cx-blue); }
-.cx-header__actions { display: flex; align-items: center; gap: 20px; }
+.cx-header__actions { display: flex; align-items: center; gap: 24px; margin-left: auto; white-space: nowrap; }
 .cx-phone { font-weight: 600; color: var(--cx-navy); text-decoration: none; white-space: nowrap; line-height: 1.2; }
 .cx-phone small { display: block; font-size: 12px; font-weight: 600; color: var(--cx-muted); letter-spacing: .08em; text-transform: uppercase; }
 .cx-menu-toggle { display: none; }
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .cx-nav, .cx-header__actions .cx-phone { display: none; }
   .cx-header__bar { min-height: 68px; gap: 12px; }
   .cx-header__logo img { height: 46px; }
@@ -494,7 +496,7 @@ p.cx-eyebrow::before, .cx-eyebrow .elementor-heading-title::before {
 
 /* In-page anchors (#request etc.) land below the sticky header */
 section[id], [id="request"] { scroll-margin-top: 100px; }
-@media (max-width: 1100px) { section[id], [id="request"] { scroll-margin-top: 80px; } }
+@media (max-width: 1200px) { section[id], [id="request"] { scroll-margin-top: 80px; } }
 
 /* ==========================================================================
    REPLACEMENT-PAGE COMPONENTS (AC Replacement is the template)

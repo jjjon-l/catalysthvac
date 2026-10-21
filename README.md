@@ -10,6 +10,9 @@ Working files for the catalysthvac.com rebuild (WordPress + Elementor Pro on Sit
 | [04-elementor-build-method.md](04-elementor-build-method.md) | How pages are assembled in Elementor as drafts on the live site |
 | `elementor/` | Sources: `global.css`, header/footer HTML, icons, and `build.py` |
 | `elementor/out/` | Generated paste-ready snippets for the CX saved templates |
+| `elementor/seo/` | SEO single source: `site.json` (business facts, published only when verified), `pages.json` (title/meta/breadcrumb/service per page), `seo.py` (schema + checks) |
+| `elementor/out/seo-register.md` | Generated: titles/metas for the SEO plugin, schema types, on-page checks, facts held out |
+| `elementor/out/seo/*.html` | Generated: per-page JSON-LD schema to paste into an HTML widget |
 | `preview/home.html`, `preview/ac-repair.html` | Local page previews (open in a browser): the Block 1 sample pages |
 
 Rebuild the snippets and preview after editing any source:

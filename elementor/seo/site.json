@@ -1,0 +1,44 @@
+{
+  "_readme": "Business facts for schema and NAP (name, address, phone). Single source: every page's JSON-LD is built from this. A fact is published ONLY when verified is true. Flip a fact to true when its Fact Sheet entry is approved in writing, then run python3 elementor/build.py.",
+
+  "origin": "https://catalysthvac.com",
+
+  "name":        { "value": "Catalyst A/C & Heat", "verified": true, "source": "Fact Sheet A: business name (legal name/DBA still to confirm)" },
+  "legalName":   { "value": null, "verified": false, "source": "Fact Sheet C: legal entity name" },
+  "description": { "value": "Residential and commercial HVAC service across Greater Houston.", "verified": true, "source": "Approved footer copy" },
+  "logo":        { "value": "https://catalysthvac.com/wp-content/uploads/2024/06/Catalyst-HVAC-Logo-2.png", "verified": true, "source": "Current logo; swap URL when approved logo files arrive (Fact Sheet B-1)" },
+
+  "telephone":   { "value": "+1-713-244-5070", "verified": false, "source": "Fact Sheet B-2: public phone (number is from the old site)" },
+  "email":       { "value": null, "verified": false, "source": "Fact Sheet: public email, if used" },
+
+  "address": {
+    "value": {
+      "streetAddress": "6815 Easthaven Blvd",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
+      "postalCode": "77017",
+      "addressCountry": "US"
+    },
+    "verified": false,
+    "source": "Fact Sheet A/C: operating base. Publish only if Jerry confirms address treatment (staffed, signed, OK to show). Never add market-page addresses."
+  },
+
+  "openingHours": { "value": null, "verified": false, "source": "Fact Sheet B-3: public hours. Format: [\"Mo-Fr 08:00-17:00\"]" },
+
+  "sameAs": {
+    "value": [
+      "https://www.facebook.com/profile.php?id=61557424948588",
+      "https://www.linkedin.com/company/catalyst-ac-heat/"
+    ],
+    "verified": false,
+    "source": "Current social links from the old site; confirm they're Catalyst's active profiles (Instagram handle on the old site looked misspelled, left out)"
+  },
+
+  "foundingDate": { "value": "2024", "verified": false, "source": "Old site says 'early 2024'; Fact Sheet C: year founded" },
+
+  "areaServed": {
+    "value": ["Houston", "Pasadena", "Pearland", "Friendswood", "Webster", "League City"],
+    "verified": true,
+    "source": "Fact Sheet A operating familiarity + six market pages (B-8 confirms final list). Areas served, not locations."
+  }
+}

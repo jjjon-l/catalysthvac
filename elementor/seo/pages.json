@@ -1,0 +1,46 @@
+{
+  "_readme": "Per-page SEO: titles and metas come from the Build Doc page register (content authority). 'service' adds Service schema; 'breadcrumb' adds BreadcrumbList; FAQ schema is generated from the page's visible FAQ accordion. Key = preview file name.",
+
+  "home": {
+    "path": "/",
+    "title": "Catalyst A/C & Heat | HVAC Service in Greater Houston",
+    "description": "Residential and commercial HVAC service across Greater Houston, including AC repair, replacement, heating, maintenance and indoor air quality. Request service from Catalyst A/C & Heat.",
+    "type": "home"
+  },
+
+  "ac-repair": {
+    "path": "/ac-repair/",
+    "title": "AC Repair in Greater Houston | Catalyst A/C & Heat",
+    "description": "Need AC repair in Greater Houston? Catalyst A/C & Heat helps homeowners evaluate cooling problems and determine the right next step. Request AC service.",
+    "breadcrumb": [["Home", "/"], ["Residential HVAC", "/residential-hvac/"], ["AC Repair", "/ac-repair/"]],
+    "service": {
+      "name": "AC Repair",
+      "serviceType": "Air conditioning repair",
+      "description": "Residential AC repair for Greater Houston homes: evaluating cooling problems such as weak airflow, short cycling and systems running but not cooling, then repairing the diagnosed problem."
+    }
+  },
+
+  "ac-replacement": {
+    "path": "/ac-replacement/",
+    "title": "AC Replacement & Installation in Greater Houston | Catalyst A/C & Heat",
+    "description": "Considering a new AC system in Greater Houston? Catalyst A/C & Heat can evaluate your home, current system and replacement options. Request an AC replacement consultation.",
+    "breadcrumb": [["Home", "/"], ["Residential HVAC", "/residential-hvac/"], ["AC Replacement & Installation", "/ac-replacement/"]],
+    "service": {
+      "name": "AC Replacement & Installation",
+      "serviceType": "Air conditioning installation",
+      "description": "Residential AC replacement and installation for Greater Houston homes, starting with an evaluation of the home, the current system, sizing, airflow and comfort goals."
+    }
+  },
+
+  "heating-repair": {
+    "path": "/heating-repair/",
+    "title": "Heating Repair in Greater Houston | Catalyst A/C & Heat",
+    "description": "Need help with a furnace, heat pump or home heating problem? Request heating repair from Catalyst A/C & Heat across Greater Houston.",
+    "breadcrumb": [["Home", "/"], ["Residential HVAC", "/residential-hvac/"], ["Heating Repair", "/heating-repair/"]],
+    "service": {
+      "name": "Heating Repair",
+      "serviceType": "Heating system repair",
+      "description": "Residential heating repair for Greater Houston homes, including furnace and heat pump problems such as no heat, short cycling and uneven heating, diagnosed before any repair."
+    }
+  }
+}

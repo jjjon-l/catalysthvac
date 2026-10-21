@@ -101,7 +101,7 @@ body.elementor-page, .elementor { font-family: var(--cx-font-body); color: var(-
   cursor: pointer;
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   min-height: 48px; padding: 14px 28px;
-  font-family: var(--cx-font-body); font-weight: 600; font-size: 17px; line-height: 1;
+  font-family: var(--cx-font-body); font-weight: 600; font-size: 17px; line-height: 1.25; text-align: center;
   background: var(--cx-red); color: #fff; border: 2px solid var(--cx-red);
   border-radius: var(--cx-radius-btn); text-decoration: none;
   transition: background-color .15s ease, border-color .15s ease, color .15s ease;
@@ -490,3 +490,58 @@ p.cx-eyebrow::before, .cx-eyebrow .elementor-heading-title::before {
 /* In-page anchors (#request etc.) land below the sticky header */
 section[id], [id="request"] { scroll-margin-top: 100px; }
 @media (max-width: 1100px) { section[id], [id="request"] { scroll-margin-top: 80px; } }
+
+/* ==========================================================================
+   REPLACEMENT-PAGE COMPONENTS (AC Replacement is the template)
+   ========================================================================== */
+
+/* Two-column checklist for longer factor lists */
+.cx-checklist--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 767px) { .cx-checklist--2col { grid-template-columns: 1fr; } }
+.cx-surface .cx-checklist li { background: #fff; }
+
+/* Option label on equipment cards */
+.cx-tag { align-self: flex-start; display: inline-block; padding: 4px 10px; border-radius: 999px; background: var(--cx-surface); color: var(--cx-blue); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.cx-card--option { border-top: 4px solid var(--cx-blue); }
+
+/* Installation-quality: four numbered questions on a dark band */
+.cx-quality { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.14); border-radius: var(--cx-radius); overflow: hidden; counter-reset: cx-q; }
+.cx-quality > div { counter-increment: cx-q; background: var(--cx-navy); padding: 32px 32px 32px 92px; position: relative; }
+.cx-quality > div::before { content: counter(cx-q); position: absolute; left: 32px; top: 30px; font-family: var(--cx-font-head); font-weight: 700; font-size: 44px; line-height: 1; color: #FF8A8C; }
+.cx-quality h3 { color: #fff; margin: 0 0 10px; font-size: 24px; }
+.cx-quality p { margin: 0; color: #C9CDE8; }
+@media (max-width: 767px) { .cx-quality { grid-template-columns: 1fr; } .cx-quality > div { padding: 24px 22px 24px 70px; } .cx-quality > div::before { left: 22px; top: 22px; font-size: 36px; } .cx-quality h3 { font-size: 21px; } }
+
+/* Process steps as cards (light background) */
+.cx-steps--cards > * { background: #fff; border: 1px solid var(--cx-border); border-radius: var(--cx-radius); padding: 76px 24px 24px; }
+.cx-steps--cards > *::before { top: 24px; left: 24px; }
+.cx-steps--cards h3 { margin: 0 0 8px; font-size: 22px; }
+.cx-steps--cards p { margin: 0; color: var(--cx-muted); }
+
+/* Held block: shows a design that can't publish yet (whole block removed before launch if still unconfirmed) */
+.cx-held { position: relative; outline: 2px dashed #C98A00; outline-offset: 10px; border-radius: 4px; }
+.cx-held::before { content: "STAGING · HELD UNTIL CONFIRMED"; position: absolute; top: -34px; left: 0; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: #6B4A00; background: #FFF8E6; padding: 3px 8px; border-radius: 4px; }
+
+/* Proposal checklist styled as a document */
+.cx-proposal { background: #fff; border: 1px solid var(--cx-border); border-radius: var(--cx-radius); box-shadow: 0 18px 40px rgba(22,26,46,.10); overflow: hidden; }
+.cx-proposal__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 24px; background: var(--cx-navy); color: #fff; }
+.cx-proposal__head strong { font-family: var(--cx-font-head); font-size: 22px; font-weight: 700; letter-spacing: .01em; }
+.cx-proposal__head span { font-size: 13px; color: #AEB4DA; letter-spacing: .08em; text-transform: uppercase; }
+.cx-proposal ul { list-style: none; margin: 0; padding: 8px 24px 16px; }
+.cx-proposal li { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--cx-silver); line-height: 1.45; }
+.cx-proposal li:last-child { border-bottom: 0; }
+.cx-proposal li::before { content: ""; flex: none; width: 18px; height: 18px; margin-top: 2px; border: 2px solid var(--cx-blue); border-radius: 4px; }
+
+/* Non-link tags (comfort goals etc.) */
+.cx-tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 24px; padding: 0; list-style: none; }
+.cx-tags li { padding: 8px 14px; border-radius: 6px; background: #fff; border: 1px solid var(--cx-border); color: var(--cx-navy); font-weight: 600; font-size: 15px; }
+
+/* Form: single-choice pills (radio) */
+.cx-choice { border: 0; margin: 0 0 16px; padding: 0; }
+.cx-choice legend { padding: 0; margin-bottom: 8px; font-size: 15px; font-weight: 600; color: var(--cx-ink); }
+.cx-choice__opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.cx-choice label { position: relative; }
+.cx-choice input { position: absolute; opacity: 0; inset: 0; }
+.cx-choice span { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border: 1px solid #B9BECB; border-radius: 6px; font-size: 15px; color: var(--cx-ink); cursor: pointer; transition: border-color .15s ease, background-color .15s ease; }
+.cx-choice input:checked + span { border-color: var(--cx-blue); background: #EEF1FA; box-shadow: inset 0 0 0 1px var(--cx-blue); font-weight: 600; }
+.cx-choice input:focus-visible + span { outline: 3px solid var(--cx-blue); outline-offset: 2px; }

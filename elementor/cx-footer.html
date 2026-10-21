@@ -69,12 +69,13 @@
 </div>
 <script>
 /* If the page has its own request form (#request), the mobile bar jumps to it
-   and uses that page's CTA label (data-cta), e.g. "Request AC Service". */
+   and uses that page's CTA label (data-cta-short, else data-cta). */
 (function () {
   var form = document.getElementById('request');
   var btn = document.querySelector('[data-cx-request]');
   if (!form || !btn) return;
   btn.href = '#request';
-  if (form.dataset.cta) btn.textContent = form.dataset.cta;
+  var label = form.dataset.ctaShort || form.dataset.cta;
+  if (label) btn.textContent = label;
 })();
 </script>

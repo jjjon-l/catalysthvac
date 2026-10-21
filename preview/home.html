@@ -130,7 +130,7 @@ body.elementor-page, .elementor { font-family: var(--cx-font-body); color: var(-
   cursor: pointer;
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   min-height: 48px; padding: 14px 28px;
-  font-family: var(--cx-font-body); font-weight: 600; font-size: 17px; line-height: 1;
+  font-family: var(--cx-font-body); font-weight: 600; font-size: 17px; line-height: 1.25; text-align: center;
   background: var(--cx-red); color: #fff; border: 2px solid var(--cx-red);
   border-radius: var(--cx-radius-btn); text-decoration: none;
   transition: background-color .15s ease, border-color .15s ease, color .15s ease;
@@ -519,6 +519,61 @@ p.cx-eyebrow::before, .cx-eyebrow .elementor-heading-title::before {
 /* In-page anchors (#request etc.) land below the sticky header */
 section[id], [id="request"] { scroll-margin-top: 100px; }
 @media (max-width: 1100px) { section[id], [id="request"] { scroll-margin-top: 80px; } }
+
+/* ==========================================================================
+   REPLACEMENT-PAGE COMPONENTS (AC Replacement is the template)
+   ========================================================================== */
+
+/* Two-column checklist for longer factor lists */
+.cx-checklist--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 767px) { .cx-checklist--2col { grid-template-columns: 1fr; } }
+.cx-surface .cx-checklist li { background: #fff; }
+
+/* Option label on equipment cards */
+.cx-tag { align-self: flex-start; display: inline-block; padding: 4px 10px; border-radius: 999px; background: var(--cx-surface); color: var(--cx-blue); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.cx-card--option { border-top: 4px solid var(--cx-blue); }
+
+/* Installation-quality: four numbered questions on a dark band */
+.cx-quality { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.14); border-radius: var(--cx-radius); overflow: hidden; counter-reset: cx-q; }
+.cx-quality > div { counter-increment: cx-q; background: var(--cx-navy); padding: 32px 32px 32px 92px; position: relative; }
+.cx-quality > div::before { content: counter(cx-q); position: absolute; left: 32px; top: 30px; font-family: var(--cx-font-head); font-weight: 700; font-size: 44px; line-height: 1; color: #FF8A8C; }
+.cx-quality h3 { color: #fff; margin: 0 0 10px; font-size: 24px; }
+.cx-quality p { margin: 0; color: #C9CDE8; }
+@media (max-width: 767px) { .cx-quality { grid-template-columns: 1fr; } .cx-quality > div { padding: 24px 22px 24px 70px; } .cx-quality > div::before { left: 22px; top: 22px; font-size: 36px; } .cx-quality h3 { font-size: 21px; } }
+
+/* Process steps as cards (light background) */
+.cx-steps--cards > * { background: #fff; border: 1px solid var(--cx-border); border-radius: var(--cx-radius); padding: 76px 24px 24px; }
+.cx-steps--cards > *::before { top: 24px; left: 24px; }
+.cx-steps--cards h3 { margin: 0 0 8px; font-size: 22px; }
+.cx-steps--cards p { margin: 0; color: var(--cx-muted); }
+
+/* Held block: shows a design that can't publish yet (whole block removed before launch if still unconfirmed) */
+.cx-held { position: relative; outline: 2px dashed #C98A00; outline-offset: 10px; border-radius: 4px; }
+.cx-held::before { content: "STAGING · HELD UNTIL CONFIRMED"; position: absolute; top: -34px; left: 0; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: #6B4A00; background: #FFF8E6; padding: 3px 8px; border-radius: 4px; }
+
+/* Proposal checklist styled as a document */
+.cx-proposal { background: #fff; border: 1px solid var(--cx-border); border-radius: var(--cx-radius); box-shadow: 0 18px 40px rgba(22,26,46,.10); overflow: hidden; }
+.cx-proposal__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 24px; background: var(--cx-navy); color: #fff; }
+.cx-proposal__head strong { font-family: var(--cx-font-head); font-size: 22px; font-weight: 700; letter-spacing: .01em; }
+.cx-proposal__head span { font-size: 13px; color: #AEB4DA; letter-spacing: .08em; text-transform: uppercase; }
+.cx-proposal ul { list-style: none; margin: 0; padding: 8px 24px 16px; }
+.cx-proposal li { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--cx-silver); line-height: 1.45; }
+.cx-proposal li:last-child { border-bottom: 0; }
+.cx-proposal li::before { content: ""; flex: none; width: 18px; height: 18px; margin-top: 2px; border: 2px solid var(--cx-blue); border-radius: 4px; }
+
+/* Non-link tags (comfort goals etc.) */
+.cx-tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 24px; padding: 0; list-style: none; }
+.cx-tags li { padding: 8px 14px; border-radius: 6px; background: #fff; border: 1px solid var(--cx-border); color: var(--cx-navy); font-weight: 600; font-size: 15px; }
+
+/* Form: single-choice pills (radio) */
+.cx-choice { border: 0; margin: 0 0 16px; padding: 0; }
+.cx-choice legend { padding: 0; margin-bottom: 8px; font-size: 15px; font-weight: 600; color: var(--cx-ink); }
+.cx-choice__opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.cx-choice label { position: relative; }
+.cx-choice input { position: absolute; opacity: 0; inset: 0; }
+.cx-choice span { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border: 1px solid #B9BECB; border-radius: 6px; font-size: 15px; color: var(--cx-ink); cursor: pointer; transition: border-color .15s ease, background-color .15s ease; }
+.cx-choice input:checked + span { border-color: var(--cx-blue); background: #EEF1FA; box-shadow: inset 0 0 0 1px var(--cx-blue); font-weight: 600; }
+.cx-choice input:focus-visible + span { outline: 3px solid var(--cx-blue); outline-offset: 2px; }
 </style>
 
 </head>
@@ -536,7 +591,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <li><button type="button" aria-haspopup="true">Residential</button>
           <ul>
             <li><a href="ac-repair.html">AC Repair</a></li>
-            <li><a href="/ac-replacement/">AC Replacement &amp; Installation</a></li>
+            <li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li>
             <li><a href="/heating-repair/">Heating Repair</a></li>
             <li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li>
             <li><a href="/hvac-maintenance/">HVAC Maintenance</a></li>
@@ -572,7 +627,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <div class="cx-mobile-panel">
           <details><summary>Residential</summary><ul>
             <li><a href="ac-repair.html">AC Repair</a></li>
-            <li><a href="/ac-replacement/">AC Replacement &amp; Installation</a></li>
+            <li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li>
             <li><a href="/heating-repair/">Heating Repair</a></li>
             <li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li>
             <li><a href="/hvac-maintenance/">HVAC Maintenance</a></li>
@@ -619,7 +674,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
     </div>
     <nav class="cx-routes" aria-label="Find the right service">
       <a class="cx-route" href="ac-repair.html"><span class="cx-route__q">AC not cooling the way it should?</span><span class="cx-route__a">Start with AC Repair</span></a>
-      <a class="cx-route" href="/ac-replacement/"><span class="cx-route__q">Thinking about a new system?</span><span class="cx-route__a">Explore AC Replacement</span></a>
+      <a class="cx-route" href="ac-replacement.html"><span class="cx-route__q">Thinking about a new system?</span><span class="cx-route__a">Explore AC Replacement</span></a>
       <a class="cx-route" href="/commercial-hvac/"><span class="cx-route__q">Managing a commercial property?</span><span class="cx-route__a">Commercial HVAC</span></a>
     </nav>
   </div>
@@ -644,7 +699,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <span class="cx-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="10" cy="12" r="4"/><path d="M10 8v8M6 12h8"/><path d="M17 8.5h1.5M17 11h1.5M17 13.5h1.5M7 19v2M17 19v2"/></svg></span>
         <h3>AC Replacement &amp; Installation</h3>
         <p>If your current system is failing, becoming unreliable or you are already considering replacement, compare the next step based on the home, the system and the work actually needed.</p>
-        <a class="cx-link-arrow" href="/ac-replacement/">AC Replacement</a>
+        <a class="cx-link-arrow" href="ac-replacement.html">AC Replacement</a>
       </article>
       <article class="cx-card cx-card--link">
         <span class="cx-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4 0 7-2.8 7-6.8 0-3.7-2.6-6.2-4.4-8.7-.4 2-1.4 3.3-2.8 4C12 7.3 10.4 4 8 2c.3 3.2-3 5.8-3 10.2C5 18.8 8 22 12 22Z"/><path d="M12 22c-1.9 0-3.2-1.4-3.2-3.3 0-2 1.7-3 2.4-4.7.6 1.3 2 2 2.6 3.3.3.5.4 1 .4 1.5 0 1.8-.9 3.2-2.2 3.2Z"/></svg></span>
@@ -761,7 +816,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <div class="cx-decision__opt cx-decision__opt--replace">
         <h3>When replacement is worth evaluating</h3>
         <p>When the current repair is part of a larger pattern, such as recurring failures, declining performance, difficult parts availability, comfort problems or repair costs that no longer make sense for the system.</p>
-        <a class="cx-btn cx-btn--outline" href="/ac-replacement/">Considering Replacement? Explore Your Options</a>
+        <a class="cx-btn cx-btn--outline" href="ac-replacement.html">Considering Replacement? Explore Your Options</a>
       </div>
     </div>
   </div>
@@ -814,7 +869,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <details><summary>Does Catalyst provide both residential and commercial HVAC service?</summary><div>Yes. Catalyst's website separates residential service from commercial HVAC so homeowners and business or property decision-makers can move into the service path that fits their need.</div></details>
       <details><summary>What residential HVAC services does Catalyst offer?</summary><div>Catalyst's primary residential services include AC repair, AC replacement and installation, heating repair and replacement, HVAC maintenance and indoor air quality.</div></details>
       <details><summary>What areas does Catalyst serve?</summary><div>Catalyst serves the Greater Houston market, with a strong initial operating focus through South and Southeast Houston and the Bay Area. Visit the <a href="/service-areas/">Service Areas</a> page for current coverage and market-specific information.</div></details>
-      <details><summary>Should I request AC repair or AC replacement?</summary><div>If you are dealing with a current cooling problem and do not already know that replacement is necessary, AC repair is usually the clearer starting point. If the system has recurring problems, major repair needs or you are already evaluating a new system, the <a href="/ac-replacement/">replacement page</a> provides more decision support. A final recommendation should follow an evaluation of the actual system.</div></details>
+      <details><summary>Should I request AC repair or AC replacement?</summary><div>If you are dealing with a current cooling problem and do not already know that replacement is necessary, AC repair is usually the clearer starting point. If the system has recurring problems, major repair needs or you are already evaluating a new system, the <a href="ac-replacement.html">replacement page</a> provides more decision support. A final recommendation should follow an evaluation of the actual system.</div></details>
     </div>
     <p class="cx-ph" style="margin-top:24px;max-width:880px">Held FAQs: emergency / after-hours service · maintenance plans (publish once verified)</p>
   </div>
@@ -842,7 +897,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <p class="cx-footer__h">Residential</p>
         <ul>
           <li><a href="ac-repair.html">AC Repair</a></li>
-          <li><a href="/ac-replacement/">AC Replacement &amp; Installation</a></li>
+          <li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li>
           <li><a href="/heating-repair/">Heating Repair</a></li>
           <li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li>
           <li><a href="/hvac-maintenance/">HVAC Maintenance</a></li>
@@ -893,13 +948,14 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 </div>
 <script>
 /* If the page has its own request form (#request), the mobile bar jumps to it
-   and uses that page's CTA label (data-cta), e.g. "Request AC Service". */
+   and uses that page's CTA label (data-cta-short, else data-cta). */
 (function () {
   var form = document.getElementById('request');
   var btn = document.querySelector('[data-cx-request]');
   if (!form || !btn) return;
   btn.href = '#request';
-  if (form.dataset.cta) btn.textContent = form.dataset.cta;
+  var label = form.dataset.ctaShort || form.dataset.cta;
+  if (label) btn.textContent = label;
 })();
 </script>
 

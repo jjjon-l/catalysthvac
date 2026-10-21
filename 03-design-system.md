@@ -109,4 +109,12 @@ Minimum tap target is 48px tall. Labels come from the brief's CTA system: **Requ
 | 17 | Related-service bridge | `cx-bridge` |
 | 19–20 | Final CTA with request form | `cx-request` (id `request`, `data-cta="Request AC Service"`), form `cx-form` |
 | — | Header / footer / mobile bar | `cx-header`, `cx-footer`, `cx-mobilebar` (the bar jumps to `#request` when the page has one) |
+| 8 | Evaluation / factor checklists (long) | `cx-checklist cx-checklist--2col` |
+| 9 | Equipment option cards | `cx-card cx-card--option` + `cx-tag` |
+| 10 | Installation-quality four-point module | `cx-quality` (inside `cx-section cx-dark`) |
+| 6 | Process steps as cards | `cx-steps cx-steps--cards` |
+| 11 | Proposal comparison checklist | `cx-proposal` (`cx-proposal__head` + list) |
+| — | Comfort-goal tags (not links) | `cx-tags` |
+| 20 | Replacement form single-choice | `cx-choice` (radio pills); request band takes `data-cta-short` for the mobile bar |
+| — | Held block (design shown, not publishable yet) | `cx-held`: **remove or confirm before launch** |
 | — | Staging placeholder | `cx-ph` (dashed amber box; **search for and remove all of these before launch**) |

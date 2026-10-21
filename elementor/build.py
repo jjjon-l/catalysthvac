@@ -48,6 +48,8 @@ def inline_icons(html: str) -> str:
     return re.sub(r"\{\{icon:([a-z0-9-]+)\}\}", lambda m: icons[m.group(1)], html)
 
 
+PREVIEW_LINKS = {"/": "home.html", "/ac-repair/": "ac-repair.html"}
+
 base = FONTS + "<style>\n" + (ROOT / "preview" / "_base.css").read_text() + "</style>\n<style>\n" + css + "</style>\n"
 for src in sorted((ROOT / "preview").glob("*.src.html")):
     page = (src.read_text()
@@ -55,6 +57,9 @@ for src in sorted((ROOT / "preview").glob("*.src.html")):
             .replace("<!--__HEADER__-->", header)
             .replace("<!--__FOOTER__-->", footer))
     out = src.with_name(src.name.replace(".src.html", ".html"))
+    # Preview-only: point links at pages that exist as previews (GitHub Pages)
+    for href, local in PREVIEW_LINKS.items():
+        page = page.replace(f'href="{href}"', f'href="{local}"')
     out.write_text(inline_icons(page))
     print(f"{out.relative_to(ROOT)}: {out.stat().st_size:,} bytes")
 

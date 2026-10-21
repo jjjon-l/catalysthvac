@@ -1,0 +1,3 @@
+# Internal-only Build Doc (not for client; keep out of the repo)
+brief/
+.DS_Store

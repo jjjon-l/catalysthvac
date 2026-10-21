@@ -5,14 +5,14 @@ Sources (edit these):
   elementor/cx-header.html  header markup
   elementor/cx-footer.html  footer + mobile call bar markup
   elementor/icons/*.svg     service icons
-  preview/home.src.html     homepage preview body
+  preview/*.src.html        preview page bodies (+ preview/_base.css)
 
 Outputs (paste these into Elementor HTML widgets):
   elementor/out/cx-styles.html   -> "CX – Styles" saved template
   elementor/out/cx-header.html   -> "CX – Header" saved template
   elementor/out/cx-footer.html   -> "CX – Footer" saved template
   elementor/out/icons/*.html     -> inline icon markup for cards
-  preview/home.html              -> local preview, everything inlined
+  preview/*.html                 -> local previews, everything inlined
 
 Run from anywhere: python3 elementor/build.py
 """
@@ -48,11 +48,15 @@ def inline_icons(html: str) -> str:
     return re.sub(r"\{\{icon:([a-z0-9-]+)\}\}", lambda m: icons[m.group(1)], html)
 
 
-page = (ROOT / "preview" / "home.src.html").read_text()
-page = (page.replace("/*__GLOBAL_CSS__*/", css)
+base = FONTS + "<style>\n" + (ROOT / "preview" / "_base.css").read_text() + "</style>\n<style>\n" + css + "</style>\n"
+for src in sorted((ROOT / "preview").glob("*.src.html")):
+    page = (src.read_text()
+            .replace("<!--__BASE__-->", base)
             .replace("<!--__HEADER__-->", header)
             .replace("<!--__FOOTER__-->", footer))
-(ROOT / "preview" / "home.html").write_text(inline_icons(page))
+    out = src.with_name(src.name.replace(".src.html", ".html"))
+    out.write_text(inline_icons(page))
+    print(f"{out.relative_to(ROOT)}: {out.stat().st_size:,} bytes")
 
 for f in sorted(OUT.glob("*.html")):
     print(f"{f.relative_to(ROOT)}: {f.stat().st_size:,} bytes")

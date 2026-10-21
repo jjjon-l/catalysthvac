@@ -10,7 +10,7 @@ Working files for the catalysthvac.com rebuild (WordPress + Elementor Pro on Sit
 | [04-elementor-build-method.md](04-elementor-build-method.md) | How pages are assembled in Elementor as drafts on the live site |
 | `elementor/` | Sources: `global.css`, header/footer HTML, icons, and `build.py` |
 | `elementor/out/` | Generated paste-ready snippets for the CX saved templates |
-| `preview/home.html` | Local homepage preview (open in a browser) |
+| `preview/home.html`, `preview/ac-repair.html` | Local page previews (open in a browser): the Block 1 sample pages |
 
 Rebuild the snippets and preview after editing any source:
 

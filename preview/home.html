@@ -8,7 +8,7 @@
 <meta name="description" content="Residential and commercial HVAC service across Greater Houston, including AC repair, replacement, heating, maintenance and indoor air quality. Request service from Catalyst A/C & Heat.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600&display=swap">
 <style>
 /* Preview only: stands in for Elementor's base output (reset, plain h1–h3, wrap) */
 *,*::before,*::after{box-sizing:border-box}
@@ -126,7 +126,8 @@ body.elementor-page, .elementor { font-family: var(--cx-font-body); color: var(-
 /* ---------- Buttons ----------
    Native Button widget: style "primary" in Site Settings → Buttons;
    add cx-btn--outline / cx-btn--light to the widget for variants. */
-.cx-btn .elementor-button, a.cx-btn {
+.cx-btn .elementor-button, a.cx-btn, button.cx-btn {
+  cursor: pointer;
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   min-height: 48px; padding: 14px 28px;
   font-family: var(--cx-font-body); font-weight: 600; font-size: 17px; line-height: 1;
@@ -134,7 +135,7 @@ body.elementor-page, .elementor { font-family: var(--cx-font-body); color: var(-
   border-radius: var(--cx-radius-btn); text-decoration: none;
   transition: background-color .15s ease, border-color .15s ease, color .15s ease;
 }
-.cx-btn .elementor-button:hover, a.cx-btn:hover { background: var(--cx-red-hover); border-color: var(--cx-red-hover); color: #fff; }
+.cx-btn .elementor-button:hover, a.cx-btn:hover, button.cx-btn:hover { background: var(--cx-red-hover); border-color: var(--cx-red-hover); color: #fff; }
 .cx-btn--outline .elementor-button, a.cx-btn--outline { background: transparent; color: var(--cx-navy); border-color: var(--cx-navy); }
 .cx-btn--outline .elementor-button:hover, a.cx-btn--outline:hover { background: var(--cx-navy); color: #fff; border-color: var(--cx-navy); }
 .cx-dark .cx-btn--outline .elementor-button, .cx-dark a.cx-btn--outline,
@@ -161,6 +162,7 @@ body.elementor-page, .elementor { font-family: var(--cx-font-body); color: var(-
   outline: 3px solid var(--cx-blue); outline-offset: 2px; border-radius: 4px;
 }
 .cx-dark :where(a, button, summary, input, select, textarea):focus-visible,
+.cx-request :where(a, button):focus-visible, .cx-hero :where(a, button):focus-visible,
 .cx-band-commercial :where(a, button):focus-visible { outline-color: #7FA2FF; }
 
 /* ---------- Grids & cards ---------- */
@@ -324,12 +326,12 @@ p.cx-eyebrow::before, .cx-eyebrow .elementor-heading-title::before {
 .cx-mobilebar { display: none; }
 @media (max-width: 767px) {
   .cx-mobilebar {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 8px;
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 999;
     padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
     background: #fff; border-top: 1px solid var(--cx-border); box-shadow: 0 -4px 16px rgba(22,26,46,.08);
   }
-  .cx-mobilebar a.cx-btn { min-height: 48px; padding: 12px; font-size: 16px; }
+  .cx-mobilebar a.cx-btn { min-height: 48px; padding: 12px 10px; font-size: 15px; white-space: nowrap; }
   body { padding-bottom: 72px; } /* the bar never covers the footer or forms */
 }
 
@@ -428,7 +430,97 @@ p.cx-eyebrow::before, .cx-eyebrow .elementor-heading-title::before {
 .cx-skip { position: absolute; left: -9999px; top: 8px; z-index: 1000; background: #fff; color: var(--cx-navy); padding: 10px 14px; border-radius: 6px; font-weight: 600; }
 .cx-skip:focus { left: 8px; }
 
+/* ==========================================================================
+   SERVICE-PAGE COMPONENTS (AC Repair is the template for repair pages)
+   ========================================================================== */
+
+/* Breadcrumb: sits at the top of the service hero */
+.cx-breadcrumb ol { display: flex; flex-wrap: wrap; gap: 4px 10px; margin: 0 0 28px; padding: 0; list-style: none; font-size: 15px; }
+.cx-breadcrumb li { display: flex; align-items: center; gap: 10px; color: #AEB4DA; }
+.cx-breadcrumb li + li::before { content: "/"; color: #6B70A8; }
+.cx-breadcrumb a { color: #DCDFF0; text-decoration: none; }
+.cx-breadcrumb a:hover { color: #fff; text-decoration: underline; }
+.cx-breadcrumb [aria-current] { color: #fff; font-weight: 600; }
+
+/* Service hero: same dark hero, tighter, no router row */
+.cx-hero--service { padding-block: 48px 0; }
+.cx-hero--service .cx-hero__grid { padding-bottom: 80px; }
+.cx-hero p.cx-hero__support { margin: 24px 0 0; font-size: 15px; color: #AEB4DA; max-width: 520px; }
+@media (max-width: 767px) { .cx-hero--service { padding-block: 28px 0; } .cx-hero--service .cx-hero__grid { padding-bottom: 48px; } }
+
+/* Symptom cards: numbered with a chamfered badge */
+.cx-grid-3.cx-symptoms { counter-reset: cx-sym; }
+.cx-card--symptom { counter-increment: cx-sym; padding-top: 24px; }
+.cx-card--symptom::before {
+  content: counter(cx-sym, decimal-leading-zero);
+  --cx-cut: 8px; width: 44px; height: 44px; display: grid; place-items: center; margin-bottom: 6px;
+  font-family: var(--cx-font-head); font-weight: 700; font-size: 18px; color: var(--cx-blue); background: var(--cx-surface);
+  clip-path: polygon(var(--cx-cut) 0, calc(100% - var(--cx-cut)) 0, 100% var(--cx-cut), 100% calc(100% - var(--cx-cut)), calc(100% - var(--cx-cut)) 100%, var(--cx-cut) 100%, 0 calc(100% - var(--cx-cut)), 0 var(--cx-cut));
+}
+.cx-after-grid { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+.cx-after-grid p { margin: 0; color: var(--cx-muted); }
+
+/* Split section: copy left, supporting panel right */
+.cx-split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.cx-split--wide-left { grid-template-columns: 1.2fr .8fr; }
+@media (max-width: 1024px) { .cx-split, .cx-split--wide-left { grid-template-columns: 1fr; gap: 32px; } }
+
+/* Checklist (decision factors, what's included) */
+.cx-checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.cx-checklist li { position: relative; padding: 14px 16px 14px 48px; background: #fff; border: 1px solid var(--cx-border); border-radius: var(--cx-radius); line-height: 1.45; }
+.cx-checklist li::before {
+  content: ""; position: absolute; left: 16px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%);
+  background: var(--cx-blue);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5 10 17.5 19 7'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5 10 17.5 19 7'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.cx-note { margin-top: 20px; padding: 16px 18px; border-left: 4px solid var(--cx-red); background: var(--cx-surface); border-radius: 0 var(--cx-radius) var(--cx-radius) 0; color: var(--cx-text); }
+
+/* Related-service bridge: a quiet, horizontal card */
+.cx-bridge { display: grid; grid-template-columns: auto 1fr auto; gap: 24px 28px; align-items: center; padding: 32px; border: 1px solid var(--cx-border); border-radius: var(--cx-radius); background: #fff; box-shadow: var(--cx-shadow); }
+.cx-bridge h2 { font-size: 32px; margin: 0 0 8px; }
+.cx-bridge p { margin: 0; color: var(--cx-muted); }
+@media (max-width: 767px) { .cx-bridge { grid-template-columns: 1fr; padding: 24px; } .cx-bridge h2 { font-size: 26px; } }
+
+/* Request band: copy + lightweight form (final CTA on service pages) */
+.cx-request { background: var(--cx-navy); color: #fff; padding-block: var(--cx-section-y); padding-inline: var(--cx-gutter); position: relative; overflow: hidden; isolation: isolate; }
+.cx-request::before { content: ""; position: absolute; z-index: -1; left: -200px; bottom: -260px; width: 620px; height: 620px; background: linear-gradient(45deg, rgba(40,58,138,.5), rgba(40,58,138,0) 70%); clip-path: polygon(25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0 75%, 0 25%); }
+.cx-request h2 { color: #fff; }
+.cx-request p { color: #DCDFF0; }
+.cx-request__grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: start; }
+.cx-request__alt { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.14); }
+.cx-request__alt a.cx-link-arrow { color: #fff; display: inline; min-height: 0; line-height: 1.5; }
+.cx-request__alt a.cx-link-arrow::after { margin-left: 6px; }
+.cx-request__phone { display: inline-block; margin-top: 4px; color: #fff; text-decoration: none; font-family: var(--cx-font-head); font-weight: 700; font-size: 34px; line-height: 1.1; }
+@media (max-width: 1024px) { .cx-request__grid { grid-template-columns: 1fr; gap: 36px; } }
+
+/* ---------- Forms: plain markup and Elementor Pro Form widget ---------- */
+.cx-form { background: #fff; color: var(--cx-text); border-radius: var(--cx-radius); padding: 32px; box-shadow: 0 20px 50px rgba(10,10,40,.35); }
+.cx-form h3 { margin: 0 0 4px; color: var(--cx-ink); }
+.cx-form__intro { margin: 0 0 22px; color: var(--cx-muted) !important; font-size: 15px; }
+.cx-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+@media (max-width: 480px) { .cx-form { padding: 22px; } .cx-form__row { grid-template-columns: 1fr; } }
+.cx-field, .cx-form .elementor-field-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.cx-field label, .cx-form .elementor-field-label { font-size: 15px; font-weight: 600; color: var(--cx-ink); }
+.cx-field label .cx-opt { font-weight: 400; color: var(--cx-muted); }
+.cx-field input, .cx-field select, .cx-field textarea,
+.cx-form .elementor-field-textual, .cx-form .elementor-select-wrapper select {
+  width: 100%; min-height: 48px; padding: 12px 14px; font: 400 16px/1.4 var(--cx-font-body); color: var(--cx-ink);
+  background: #fff; border: 1px solid #B9BECB; border-radius: 6px; transition: border-color .15s ease, box-shadow .15s ease;
+}
+.cx-field textarea, .cx-form textarea.elementor-field-textual { min-height: 104px; resize: vertical; }
+.cx-field :is(input, select, textarea):focus, .cx-form .elementor-field-textual:focus { outline: none; border-color: var(--cx-blue); box-shadow: 0 0 0 3px rgba(40,58,138,.22); }
+.cx-field [aria-invalid="true"], .cx-form .elementor-error .elementor-field-textual { border-color: var(--cx-error); }
+.cx-field__error, .cx-form .elementor-message-danger { color: var(--cx-error); font-size: 14px; }
+.cx-form .elementor-message-success { color: var(--cx-success); font-weight: 600; }
+.cx-form button[type="submit"], .cx-form .elementor-button { width: 100%; justify-content: center; }
+.cx-form__micro { margin: 14px 0 0; font-size: 13px; line-height: 1.5; color: var(--cx-muted) !important; }
+
+/* In-page anchors (#request etc.) land below the sticky header */
+section[id], [id="request"] { scroll-margin-top: 100px; }
+@media (max-width: 1100px) { section[id], [id="request"] { scroll-margin-top: 80px; } }
 </style>
+
 </head>
 <body>
 <!-- CX – Header · paste into an HTML widget in the "CX – Header" saved template.
@@ -797,8 +889,19 @@ p.cx-eyebrow::before, .cx-eyebrow .elementor-heading-title::before {
 <!-- Mobile sticky call + request bar -->
 <div class="cx-mobilebar">
   <a class="cx-btn cx-btn--outline" href="tel:+17132445070">Call Catalyst</a>
-  <a class="cx-btn" href="/contact/">Request Service</a>
+  <a class="cx-btn" href="/contact/" data-cx-request>Request Service</a>
 </div>
+<script>
+/* If the page has its own request form (#request), the mobile bar jumps to it
+   and uses that page's CTA label (data-cta), e.g. "Request AC Service". */
+(function () {
+  var form = document.getElementById('request');
+  var btn = document.querySelector('[data-cx-request]');
+  if (!form || !btn) return;
+  btn.href = '#request';
+  if (form.dataset.cta) btn.textContent = form.dataset.cta;
+})();
+</script>
 
 </body>
 </html>

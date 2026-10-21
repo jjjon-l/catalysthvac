@@ -1,0 +1,15 @@
+/* Preview only: stands in for Elementor's base output (reset, plain h1–h3, wrap) */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Inter",system-ui,sans-serif;font-size:18px;line-height:1.6;color:#2A2F45;background:#fff}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;color:#161A2E;margin:0 0 16px}
+h1{font-size:60px;line-height:1.05;font-weight:700}
+h2{font-size:44px;line-height:1.1;font-weight:700}
+h3{font-size:26px;line-height:1.2;font-weight:600}
+p{margin:0 0 16px}
+a{color:#283A8A}
+img{max-width:100%;height:auto}
+.wrap{max-width:1240px;margin-inline:auto}
+.cx-section-head{margin-bottom:44px}
+@media(max-width:1024px){body{font-size:17px}h1{font-size:48px}h2{font-size:38px}h3{font-size:24px}}
+@media(max-width:767px){body{font-size:16px}h1{font-size:38px}h2{font-size:32px}h3{font-size:22px}}

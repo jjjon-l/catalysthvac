@@ -65,5 +65,16 @@
 <!-- Mobile sticky call + request bar -->
 <div class="cx-mobilebar">
   <a class="cx-btn cx-btn--outline" href="tel:+17132445070">Call Catalyst</a>
-  <a class="cx-btn" href="/contact/">Request Service</a>
+  <a class="cx-btn" href="/contact/" data-cx-request>Request Service</a>
 </div>
+<script>
+/* If the page has its own request form (#request), the mobile bar jumps to it
+   and uses that page's CTA label (data-cta), e.g. "Request AC Service". */
+(function () {
+  var form = document.getElementById('request');
+  var btn = document.querySelector('[data-cx-request]');
+  if (!form || !btn) return;
+  btn.href = '#request';
+  if (form.dataset.cta) btn.textContent = form.dataset.cta;
+})();
+</script>

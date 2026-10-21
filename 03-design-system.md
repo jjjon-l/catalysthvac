@@ -100,4 +100,13 @@ Minimum tap target is 48px tall. Labels come from the brief's CTA system: **Requ
 | 19 | Final CTA band | `cx-band-cta` |
 | — | Eyebrow | `cx-eyebrow` (on a Heading widget, size "p") |
 | — | Mobile call / request bar | `cx-mobilebar` (Theme Builder footer) |
+| — | Brand motif (chamfered corners) | `cx-chamfer` (set `--cx-cut`) |
+| — | Hero quick router | `cx-routes`, `cx-route` |
+| — | Service hero + breadcrumb | `cx-hero cx-hero--service cx-dark`, `cx-breadcrumb` |
+| 5 | Symptom grid (numbered) | `cx-grid-3 cx-symptoms` + `cx-card cx-card--symptom` |
+| — | Two-column copy/panel | `cx-split`, `cx-split--wide-left` |
+| — | Decision factors / checklists | `cx-checklist`, callout `cx-note` |
+| 17 | Related-service bridge | `cx-bridge` |
+| 19–20 | Final CTA with request form | `cx-request` (id `request`, `data-cta="Request AC Service"`), form `cx-form` |
+| — | Header / footer / mobile bar | `cx-header`, `cx-footer`, `cx-mobilebar` (the bar jumps to `#request` when the page has one) |
 | — | Staging placeholder | `cx-ph` (dashed amber box; **search for and remove all of these before launch**) |

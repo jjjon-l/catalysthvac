@@ -774,6 +774,27 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 .cx-choice input[type="checkbox"] + span { padding-left: 42px; position: relative; }
 .cx-choice input[type="checkbox"] + span::before { content: ""; position: absolute; left: 14px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); border: 2px solid #B9BECB; border-radius: 4px; background: #fff; }
 .cx-choice input[type="checkbox"]:checked + span::before { border-color: var(--cx-blue); background: var(--cx-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5 10 17.5 19 7'/%3E%3C/svg%3E") center / 14px no-repeat; }
+
+/* Staging-only: temporary stock image that must be replaced before launch */
+.cx-temp { position: relative; }
+.cx-temp::after {
+  content: "TEMPORARY STOCK PHOTO · replace with a real Catalyst photo";
+  position: absolute; left: 12px; bottom: 12px; right: 12px;
+  padding: 6px 10px; border-radius: 4px; background: #FFF1A8; color: #6B4A00;
+  font: 600 12px/1.3 var(--cx-font-body); letter-spacing: .04em;
+}
+
+/* Quick-route links on light sections (e.g. Contact): dark text instead of white */
+.cx-section .cx-routes, .cx-surface .cx-routes { border-top-color: var(--cx-border); }
+.cx-section:not(.cx-dark) .cx-route { color: var(--cx-navy); }
+.cx-section:not(.cx-dark) .cx-route + .cx-route { border-left-color: var(--cx-border); }
+.cx-section:not(.cx-dark) .cx-route__q { color: var(--cx-muted); }
+.cx-section:not(.cx-dark) .cx-route__a { color: var(--cx-navy); }
+.cx-section:not(.cx-dark) .cx-route__a::after { color: var(--cx-red); }
+@media (max-width: 767px) { .cx-section:not(.cx-dark) .cx-route, .cx-section:not(.cx-dark) .cx-route + .cx-route { border-top-color: var(--cx-border); } }
+
+/* Forms sitting on light sections: lighter shadow, visible border */
+.cx-section:not(.cx-dark) .cx-form { box-shadow: 0 8px 24px rgba(22,26,46,.08); border: 1px solid var(--cx-border); }
 </style>
 
 </head>
@@ -801,43 +822,43 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         </li>
         <li><button type="button" aria-haspopup="true">Multi-Family</button>
           <ul>
-            <li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li>
-            <li><a href="/senior-living-hvac/">Senior Living HVAC</a></li>
+            <li><a href="multi-family-hvac.html">Multi-Family HVAC</a></li>
+            <li><a href="senior-living-hvac.html">Senior Living HVAC</a></li>
           </ul>
         </li>
         <li><button type="button" aria-haspopup="true">Commercial</button>
           <ul>
-            <li><a href="/commercial-hvac/">Commercial HVAC</a></li>
-            <li><a href="/hvac-project-management/">HVAC Project Management</a></li>
-            <li><a href="/coil-cleaning-repair/">Coil Cleaning &amp; Repair</a></li>
+            <li><a href="commercial-hvac.html">Commercial HVAC</a></li>
+            <li><a href="hvac-project-management.html">HVAC Project Management</a></li>
+            <li><a href="coil-cleaning-repair.html">Coil Cleaning &amp; Repair</a></li>
           </ul>
         </li>
         <li><button type="button" aria-haspopup="true">Industrial</button>
           <ul>
-            <li><a href="/industrial-hvac/">Industrial HVAC</a></li>
+            <li><a href="industrial-hvac.html">Industrial HVAC</a></li>
           </ul>
         </li>
         <li><button type="button" aria-haspopup="true">About</button>
           <ul>
-            <li><a href="/about/">About Catalyst</a></li>
-            <li><a href="/service-areas/">Service Areas</a></li>
-            <li><a href="/careers/">Careers</a></li>
-            <li><a href="/contact/">Contact</a></li>
+            <li><a href="about.html">About Catalyst</a></li>
+            <li><a href="service-areas.html">Service Areas</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </li>
       </ul>
     </nav>
     <div class="cx-header__actions">
       <a class="cx-phone" href="tel:+18322814515"><small>Call Catalyst</small><span class="cx-verify">(832) 281-4515</span></a>
-      <a class="cx-btn" href="/contact/">Request Service</a>
+      <a class="cx-btn" href="contact.html">Request Service</a>
       <details class="cx-menu-toggle">
         <summary>Menu</summary>
         <div class="cx-mobile-panel">
           <details><summary>Residential</summary><ul><li><a href="ac-repair.html">AC Repair</a></li><li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li><li><a href="heating-repair.html">Heating Repair</a></li><li><a href="heating-replacement.html">Heating Replacement &amp; Installation</a></li><li><a href="hvac-maintenance.html">HVAC Maintenance</a></li><li><a href="attic-insulation.html">Attic Insulation</a></li><li><a href="residential-hvac.html"><strong>All Residential HVAC</strong></a></li></ul></details>
-          <details><summary>Multi-Family</summary><ul><li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li><li><a href="/senior-living-hvac/">Senior Living HVAC</a></li></ul></details>
-          <details><summary>Commercial</summary><ul><li><a href="/commercial-hvac/">Commercial HVAC</a></li><li><a href="/hvac-project-management/">HVAC Project Management</a></li><li><a href="/coil-cleaning-repair/">Coil Cleaning &amp; Repair</a></li></ul></details>
-          <details><summary>Industrial</summary><ul><li><a href="/industrial-hvac/">Industrial HVAC</a></li></ul></details>
-          <details><summary>About</summary><ul><li><a href="/about/">About Catalyst</a></li><li><a href="/service-areas/">Service Areas</a></li><li><a href="/careers/">Careers</a></li><li><a href="/contact/">Contact</a></li></ul></details>
+          <details><summary>Multi-Family</summary><ul><li><a href="multi-family-hvac.html">Multi-Family HVAC</a></li><li><a href="senior-living-hvac.html">Senior Living HVAC</a></li></ul></details>
+          <details><summary>Commercial</summary><ul><li><a href="commercial-hvac.html">Commercial HVAC</a></li><li><a href="hvac-project-management.html">HVAC Project Management</a></li><li><a href="coil-cleaning-repair.html">Coil Cleaning &amp; Repair</a></li></ul></details>
+          <details><summary>Industrial</summary><ul><li><a href="industrial-hvac.html">Industrial HVAC</a></li></ul></details>
+          <details><summary>About</summary><ul><li><a href="about.html">About Catalyst</a></li><li><a href="service-areas.html">Service Areas</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></details>
         </div>
       </details>
     </div>
@@ -857,13 +878,13 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <h1>HVAC Service for Greater Houston Homes &amp; Businesses</h1>
         <p>From AC repair and system replacement to maintenance, heating, and multi-family, commercial and industrial HVAC, Catalyst helps Houston-area homeowners, property managers, businesses and industrial facilities get to the right solution for their system, property and situation.</p>
         <div class="cx-cta-pair">
-          <a class="cx-btn" href="/contact/">Request Service</a>
+          <a class="cx-btn" href="contact.html">Request Service</a>
           <a class="cx-btn cx-btn--outline" href="tel:+18322814515">Call Catalyst</a>
         </div>
-        <div class="cx-hero__secondary"><a class="cx-link-arrow" href="/commercial-hvac/">Commercial HVAC</a></div>
+        <div class="cx-hero__secondary"><a class="cx-link-arrow" href="commercial-hvac.html">Commercial HVAC</a></div>
       </div>
       <!-- TEMP stock photo: never caption or alt-text these technicians as Catalyst staff. Replace with a real Catalyst photo before launch. -->
-      <div class="cx-hero__media cx-chamfer">
+      <div class="cx-hero__media cx-chamfer cx-temp">
         <img src="https://catalysthvac.com/wp-content/uploads/2024/06/Layer-48@2x-1.png" alt="Two HVAC technicians checking refrigerant pressures at an outdoor condenser unit" width="1366" height="1382" fetchpriority="high" style="object-position:50% 30%">
       </div>
     </div>
@@ -951,19 +972,19 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <span class="cx-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/><path d="M10.5 21v-3h3v3"/></svg></span>
         <h3>Multi-Family HVAC</h3>
         <p>Apartment communities and property management portfolios, from resident service calls and unit turns to replacement programs, plus senior living communities.</p>
-        <a class="cx-link-arrow" href="/multi-family-hvac/">Explore Multi-Family HVAC</a>
+        <a class="cx-link-arrow" href="multi-family-hvac.html">Explore Multi-Family HVAC</a>
       </article>
       <article class="cx-card cx-card--link cx-card--dark">
         <span class="cx-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4M9 9h2M13 9h2M9 13h2M13 13h2"/></svg></span>
         <h3>Commercial HVAC</h3>
         <p><span class="cx-verify">Offices, shopping centers, movie theaters, big-box stores, churches and modular homes and buildings, with service, planned maintenance and project coordination.</span></p>
-        <a class="cx-link-arrow" href="/commercial-hvac/">Explore Commercial HVAC</a>
+        <a class="cx-link-arrow" href="commercial-hvac.html">Explore Commercial HVAC</a>
       </article>
       <article class="cx-card cx-card--link cx-card--dark">
         <span class="cx-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 21h20"/><path d="M3 21V11l5 3V11l5 3V7h4l1-4h2l1 4v14"/><path d="M7 17h2M12 17h2"/></svg></span>
         <h3>Industrial HVAC</h3>
         <p>Energy, petrochemical and industrial facilities, including hydronic systems, fan coils and VRV/VRF.</p>
-        <a class="cx-link-arrow" href="/industrial-hvac/">Explore Industrial HVAC</a>
+        <a class="cx-link-arrow" href="industrial-hvac.html">Explore Industrial HVAC</a>
       </article>
     </div>
     <div class="cx-cta-pair" style="margin-top:32px">
@@ -987,7 +1008,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <div class="cx-ph cx-chamfer" style="--cx-cut:14px;aspect-ratio:3/2;display:grid;place-items:center">Team / leadership photo</div>
         <h3>Meet the Catalyst Team</h3>
         <p><span class="cx-verify">Catalyst is led by owner Jerry Smith. Our field team handles residential, multi-family, commercial and industrial service calls, installations and maintenance, and the same people who answer for the work are the ones you meet at your door.</span></p>
-        <a class="cx-link-arrow" href="/about/">About Catalyst</a>
+        <a class="cx-link-arrow" href="about.html">About Catalyst</a>
       </article>
       <article class="cx-card cx-card--link">
         <div class="cx-ph cx-chamfer" style="--cx-cut:14px;aspect-ratio:3/2;display:grid;place-items:center">Real job photo</div>
@@ -999,7 +1020,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <div class="cx-ph cx-chamfer" style="--cx-cut:14px;aspect-ratio:3/2;display:grid;place-items:center">Service-area or shop photo</div>
         <h3>Based in the Houston Area</h3>
         <p>Catalyst A/C &amp; Heat is based in Houston and serves customers across its Greater Houston service area. Explore the communities we serve and contact the team about your location.</p>
-        <a class="cx-link-arrow" href="/service-areas/">Service Areas</a>
+        <a class="cx-link-arrow" href="service-areas.html">Service Areas</a>
       </article>
     </div>
   </div>
@@ -1015,15 +1036,15 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
     <div>
       <p><span class="cx-verify">Catalyst serves homes and businesses across all of Greater Houston, from Southeast Houston and the Bay Area, where the shop is, to Katy, Sugar Land, The Woodlands, Kingwood and Baytown, with the same services and offers everywhere.</span></p>
       <ul class="cx-areas">
-        <li><a class="cx-chip" href="/service-areas/southeast-houston-bay-area/">Southeast Houston &amp; Bay Area</a></li>
-        <li><a class="cx-chip" href="/service-areas/central-houston/">Central Houston &amp; Inner Loop</a></li>
-        <li><a class="cx-chip" href="/service-areas/west-houston-katy/">West Houston, Energy Corridor &amp; Katy</a></li>
-        <li><a class="cx-chip" href="/service-areas/southwest-houston-fort-bend/">Southwest Houston &amp; Fort Bend</a></li>
-        <li><a class="cx-chip" href="/service-areas/northwest-houston-cypress/">Northwest Houston &amp; Cypress</a></li>
-        <li><a class="cx-chip" href="/service-areas/north-houston-the-woodlands/">North Houston, Spring &amp; The Woodlands</a></li>
-        <li><a class="cx-chip" href="/service-areas/northeast-east-houston/">Northeast &amp; East Houston</a></li>
+        <li><a class="cx-chip" href="southeast-houston-bay-area.html">Southeast Houston &amp; Bay Area</a></li>
+        <li><a class="cx-chip" href="central-houston.html">Central Houston &amp; Inner Loop</a></li>
+        <li><a class="cx-chip" href="west-houston-katy.html">West Houston, Energy Corridor &amp; Katy</a></li>
+        <li><a class="cx-chip" href="southwest-houston-fort-bend.html">Southwest Houston &amp; Fort Bend</a></li>
+        <li><a class="cx-chip" href="northwest-houston-cypress.html">Northwest Houston &amp; Cypress</a></li>
+        <li><a class="cx-chip" href="north-houston-the-woodlands.html">North Houston, Spring &amp; The Woodlands</a></li>
+        <li><a class="cx-chip" href="northeast-east-houston.html">Northeast &amp; East Houston</a></li>
       </ul>
-      <a class="cx-link-arrow" href="/service-areas/">View All Service Areas</a>
+      <a class="cx-link-arrow" href="service-areas.html">View All Service Areas</a>
     </div>
   </div>
 </section>
@@ -1116,7 +1137,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
     <h2>Tell Catalyst What You Need</h2>
     <p>Start with the service request and a short description of what is happening. For an apartment community, a commercial property or an industrial facility, use that inquiry path so the request reaches the right conversation.</p>
     <div class="cx-cta-pair" style="margin-top:28px">
-      <a class="cx-btn cx-btn--light" href="/contact/">Request Service</a>
+      <a class="cx-btn cx-btn--light" href="contact.html">Request Service</a>
       <a class="cx-btn cx-btn--outline" href="tel:+18322814515">Call Catalyst</a>
     </div>
     <p style="margin:22px 0 0"><a class="cx-link-arrow" href="/contact/#inquiry">Multi-Family, Commercial or Industrial Inquiry</a></p>
@@ -1130,7 +1151,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
     <div class="cx-faq">
       <details><summary>What kinds of properties does Catalyst serve?</summary><div>Homes, apartment and senior living communities, commercial buildings and industrial facilities across Greater Houston. Each has its own section of the site, so homeowners, property managers, business owners and facility teams can go straight to the service path that fits their need.</div></details>
       <details><summary>What residential HVAC services does Catalyst offer?</summary><div>Catalyst's primary residential services include AC repair, AC replacement and installation, heating repair and replacement, HVAC maintenance and attic insulation.</div></details>
-      <details><summary>What areas does Catalyst serve?</summary><div>Catalyst serves all of Greater Houston, across seven regions from Southeast Houston and the Bay Area, where the shop is, to Katy, Sugar Land, The Woodlands, Kingwood and Baytown. Visit the <a href="/service-areas/">Service Areas</a> page to find your region.</div></details>
+      <details><summary>What areas does Catalyst serve?</summary><div>Catalyst serves all of Greater Houston, across seven regions from Southeast Houston and the Bay Area, where the shop is, to Katy, Sugar Land, The Woodlands, Kingwood and Baytown. Visit the <a href="service-areas.html">Service Areas</a> page to find your region.</div></details>
       <details><summary>Should I request AC repair or AC replacement?</summary><div>If you are dealing with a current cooling problem and do not already know that replacement is necessary, AC repair is usually the clearer starting point. If the system has recurring problems, major repair needs or you are already evaluating a new system, the <a href="ac-replacement.html">replacement page</a> provides more decision support. A final recommendation should follow an evaluation of the actual system.</div></details>
       <details><summary>Does Catalyst offer emergency or after-hours HVAC service?</summary><div><span class="cx-verify">Our office is open <span class="cx-blank">____</span>. For an urgent no-cooling or no-heat problem outside those hours, call <span class="cx-blank">____</span> and Catalyst will get a technician out as soon as one is available.</span></div></details>
       <details><summary>Does Catalyst offer HVAC maintenance plans?</summary><div><span class="cx-verify">Yes. The Catalyst Membership Plan includes two maintenance visits a year, a spring cooling tune-up and a fall heating tune-up with filter changes, plus priority scheduling, 24-hour emergency service, 10% off repairs, discounted diagnostic fees and a written summary after each visit. Ask about it when you request service.</span></div></details>
@@ -1153,7 +1174,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       </div>
       <div class="cx-footer__contact">
         <a class="cx-footer__phone" href="tel:+18322814515"><small>Call Catalyst</small><span class="cx-verify">(832) 281-4515</span></a>
-        <a class="cx-btn" href="/contact/">Request Service</a>
+        <a class="cx-btn" href="contact.html">Request Service</a>
       </div>
     </div>
 
@@ -1172,27 +1193,27 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <nav aria-label="Service areas">
         <p class="cx-footer__h">Service Areas</p>
         <ul>
-          <li><a href="/service-areas/southeast-houston-bay-area/">Southeast Houston &amp; Bay Area</a></li>
-          <li><a href="/service-areas/central-houston/">Central Houston &amp; Inner Loop</a></li>
-          <li><a href="/service-areas/west-houston-katy/">West Houston, Energy Corridor &amp; Katy</a></li>
-          <li><a href="/service-areas/southwest-houston-fort-bend/">Southwest Houston &amp; Fort Bend</a></li>
-          <li><a href="/service-areas/northwest-houston-cypress/">Northwest Houston &amp; Cypress</a></li>
-          <li><a href="/service-areas/north-houston-the-woodlands/">North Houston, Spring &amp; The Woodlands</a></li>
-          <li><a href="/service-areas/northeast-east-houston/">Northeast &amp; East Houston</a></li>
-          <li><a href="/service-areas/">All Service Areas</a></li>
+          <li><a href="southeast-houston-bay-area.html">Southeast Houston &amp; Bay Area</a></li>
+          <li><a href="central-houston.html">Central Houston &amp; Inner Loop</a></li>
+          <li><a href="west-houston-katy.html">West Houston, Energy Corridor &amp; Katy</a></li>
+          <li><a href="southwest-houston-fort-bend.html">Southwest Houston &amp; Fort Bend</a></li>
+          <li><a href="northwest-houston-cypress.html">Northwest Houston &amp; Cypress</a></li>
+          <li><a href="north-houston-the-woodlands.html">North Houston, Spring &amp; The Woodlands</a></li>
+          <li><a href="northeast-east-houston.html">Northeast &amp; East Houston</a></li>
+          <li><a href="service-areas.html">All Service Areas</a></li>
         </ul>
       </nav>
       <nav aria-label="Quick links">
         <p class="cx-footer__h">Quick Links</p>
         <ul>
           <li><a href="residential-hvac.html">Residential HVAC</a></li>
-          <li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li>
-          <li><a href="/commercial-hvac/">Commercial HVAC</a></li>
-          <li><a href="/industrial-hvac/">Industrial HVAC</a></li>
-          <li><a href="/service-areas/">Service Areas</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/careers/">Careers</a></li>
-          <li><a href="/contact/">Contact / Request Service</a></li>
+          <li><a href="multi-family-hvac.html">Multi-Family HVAC</a></li>
+          <li><a href="commercial-hvac.html">Commercial HVAC</a></li>
+          <li><a href="industrial-hvac.html">Industrial HVAC</a></li>
+          <li><a href="service-areas.html">Service Areas</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact / Request Service</a></li>
         </ul>
       </nav>
       <div class="cx-footer__meta">
@@ -1216,7 +1237,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 <!-- Mobile sticky call + request bar -->
 <div class="cx-mobilebar">
   <a class="cx-btn cx-btn--outline" href="tel:+18322814515">Call Catalyst</a>
-  <a class="cx-btn" href="/contact/" data-cx-request>Request Service</a>
+  <a class="cx-btn" href="contact.html" data-cx-request>Request Service</a>
 </div>
 <script>
 /* If the page has its own request form (#request), the mobile bar jumps to it

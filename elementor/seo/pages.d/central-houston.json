@@ -1,0 +1,21 @@
+{
+  "central-houston": {
+    "path": "/service-areas/central-houston/",
+    "title": "HVAC Service in Central Houston & the Inner Loop | Catalyst A/C & Heat",
+    "description": "HVAC service for homes, townhomes, apartments and commercial buildings inside the Loop, from Downtown and Midtown to the Heights, Montrose and the Medical Center.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Service Areas",
+        "/service-areas/"
+      ],
+      [
+        "Central Houston & Inner Loop",
+        "/service-areas/central-houston/"
+      ]
+    ]
+  }
+}

@@ -20,6 +20,7 @@ Outputs (paste these into Elementor HTML widgets):
 
 Run from anywhere: python3 elementor/build.py
 """
+import html
 import importlib.util
 import json
 import re
@@ -36,6 +37,8 @@ seo = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(seo)
 site = json.loads((EL / "seo" / "site.json").read_text())
 pages = json.loads((EL / "seo" / "pages.json").read_text())
+for extra in sorted((EL / "seo" / "pages.d").glob("*.json")):
+    pages.update(json.loads(extra.read_text()))
 
 css = (EL / "global.css").read_text()
 header = (EL / "cx-header.html").read_text()
@@ -61,10 +64,7 @@ def inline_icons(html: str) -> str:
     return re.sub(r"\{\{icon:([a-z0-9-]+)\}\}", lambda m: icons[m.group(1)], html)
 
 
-PREVIEW_LINKS = {"/": "home.html", "/ac-repair/": "ac-repair.html", "/ac-replacement/": "ac-replacement.html",
-                 "/heating-repair/": "heating-repair.html",
-                 "/residential-hvac/": "residential-hvac.html", "/heating-replacement/": "heating-replacement.html",
-                 "/hvac-maintenance/": "hvac-maintenance.html", "/attic-insulation/": "attic-insulation.html"}
+PREVIEW_LINKS = {v["path"]: f"{k}.html" for k, v in pages.items() if isinstance(v, dict)}
 
 base = FONTS + "<style>\n" + (ROOT / "preview" / "_base.css").read_text() + "</style>\n<style>\n" + css + "</style>\n"
 report = []
@@ -86,6 +86,16 @@ for src in sorted((ROOT / "preview").glob("*.src.html")):
         page = page.replace(f'href="{href}"', f'href="{local}"')
     out.write_text(inline_icons(page))
     print(f"{out.relative_to(ROOT)}: {out.stat().st_size:,} bytes")
+
+
+def write_index():
+    order = sorted((v["path"].count("/"), v["path"], k) for k, v in pages.items() if isinstance(v, dict))
+    items = "\n".join(
+        f'    <li><a href="preview/{k}.html">{html.escape(pages[k]["title"].split(" | ")[0] if k != "home" else "Homepage")}'
+        f'<span>{html.escape(path)}</span></a></li>'
+        for _, path, k in order if (ROOT / "preview" / f"{k}.src.html").exists())
+    tpl = (ROOT / "preview" / "_index.tpl.html").read_text()
+    (ROOT / "index.html").write_text(tpl.replace("<!--__PAGES__-->", items))
 
 
 def write_register():
@@ -126,5 +136,6 @@ def write_register():
 
 
 write_register()
+write_index()
 for f in sorted(OUT.glob("*.html")):
     print(f"{f.relative_to(ROOT)}: {f.stat().st_size:,} bytes")

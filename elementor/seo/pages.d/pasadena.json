@@ -1,0 +1,25 @@
+{
+  "pasadena": {
+    "path": "/service-areas/pasadena/",
+    "title": "HVAC & AC Service in Pasadena, TX | Catalyst A/C & Heat",
+    "description": "Need HVAC service in Pasadena, TX? Explore AC repair, replacement, heating, maintenance and attic insulation services from Catalyst A/C & Heat and request service for your address.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Service Areas",
+        "/service-areas/"
+      ],
+      [
+        "Southeast Houston & Bay Area",
+        "/service-areas/southeast-houston-bay-area/"
+      ],
+      [
+        "Pasadena",
+        "/service-areas/pasadena/"
+      ]
+    ]
+  }
+}

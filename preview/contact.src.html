@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<!--__SEO__-->
+<!--__BASE__-->
+</head>
+<body>
+<!--__HEADER__-->
+
+<main id="main">
+<!-- Copy: Block 2B "Contact & Request Service — full page copy" (+ form specs: Messaging §D, Multi-Family §9, Commercial §10, Industrial §10 in 2C).
+     cx-verify / cx-blank = yellow in the doc or an unconfirmed fact (Catalyst to confirm before launch).
+     Every form: hidden service_intent / lead_type / source_page / cta_placement (+ UTMs per Messaging §G).
+     Lead routing (to confirm): residential, replacement, multi-family, commercial and industrial each go to their own recipient; careers never posts here. -->
+
+<!-- 1 · HERO  [cx-hero cx-hero--service cx-dark · route links] -->
+<section class="cx-hero cx-hero--service cx-dark">
+  <div class="wrap">
+    <nav class="cx-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><span aria-current="page">Contact</span></li>
+      </ol>
+    </nav>
+    <div style="max-width:760px;padding-bottom:56px">
+      <p class="cx-eyebrow">Contact &amp; Request Service</p>
+      <h1>Tell Us What You Need</h1>
+      <p>Tell Catalyst what's happening, where service is needed and the best way to reach you. If you're considering a system replacement, or you're reaching out about an apartment community, a commercial property or an industrial facility, choose that path so your request reaches the right conversation.</p>
+      <div class="cx-cta-pair">
+        <a class="cx-btn" href="#request">Request Service</a>
+        <a class="cx-btn cx-btn--outline" href="tel:+18322814515">Call Catalyst <span class="cx-verify">(832) 281-4515</span></a>
+      </div>
+    </div>
+    <nav class="cx-routes" aria-label="Choose your request">
+      <a class="cx-route" href="#replacement"><span class="cx-route__q">Considering replacement?</span><span class="cx-route__a">Replacement Request</span></a>
+      <a class="cx-route" href="#multi-family"><span class="cx-route__q">Apartment or senior living community?</span><span class="cx-route__a">Multi-Family Inquiry</span></a>
+      <a class="cx-route" href="#commercial"><span class="cx-route__q">Commercial property?</span><span class="cx-route__a">Commercial Inquiry</span></a>
+    </nav>
+    <nav class="cx-routes" aria-label="More routes" style="border-top:0">
+      <a class="cx-route" href="#industrial"><span class="cx-route__q">Industrial facility?</span><span class="cx-route__a">Industrial Inquiry</span></a>
+      <a class="cx-route" href="/careers/"><span class="cx-route__q">Looking for a job?</span><span class="cx-route__a">Careers</span></a>
+      <a class="cx-route" href="#call"><span class="cx-route__q">Prefer to talk?</span><span class="cx-route__a">Call Catalyst</span></a>
+    </nav>
+  </div>
+</section>
+
+<!-- 2 · RESIDENTIAL SERVICE REQUEST  [cx-request · cx-form] · primary action
+     Preselect "Service needed" from the referring page (Messaging §G). Choosing a replacement option reveals replacement questions or switches to #replacement. -->
+<section class="cx-request" id="request" data-cta="Request Service">
+  <div class="wrap cx-request__grid">
+    <div>
+      <p class="cx-eyebrow">Residential Service</p>
+      <h2>Request Residential Service</h2>
+      <p>Include the service location and a short description of what's happening so the request can be routed correctly.</p>
+      <div class="cx-request__alt">
+        <p style="margin:0">Prefer to talk it through?</p>
+        <a class="cx-request__phone" href="tel:+18322814515"><span class="cx-verify">(832) 281-4515</span></a>
+      </div>
+    </div>
+    <form class="cx-form" action="#" method="post" novalidate>
+      <h3>Request Service</h3>
+      <p class="cx-form__intro">A few details so the right person can follow up.</p>
+      <input type="hidden" name="lead_type" value="residential">
+      <input type="hidden" name="service_intent" value="">
+      <input type="hidden" name="source_page" value="/contact/">
+      <input type="hidden" name="cta_placement" value="contact_residential">
+      <div class="cx-form__row">
+        <div class="cx-field"><label for="s-name">Name</label><input id="s-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="cx-field"><label for="s-phone">Phone</label><input id="s-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div class="cx-field"><label for="s-zip">Service address or ZIP</label><input id="s-zip" name="service_location" type="text" autocomplete="street-address" required></div>
+      <div class="cx-field"><label for="s-service">Service needed</label>
+        <select id="s-service" name="service_needed" required>
+          <option value="">Choose one</option>
+          <option>AC Repair</option>
+          <option>Heating Repair</option>
+          <option>HVAC Maintenance</option>
+          <option>Attic Insulation</option>
+          <option>AC Replacement / Installation</option>
+          <option>Heating Replacement / Installation</option>
+          <option>Not Sure</option>
+        </select>
+      </div>
+      <div class="cx-field"><label for="s-desc">What's happening?</label><textarea id="s-desc" name="description" required placeholder="A short description of what the system is doing"></textarea></div>
+      <div class="cx-field"><label for="s-email">Email <span class="cx-opt">(optional)</span></label><input id="s-email" name="email" type="email" autocomplete="email"></div>
+      <button class="cx-btn" type="submit">Request Service</button>
+      <p class="cx-form__micro">Submitting this form requests contact from Catalyst; it doesn't confirm an appointment until Catalyst confirms the service time.</p>
+    </form>
+  </div>
+</section>
+
+<!-- 3 · REPLACEMENT REQUEST  [cx-section · cx-split · cx-form] -->
+<section class="cx-section cx-surface" id="replacement">
+  <div class="wrap cx-split">
+    <div>
+      <p class="cx-eyebrow">Replacement</p>
+      <h2>Considering a New System?</h2>
+      <p>Use the replacement request so Catalyst can capture the home and system details needed for the right consultation.</p>
+      <a class="cx-link-arrow" href="/ac-replacement/">AC Replacement &amp; Installation</a><br>
+      <a class="cx-link-arrow" href="/heating-replacement/">Heating Replacement &amp; Installation</a>
+    </div>
+    <form class="cx-form" action="#" method="post" novalidate>
+      <h3>Request a Replacement Consultation</h3>
+      <input type="hidden" name="lead_type" value="replacement">
+      <input type="hidden" name="service_intent" value="Replacement">
+      <input type="hidden" name="source_page" value="/contact/">
+      <input type="hidden" name="cta_placement" value="contact_replacement">
+      <div class="cx-form__row">
+        <div class="cx-field"><label for="r-name">Name</label><input id="r-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="cx-field"><label for="r-phone">Phone</label><input id="r-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div class="cx-field"><label for="r-zip">Address or ZIP</label><input id="r-zip" name="service_location" type="text" autocomplete="street-address" required></div>
+      <fieldset class="cx-choice">
+        <legend>Replacement type</legend>
+        <div class="cx-choice__opts">
+          <label><input type="radio" name="replacement_type" value="ac" required><span>AC</span></label>
+          <label><input type="radio" name="replacement_type" value="heating"><span>Heating</span></label>
+          <label><input type="radio" name="replacement_type" value="both"><span>Both</span></label>
+          <label><input type="radio" name="replacement_type" value="not_sure"><span>Not sure</span></label>
+        </div>
+      </fieldset>
+      <div class="cx-field"><label for="r-reason">Reason for replacement</label><textarea id="r-reason" name="reason" required placeholder="For example: repeated repairs, the system has failed, or rooms never get comfortable"></textarea></div>
+      <button class="cx-btn" type="submit">Request a Replacement Consultation</button>
+      <p class="cx-form__micro">Catalyst will review your request and confirm the right next step. Submitting doesn't confirm an appointment.</p>
+    </form>
+  </div>
+</section>
+
+<!-- 4–6 · PROPERTY & FACILITY INQUIRIES  [id="inquiry" wraps multi-family / commercial / industrial] -->
+<section class="cx-band-commercial" id="inquiry">
+  <div class="wrap">
+    <div class="cx-section-head">
+      <p class="cx-eyebrow">Multi-Family · Commercial · Industrial</p>
+      <h2>Property and Facility Inquiries</h2>
+      <p>Each inquiry goes to the people who handle that work, separate from residential service requests.</p>
+    </div>
+    <div class="cx-cta-pair">
+      <a class="cx-btn cx-btn--outline" href="#multi-family">Multi-Family Inquiry</a>
+      <a class="cx-btn cx-btn--outline" href="#commercial">Commercial Inquiry</a>
+      <a class="cx-btn cx-btn--outline" href="#industrial">Industrial Inquiry</a>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · COMMERCIAL INQUIRY  (form per Commercial §10, 2C) · event: commercial_form_submit -->
+<section class="cx-section cx-surface" id="commercial">
+  <div class="wrap cx-split">
+    <div>
+      <p class="cx-eyebrow">Commercial</p>
+      <h2>Commercial HVAC Inquiry</h2>
+      <p>Tell Catalyst about the property, facility, service need or project, and the best contact for follow-up.</p>
+      <p class="cx-note"><span class="cx-verify">Commercial inquiries go to Jerry Smith and the commercial service lead; a team member calls back within one business day.</span></p>
+      <a class="cx-link-arrow" href="/commercial-hvac/">Commercial HVAC</a>
+    </div>
+    <form class="cx-form" action="#" method="post" novalidate>
+      <h3>Send Commercial Inquiry</h3>
+      <input type="hidden" name="lead_type" value="commercial">
+      <input type="hidden" name="service_intent" value="Commercial HVAC">
+      <input type="hidden" name="source_page" value="/contact/">
+      <input type="hidden" name="cta_placement" value="contact_commercial">
+      <div class="cx-form__row">
+        <div class="cx-field"><label for="c-name">Name</label><input id="c-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="cx-field"><label for="c-co">Company or organization</label><input id="c-co" name="company" type="text" autocomplete="organization" required></div>
+      </div>
+      <div class="cx-form__row">
+        <div class="cx-field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+        <div class="cx-field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="cx-field"><label for="c-addr">Facility or project address</label><input id="c-addr" name="property" type="text" required></div>
+      <div class="cx-field"><label for="c-type">Service or project type</label>
+        <select id="c-type" name="need_type" required>
+          <option value="">Choose one</option>
+          <option>Service</option>
+          <option>Maintenance</option>
+          <option>Replacement</option>
+          <option>Project</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div class="cx-field"><label for="c-desc">Equipment and issue, where known <span class="cx-opt">(optional)</span></label><textarea id="c-desc" name="description"></textarea></div>
+      <button class="cx-btn" type="submit">Send Commercial Inquiry</button>
+      <p class="cx-form__micro">Submitting this form requests contact from Catalyst; it does not confirm an appointment.</p>
+    </form>
+  </div>
+</section>
+
+<!-- 5 · MULTI-FAMILY INQUIRY  (form per Multi-Family §9, 2C) · event: multifamily_form_submit -->
+<section class="cx-section" id="multi-family">
+  <div class="wrap cx-split">
+    <div>
+      <p class="cx-eyebrow">Multi-Family</p>
+      <h2>Multi-Family HVAC Inquiry</h2>
+      <p>Tell Catalyst about the property or portfolio, the number of units and what you need, and the best contact for follow-up. Senior living communities can use this inquiry or the one on the <a href="/senior-living-hvac/">Senior Living HVAC</a> page.</p>
+      <p class="cx-note"><span class="cx-verify">A team member follows up within one business day.</span></p>
+      <a class="cx-link-arrow" href="/multi-family-hvac/">Multi-Family HVAC</a>
+    </div>
+    <form class="cx-form" action="#" method="post" novalidate>
+      <h3>Send Multi-Family Inquiry</h3>
+      <input type="hidden" name="lead_type" value="multi-family">
+      <input type="hidden" name="service_intent" value="Multi-Family HVAC">
+      <input type="hidden" name="source_page" value="/contact/">
+      <input type="hidden" name="cta_placement" value="contact_multifamily">
+      <div class="cx-form__row">
+        <div class="cx-field"><label for="m-name">Name</label><input id="m-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="cx-field"><label for="m-co">Management company or owner</label><input id="m-co" name="company" type="text" autocomplete="organization" required></div>
+      </div>
+      <div class="cx-form__row">
+        <div class="cx-field"><label for="m-phone">Phone</label><input id="m-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+        <div class="cx-field"><label for="m-email">Email</label><input id="m-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="cx-field"><label for="m-prop">Property name and address</label><input id="m-prop" name="property" type="text" required></div>
+      <div class="cx-field"><label for="m-units">Number of properties and units</label><input id="m-units" name="units" type="text"></div>
+      <div class="cx-field"><label for="m-need">Service needed</label>
+        <select id="m-need" name="need_type" required>
+          <option value="">Choose one</option>
+          <option>Service and repair</option>
+          <option>Unit turns</option>
+          <option>Replacement program</option>
+          <option>Maintenance</option>
+          <option>Project</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div class="cx-field"><label for="m-notes">Notes <span class="cx-opt">(optional)</span></label><textarea id="m-notes" name="description"></textarea></div>
+      <button class="cx-btn" type="submit">Send Multi-Family Inquiry</button>
+      <p class="cx-form__micro">Submitting this form requests contact from Catalyst; it does not confirm an appointment.</p>
+    </form>
+  </div>
+</section>
+
+<!-- 6 · INDUSTRIAL INQUIRY  (form per Industrial §10, 2C) · event: industrial_form_submit -->
+<section class="cx-section cx-surface" id="industrial">
+  <div class="wrap cx-split">
+    <div>
+      <p class="cx-eyebrow">Industrial</p>
+      <h2>Industrial HVAC Inquiry</h2>
+      <p>Tell Catalyst about the facility, the systems involved and any site requirements, such as badging or a safety orientation.</p>
+      <p class="cx-note"><span class="cx-verify">A team member follows up within one business day.</span></p>
+      <a class="cx-link-arrow" href="/industrial-hvac/">Industrial HVAC</a>
+    </div>
+    <form class="cx-form" action="#" method="post" novalidate>
+      <h3>Send Industrial Inquiry</h3>
+      <input type="hidden" name="lead_type" value="industrial">
+      <input type="hidden" name="service_intent" value="Industrial HVAC">
+      <input type="hidden" name="source_page" value="/contact/">
+      <input type="hidden" name="cta_placement" value="contact_industrial">
+      <div class="cx-form__row">
+        <div class="cx-field"><label for="i-name">Name</label><input id="i-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="cx-field"><label for="i-co">Company</label><input id="i-co" name="company" type="text" autocomplete="organization" required></div>
+      </div>
+      <div class="cx-form__row">
+        <div class="cx-field"><label for="i-phone">Phone</label><input id="i-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+        <div class="cx-field"><label for="i-email">Email</label><input id="i-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="cx-form__row">
+        <div class="cx-field"><label for="i-addr">Facility address</label><input id="i-addr" name="property" type="text" required></div>
+        <div class="cx-field"><label for="i-type">Facility type</label><input id="i-type" name="facility_type" type="text"></div>
+      </div>
+      <div class="cx-field"><label for="i-sys">Systems involved</label>
+        <select id="i-sys" name="systems">
+          <option value="">Choose one</option>
+          <option>Hydronic</option>
+          <option>Fan coils</option>
+          <option>VRV/VRF</option>
+          <option>Packaged / rooftop</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="cx-field"><label for="i-site">Site requirements <span class="cx-opt">(badging, safety orientation)</span></label><input id="i-site" name="site_requirements" type="text"></div>
+      <div class="cx-field"><label for="i-desc">Description of the need</label><textarea id="i-desc" name="description" required></textarea></div>
+      <button class="cx-btn" type="submit">Send Industrial Inquiry</button>
+      <p class="cx-form__micro">Submitting this form requests contact from Catalyst; it does not confirm an appointment.</p>
+    </form>
+  </div>
+</section>
+
+<!-- 7 · CAREERS  (application lives on /careers/ and never posts into the service pipeline) -->
+<section class="cx-section cx-section--tight">
+  <div class="wrap">
+    <div class="cx-bridge">
+      <span class="cx-icon">{{icon:commercial}}</span>
+      <div>
+        <h2>Looking for a Job at Catalyst?</h2>
+        <p>Submit your resume on the Careers page. The service forms are for service requests only.</p>
+      </div>
+      <a class="cx-btn cx-btn--outline" href="/careers/">Submit Your Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · PREFER TO CALL?  If after-hours service isn't confirmed, use only: "Submit your request and Catalyst will follow up according to current service availability." (Messaging §F) -->
+<section class="cx-section cx-dark" id="call">
+  <div class="wrap cx-grid-2">
+    <div>
+      <p class="cx-eyebrow">Call Catalyst</p>
+      <h2>Prefer to Call?</h2>
+    </div>
+    <div>
+      <p><span class="cx-verify">Call Catalyst at (832) 281-4515. Office hours: <span class="cx-blank">____</span>. After hours, call <span class="cx-blank">____</span> for urgent problems.</span></p>
+      <div class="cx-cta-pair" style="margin-top:20px">
+        <a class="cx-btn" href="tel:+18322814515">Call Catalyst</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · FAQ  [cx-faq] -->
+<section class="cx-section">
+  <div class="wrap">
+    <h2>Contact &amp; Service Request Questions</h2>
+    <div class="cx-faq">
+      <details><summary>How do I request residential HVAC service?</summary><div>Use the <a href="#request">residential service request form</a> or call Catalyst. Include the service location and a short description of what's happening so the request can be routed correctly.</div></details>
+      <details><summary>Does submitting the form confirm an appointment?</summary><div>No. Submitting the form requests contact, and Catalyst confirms the next step with you.</div></details>
+      <details><summary>What if I'm considering HVAC replacement?</summary><div>Use the <a href="#replacement">replacement request</a> so Catalyst can capture the home and system details needed for the right consultation.</div></details>
+      <details><summary>How do I contact Catalyst about commercial HVAC?</summary><div>Use the <a href="#commercial">Commercial HVAC Inquiry</a>. Commercial requests are kept separate from residential service requests so they reach the right person.</div></details>
+      <details><summary>How do I contact Catalyst about an apartment community or an industrial facility?</summary><div>Use the <a href="#multi-family">Multi-Family HVAC Inquiry</a> or the <a href="#industrial">Industrial HVAC Inquiry</a>. Each goes to the people who handle that work, separate from residential service requests.</div></details>
+      <details><summary>How do I apply for a job at Catalyst?</summary><div>Submit your resume on the <a href="/careers/">Careers</a> page. The service forms are for service requests only.</div></details>
+      <details><summary>How do I know whether Catalyst serves my address?</summary><div>Include your service address or ZIP in the request, or call Catalyst. The <a href="/service-areas/">Service Areas</a> page describes the broader footprint, but serviceability is confirmed for each address.</div></details>
+      <details><summary>What are Catalyst's service hours?</summary><div><span class="cx-verify">Our office is open <span class="cx-blank">____</span>. Request service online any time and the team will follow up during business hours.</span></div></details>
+      <details><summary>Does Catalyst provide emergency or after-hours service?</summary><div><span class="cx-verify">Our office is open <span class="cx-blank">____</span>. For an urgent problem outside those hours, call <span class="cx-blank">____</span> and Catalyst will get a technician out as soon as one is available.</span></div></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!--__FOOTER__-->
+</body>
+</html>

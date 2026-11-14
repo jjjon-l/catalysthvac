@@ -1,0 +1,23 @@
+{
+  "multi-family-hvac": {
+    "path": "/multi-family-hvac/",
+    "title": "Multi-Family HVAC Services in Greater Houston | Catalyst A/C & Heat",
+    "description": "HVAC service, replacement and planning for apartment communities and property management companies across Greater Houston. Talk to Catalyst A/C & Heat about your property or portfolio.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Multi-Family HVAC",
+        "/multi-family-hvac/"
+      ]
+    ],
+    "service": {
+      "name": "Multi-Family HVAC",
+      "serviceType": "Multi-family HVAC services",
+      "description": "HVAC service and repair, unit turns, preventive maintenance and replacement programs for apartment communities and property management companies across Greater Houston.",
+      "audience": "Apartment property managers and owners"
+    }
+  }
+}

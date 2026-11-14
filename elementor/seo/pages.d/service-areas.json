@@ -1,0 +1,17 @@
+{
+  "service-areas": {
+    "path": "/service-areas/",
+    "title": "HVAC Service Areas in Greater Houston | Catalyst A/C & Heat",
+    "description": "Explore Catalyst A/C & Heat service across all of Greater Houston: seven regions from Southeast Houston and the Bay Area to Katy, Sugar Land, The Woodlands and Baytown, plus local pages for Pasadena, Pearland, Friendswood, Clear Lake/Webster and League City.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Service Areas",
+        "/service-areas/"
+      ]
+    ]
+  }
+}

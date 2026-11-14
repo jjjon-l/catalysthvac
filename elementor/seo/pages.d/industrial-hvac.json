@@ -1,0 +1,23 @@
+{
+  "industrial-hvac": {
+    "path": "/industrial-hvac/",
+    "title": "Industrial HVAC Services in Greater Houston | Catalyst A/C & Heat",
+    "description": "Industrial HVAC for Houston's energy, petrochemical and industrial facilities, including hydronic systems, fan coils and VRV/VRF. Start an industrial inquiry with Catalyst A/C & Heat.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Industrial HVAC",
+        "/industrial-hvac/"
+      ]
+    ],
+    "service": {
+      "name": "Industrial HVAC",
+      "serviceType": "Industrial HVAC services",
+      "description": "Industrial HVAC service, maintenance and installation, including hydronic systems, fan coils and VRV/VRF, for facilities across the Energy Corridor, the Ship Channel and Greater Houston.",
+      "audience": "Industrial facility and plant managers"
+    }
+  }
+}

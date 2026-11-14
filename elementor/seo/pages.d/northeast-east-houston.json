@@ -1,0 +1,21 @@
+{
+  "northeast-east-houston": {
+    "path": "/service-areas/northeast-east-houston/",
+    "title": "HVAC Service in Northeast & East Houston, Baytown & Kingwood | Catalyst A/C & Heat",
+    "description": "Residential, multi-family, commercial and industrial HVAC across Northeast and East Houston, including Humble, Kingwood, Atascocita, Baytown and Mont Belvieu.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Service Areas",
+        "/service-areas/"
+      ],
+      [
+        "Northeast & East Houston",
+        "/service-areas/northeast-east-houston/"
+      ]
+    ]
+  }
+}

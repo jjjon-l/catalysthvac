@@ -1,0 +1,27 @@
+{
+  "hvac-project-management": {
+    "path": "/hvac-project-management/",
+    "title": "HVAC Project Management | Catalyst A/C & Heat",
+    "description": "Discuss commercial HVAC project planning, scope and coordination with Catalyst A/C & Heat.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Commercial HVAC",
+        "/commercial-hvac/"
+      ],
+      [
+        "HVAC Project Management",
+        "/hvac-project-management/"
+      ]
+    ],
+    "service": {
+      "name": "HVAC Project Management & Coordination",
+      "serviceType": "Commercial HVAC project coordination",
+      "description": "A commercial inquiry path for organizations evaluating an HVAC replacement, installation or defined project scope in Greater Houston.",
+      "audience": "Commercial property owners and facility managers"
+    }
+  }
+}

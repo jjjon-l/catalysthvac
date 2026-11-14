@@ -1,0 +1,23 @@
+{
+  "commercial-hvac": {
+    "path": "/commercial-hvac/",
+    "title": "Commercial HVAC Services in Greater Houston | Catalyst A/C & Heat",
+    "description": "Contact Catalyst A/C & Heat about commercial heating, cooling, maintenance and project needs in Greater Houston.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Commercial HVAC",
+        "/commercial-hvac/"
+      ]
+    ],
+    "service": {
+      "name": "Commercial HVAC",
+      "serviceType": "Commercial HVAC service",
+      "description": "Commercial heating and cooling service in Greater Houston, with service, maintenance and replacements planned around how each building is used.",
+      "audience": "Commercial property and facility managers"
+    }
+  }
+}

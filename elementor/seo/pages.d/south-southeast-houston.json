@@ -1,0 +1,25 @@
+{
+  "south-southeast-houston": {
+    "path": "/service-areas/south-southeast-houston/",
+    "title": "HVAC & AC Service in South and Southeast Houston | Catalyst A/C & Heat",
+    "description": "Explore AC repair, replacement, heating, maintenance and attic insulation service for South and Southeast Houston homes. Contact Catalyst to confirm service for your address.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Service Areas",
+        "/service-areas/"
+      ],
+      [
+        "Southeast Houston & Bay Area",
+        "/service-areas/southeast-houston-bay-area/"
+      ],
+      [
+        "South / Southeast Houston",
+        "/service-areas/south-southeast-houston/"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "north-houston-the-woodlands": {
+    "path": "/service-areas/north-houston-the-woodlands/",
+    "title": "HVAC Service in North Houston, Spring & The Woodlands | Catalyst A/C & Heat",
+    "description": "HVAC service for homes, apartments and businesses across North Houston, Spring, Klein, The Woodlands, Conroe and Montgomery County.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Service Areas",
+        "/service-areas/"
+      ],
+      [
+        "North Houston, Spring & The Woodlands",
+        "/service-areas/north-houston-the-woodlands/"
+      ]
+    ]
+  }
+}

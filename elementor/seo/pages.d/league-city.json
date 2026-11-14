@@ -1,0 +1,25 @@
+{
+  "league-city": {
+    "path": "/service-areas/league-city/",
+    "title": "HVAC & AC Service in League City, TX | Catalyst A/C & Heat",
+    "description": "Explore AC repair, replacement, maintenance, heating and attic insulation service for League City homes. Contact Catalyst about HVAC service for your address.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Service Areas",
+        "/service-areas/"
+      ],
+      [
+        "Southeast Houston & Bay Area",
+        "/service-areas/southeast-houston-bay-area/"
+      ],
+      [
+        "League City",
+        "/service-areas/league-city/"
+      ]
+    ]
+  }
+}

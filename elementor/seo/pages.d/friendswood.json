@@ -1,0 +1,25 @@
+{
+  "friendswood": {
+    "path": "/service-areas/friendswood/",
+    "title": "HVAC & AC Service in Friendswood, TX | Catalyst A/C & Heat",
+    "description": "AC repair, system replacement, heating and maintenance information for Friendswood homeowners. Contact Catalyst to confirm local HVAC service.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Service Areas",
+        "/service-areas/"
+      ],
+      [
+        "Southeast Houston & Bay Area",
+        "/service-areas/southeast-houston-bay-area/"
+      ],
+      [
+        "Friendswood",
+        "/service-areas/friendswood/"
+      ]
+    ]
+  }
+}

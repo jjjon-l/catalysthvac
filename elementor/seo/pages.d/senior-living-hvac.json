@@ -1,0 +1,27 @@
+{
+  "senior-living-hvac": {
+    "path": "/senior-living-hvac/",
+    "title": "Senior Living HVAC Services | Catalyst A/C & Heat",
+    "description": "Discuss senior-living facility HVAC needs and project requirements with Catalyst A/C & Heat.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Multi-Family HVAC",
+        "/multi-family-hvac/"
+      ],
+      [
+        "Senior Living HVAC",
+        "/senior-living-hvac/"
+      ]
+    ],
+    "service": {
+      "name": "Senior Living HVAC",
+      "serviceType": "Senior living facility HVAC services",
+      "description": "HVAC service and repair, preventive maintenance, and replacement and retrofit planning for senior living properties, coordinated around occupied spaces and facility operations.",
+      "audience": "Senior living community operators"
+    }
+  }
+}

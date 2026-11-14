@@ -1,0 +1,21 @@
+{
+  "west-houston-katy": {
+    "path": "/service-areas/west-houston-katy/",
+    "title": "HVAC Service in West Houston, the Energy Corridor & Katy | Catalyst A/C & Heat",
+    "description": "Residential, multi-family, commercial and industrial HVAC across West Houston, the Energy Corridor, Memorial, Katy and Fulshear. Request service from Catalyst A/C & Heat.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Service Areas",
+        "/service-areas/"
+      ],
+      [
+        "West Houston, Energy Corridor & Katy",
+        "/service-areas/west-houston-katy/"
+      ]
+    ]
+  }
+}

@@ -102,7 +102,7 @@ def build_graph(site: dict, key: str, page: dict, faqs: list[tuple[str, str]]) -
             "@type": "Service", "@id": f"{url}#service", "url": url,
             "name": svc["name"], "serviceType": svc["serviceType"], "description": svc["description"],
             "provider": org_ref, "areaServed": area or None,
-            "audience": {"@type": "Audience", "audienceType": "Homeowners"},
+            "audience": {"@type": "Audience", "audienceType": svc.get("audience", "Homeowners")},
         })
 
     if faqs:

@@ -1,0 +1,25 @@
+{
+  "pearland": {
+    "path": "/service-areas/pearland/",
+    "title": "HVAC & AC Service in Pearland, TX | Catalyst A/C & Heat",
+    "description": "Explore AC repair, replacement and maintenance options for Pearland homeowners. Contact Catalyst A/C & Heat to discuss HVAC service for your address.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Service Areas",
+        "/service-areas/"
+      ],
+      [
+        "Southeast Houston & Bay Area",
+        "/service-areas/southeast-houston-bay-area/"
+      ],
+      [
+        "Pearland",
+        "/service-areas/pearland/"
+      ]
+    ]
+  }
+}

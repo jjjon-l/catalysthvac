@@ -163,8 +163,9 @@ body.elementor-page, .elementor { font-family: var(--cx-font-body); color: var(-
 .cx-card--feature { border-top: 4px solid var(--cx-red); }
 
 /* ---------- Brand motif: the logo's chamfered badge ----------
-   .cx-chamfer cuts the corners like the logo hexagon; use on hero/project
-   images and icon tiles. --cx-cut sets the corner size. */
+   .cx-chamfer cuts the corners like the logo hexagon. Photos use rounded
+   rectangles instead (.cx-hero__media, .cx-photo); the chamfer stays on icon
+   tiles, symptom badges and the hero background shape. --cx-cut sets the size. */
 .cx-chamfer { --cx-cut: 22px; clip-path: polygon(var(--cx-cut) 0, calc(100% - var(--cx-cut)) 0, 100% var(--cx-cut), 100% calc(100% - var(--cx-cut)), calc(100% - var(--cx-cut)) 100%, var(--cx-cut) 100%, 0 calc(100% - var(--cx-cut)), 0 var(--cx-cut)); }
 
 /* Eyebrow gets the logo's red band as a short rule */
@@ -189,7 +190,7 @@ p.cx-eyebrow::before, .cx-eyebrow .elementor-heading-title::before {
 .cx-hero__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 64px; align-items: center; padding-bottom: 72px; }
 .cx-hero h1, .cx-hero .elementor-heading-title { color: #fff; margin: 0 0 22px; }
 .cx-hero p:not(.cx-eyebrow) { font-size: 1.15em; color: #DCDFF0; max-width: 580px; margin: 0 0 32px; }
-.cx-hero__media { aspect-ratio: 4 / 3; overflow: hidden; background: #2A2A70; }
+.cx-hero__media { aspect-ratio: 4 / 3; overflow: hidden; background: #2A2A70; border-radius: 12px; }
 .cx-hero__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cx-hero__secondary { margin-top: 20px; }
 
@@ -650,4 +651,8 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 
 /* Forms sitting on light sections: lighter shadow, visible border */
 .cx-section:not(.cx-dark) .cx-form { box-shadow: 0 8px 24px rgba(22,26,46,.08); border: 1px solid var(--cx-border); }
+
+
+/* Photos (and photo placeholders): rectangle with softly rounded corners */
+.cx-photo { border-radius: 12px; overflow: hidden; }
 </style>

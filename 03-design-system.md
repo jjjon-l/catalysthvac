@@ -100,7 +100,8 @@ Minimum tap target is 48px tall. Labels come from the brief's CTA system: **Requ
 | 19 | Final CTA band | `cx-band-cta` |
 | — | Eyebrow | `cx-eyebrow` (on a Heading widget, size "p") |
 | — | Mobile call / request bar | `cx-mobilebar` (Theme Builder footer) |
-| — | Brand motif (chamfered corners) | `cx-chamfer` (set `--cx-cut`) |
+| — | Brand motif (chamfered corners) | `cx-chamfer` (set `--cx-cut`): icon tiles, symptom badges, hero background shape only |
+| — | Photos (rounded rectangle, 12px corners) | `cx-hero__media`, `cx-photo` |
 | — | Hero quick router | `cx-routes`, `cx-route` |
 | — | Service hero + breadcrumb | `cx-hero cx-hero--service cx-dark`, `cx-breadcrumb` |
 | 5 | Symptom grid (numbered) | `cx-grid-3 cx-symptoms` + `cx-card cx-card--symptom` |

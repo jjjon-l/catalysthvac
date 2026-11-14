@@ -120,4 +120,6 @@ Minimum tap target is 48px tall. Labels come from the brief's CTA system: **Requ
 | 14 | Safety callout (restrained) | `cx-safety` (icon `safety`) |
 | — | Odd card counts (last card fills the row) | add `cx-grid--fill` to `cx-grid-3` |
 | — | Four-up path cards | `cx-grid-4` + `cx-card cx-card--option` + `cx-tag` |
+| 12 | Membership card (plan name + benefits) | `cx-membership` (with `cx-checklist`) |
+| 4 | Properties band cards on dark | `cx-card cx-card--link cx-card--dark` inside `cx-band-commercial` |
 | — | Staging placeholder | `cx-ph` (dashed amber box; **search for and remove all of these before launch**) |

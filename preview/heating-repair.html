@@ -85,28 +85,32 @@
       },
       "areaServed": [
         {
-          "@type": "City",
-          "name": "Houston, TX"
+          "@type": "AdministrativeArea",
+          "name": "Greater Houston, TX"
         },
         {
-          "@type": "City",
-          "name": "Pasadena, TX"
+          "@type": "AdministrativeArea",
+          "name": "Harris County, TX"
         },
         {
-          "@type": "City",
-          "name": "Pearland, TX"
+          "@type": "AdministrativeArea",
+          "name": "Fort Bend County, TX"
         },
         {
-          "@type": "City",
-          "name": "Friendswood, TX"
+          "@type": "AdministrativeArea",
+          "name": "Montgomery County, TX"
         },
         {
-          "@type": "City",
-          "name": "Webster, TX"
+          "@type": "AdministrativeArea",
+          "name": "Galveston County, TX"
         },
         {
-          "@type": "City",
-          "name": "League City, TX"
+          "@type": "AdministrativeArea",
+          "name": "Brazoria County, TX"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Waller County, TX"
         }
       ],
       "audience": {
@@ -765,6 +769,30 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 .cx-safety h2 { font-size: 30px; margin: 0 0 10px; }
 .cx-safety p { margin: 0; max-width: 820px; }
 @media (max-width: 767px) { .cx-safety { grid-template-columns: 1fr; padding: 22px; } .cx-safety h2 { font-size: 24px; } }
+
+/* ==========================================================================
+   BLOCK 2 additions
+   ========================================================================== */
+
+/* Membership card: plan name + benefits (on dark or light sections) */
+.cx-membership { background: #fff; color: var(--cx-text); border-radius: var(--cx-radius); padding: 28px; border-top: 4px solid var(--cx-red); box-shadow: 0 18px 40px rgba(10,10,40,.25); }
+.cx-membership h3 { margin: 0 0 4px; color: var(--cx-ink); }
+.cx-membership__sub { margin: 0 0 16px; color: var(--cx-muted) !important; font-size: 15px; }
+.cx-membership .cx-checklist { gap: 8px; margin-bottom: 20px; }
+.cx-membership .cx-checklist li { padding: 10px 14px 10px 44px; color: var(--cx-text); }
+.cx-dark .cx-membership p:not(.cx-membership__sub):not(.cx-ph) { color: var(--cx-text); }
+
+/* Properties band: three audience cards on the dark commercial background */
+.cx-band-commercial .cx-grid-3 { margin-top: 36px; }
+.cx-card--dark { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); box-shadow: none; }
+.cx-card--dark h3 { color: #fff; }
+.cx-card--dark p { color: #C9CDE8 !important; }
+.cx-card--dark .cx-icon { background: rgba(255,255,255,.1); color: #fff; }
+.cx-card--dark.cx-card--link:hover { border-color: #FF8A8C; background: rgba(255,255,255,.1); }
+.cx-card--dark .cx-link-arrow, .cx-card--dark .cx-link-arrow a { color: #fff; }
+
+/* Placeholders stay readable inside dark sections (beats .cx-dark p) */
+.cx-dark .cx-ph, .cx-dark p.cx-ph, .cx-band-commercial p.cx-ph, .cx-request p.cx-ph { color: #6B4A00 !important; }
 </style>
 
 </head>
@@ -786,28 +814,36 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
             <li><a href="heating-repair.html">Heating Repair</a></li>
             <li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li>
             <li><a href="/hvac-maintenance/">HVAC Maintenance</a></li>
-            <li><a href="/indoor-air-quality/">Indoor Air Quality</a></li>
+            <li><a href="/attic-insulation/">Attic Insulation</a></li>
             <li class="is-overview"><a href="/residential-hvac/">All Residential HVAC</a></li>
+          </ul>
+        </li>
+        <li><button type="button" aria-haspopup="true">Multi-Family</button>
+          <ul>
+            <li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li>
+            <li><a href="/senior-living-hvac/">Senior Living HVAC</a></li>
           </ul>
         </li>
         <li><button type="button" aria-haspopup="true">Commercial</button>
           <ul>
             <li><a href="/commercial-hvac/">Commercial HVAC</a></li>
+            <li><a href="/hvac-project-management/">HVAC Project Management</a></li>
+            <li><a href="/coil-cleaning-repair/">Coil Cleaning &amp; Repair</a></li>
           </ul>
         </li>
-        <li><button type="button" aria-haspopup="true">Service Areas</button>
+        <li><button type="button" aria-haspopup="true">Industrial</button>
           <ul>
-            <li><a href="/service-areas/south-southeast-houston/">South / Southeast Houston</a></li>
-            <li><a href="/service-areas/pasadena/">Pasadena</a></li>
-            <li><a href="/service-areas/pearland/">Pearland</a></li>
-            <li><a href="/service-areas/friendswood/">Friendswood</a></li>
-            <li><a href="/service-areas/clear-lake-webster/">Clear Lake / Webster</a></li>
-            <li><a href="/service-areas/league-city/">League City</a></li>
-            <li class="is-overview"><a href="/service-areas/">All Service Areas</a></li>
+            <li><a href="/industrial-hvac/">Industrial HVAC</a></li>
           </ul>
         </li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><button type="button" aria-haspopup="true">About</button>
+          <ul>
+            <li><a href="/about/">About Catalyst</a></li>
+            <li><a href="/service-areas/">Service Areas</a></li>
+            <li><a href="/careers/">Careers</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
     <div class="cx-header__actions">
@@ -816,29 +852,11 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <details class="cx-menu-toggle">
         <summary>Menu</summary>
         <div class="cx-mobile-panel">
-          <details><summary>Residential</summary><ul>
-            <li><a href="ac-repair.html">AC Repair</a></li>
-            <li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li>
-            <li><a href="heating-repair.html">Heating Repair</a></li>
-            <li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li>
-            <li><a href="/hvac-maintenance/">HVAC Maintenance</a></li>
-            <li><a href="/indoor-air-quality/">Indoor Air Quality</a></li>
-            <li><a href="/residential-hvac/"><strong>All Residential HVAC</strong></a></li>
-          </ul></details>
-          <details><summary>Commercial</summary><ul>
-            <li><a href="/commercial-hvac/">Commercial HVAC</a></li>
-          </ul></details>
-          <details><summary>Service Areas</summary><ul>
-            <li><a href="/service-areas/south-southeast-houston/">South / Southeast Houston</a></li>
-            <li><a href="/service-areas/pasadena/">Pasadena</a></li>
-            <li><a href="/service-areas/pearland/">Pearland</a></li>
-            <li><a href="/service-areas/friendswood/">Friendswood</a></li>
-            <li><a href="/service-areas/clear-lake-webster/">Clear Lake / Webster</a></li>
-            <li><a href="/service-areas/league-city/">League City</a></li>
-            <li><a href="/service-areas/"><strong>All Service Areas</strong></a></li>
-          </ul></details>
-          <a href="/about/">About</a>
-          <a href="/contact/">Contact</a>
+          <details><summary>Residential</summary><ul><li><a href="ac-repair.html">AC Repair</a></li><li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li><li><a href="heating-repair.html">Heating Repair</a></li><li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li><li><a href="/hvac-maintenance/">HVAC Maintenance</a></li><li><a href="/attic-insulation/">Attic Insulation</a></li><li><a href="/residential-hvac/"><strong>All Residential HVAC</strong></a></li></ul></details>
+          <details><summary>Multi-Family</summary><ul><li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li><li><a href="/senior-living-hvac/">Senior Living HVAC</a></li></ul></details>
+          <details><summary>Commercial</summary><ul><li><a href="/commercial-hvac/">Commercial HVAC</a></li><li><a href="/hvac-project-management/">HVAC Project Management</a></li><li><a href="/coil-cleaning-repair/">Coil Cleaning &amp; Repair</a></li></ul></details>
+          <details><summary>Industrial</summary><ul><li><a href="/industrial-hvac/">Industrial HVAC</a></li></ul></details>
+          <details><summary>About</summary><ul><li><a href="/about/">About Catalyst</a></li><li><a href="/service-areas/">Service Areas</a></li><li><a href="/careers/">Careers</a></li><li><a href="/contact/">Contact</a></li></ul></details>
         </div>
       </details>
     </div>
@@ -1023,14 +1041,15 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
     </div>
     <div>
       <p>Greater Houston is cooling-dominated, so a home's heating equipment may sit unused for long stretches before a cold front creates sudden demand. That makes reliable startup, controls, airflow and pre-season maintenance especially relevant even though heating isn't the system's main annual workload.</p>
-      <p>Catalyst serves the Greater Houston market, with an operating focus through South and Southeast Houston and the Bay Area.</p>
+      <p>Catalyst serves homeowners across all of Greater Houston. Find your part of the metro:</p>
       <ul class="cx-areas">
-        <li><a class="cx-chip" href="/service-areas/south-southeast-houston/">South / Southeast Houston</a></li>
-        <li><a class="cx-chip" href="/service-areas/pasadena/">Pasadena</a></li>
-        <li><a class="cx-chip" href="/service-areas/pearland/">Pearland</a></li>
-        <li><a class="cx-chip" href="/service-areas/friendswood/">Friendswood</a></li>
-        <li><a class="cx-chip" href="/service-areas/clear-lake-webster/">Clear Lake / Webster</a></li>
-        <li><a class="cx-chip" href="/service-areas/league-city/">League City</a></li>
+        <li><a class="cx-chip" href="/service-areas/southeast-houston-bay-area/">Southeast Houston &amp; Bay Area</a></li>
+        <li><a class="cx-chip" href="/service-areas/central-houston/">Central Houston &amp; Inner Loop</a></li>
+        <li><a class="cx-chip" href="/service-areas/west-houston-katy/">West Houston, Energy Corridor &amp; Katy</a></li>
+        <li><a class="cx-chip" href="/service-areas/southwest-houston-fort-bend/">Southwest Houston &amp; Fort Bend</a></li>
+        <li><a class="cx-chip" href="/service-areas/northwest-houston-cypress/">Northwest Houston &amp; Cypress</a></li>
+        <li><a class="cx-chip" href="/service-areas/north-houston-the-woodlands/">North Houston, Spring &amp; The Woodlands</a></li>
+        <li><a class="cx-chip" href="/service-areas/northeast-east-houston/">Northeast &amp; East Houston</a></li>
       </ul>
       <a class="cx-link-arrow" href="/service-areas/">View Service Areas</a>
     </div>
@@ -1045,7 +1064,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <div>
         <p class="cx-eyebrow">Before the Next Cold Front</p>
         <h2>Heating Maintenance Can Find Problems Before the First Real Demand</h2>
-        <p>ENERGY STAR recommends annual pre-season HVAC checkups, with heating equipment typically checked before winter. A heating maintenance visit can evaluate operation before the system is suddenly needed after months of limited use. If you've just had a repair, it's also a natural point to set up an ongoing maintenance schedule rather than waiting for the next failure.</p>
+        <p>ENERGY STAR recommends annual pre-season HVAC checkups, with heating equipment typically checked before winter. A heating maintenance visit can evaluate operation before the system is suddenly needed after months of limited use. If you've just had a repair, it's also a natural point to set up an ongoing maintenance schedule rather than waiting for the next failure. Ask about the <a href="/hvac-maintenance/">Catalyst Membership Plan</a>: two maintenance visits a year, priority scheduling and member savings on repairs.</p>
       </div>
       <a class="cx-btn cx-btn--outline" href="/hvac-maintenance/">Explore HVAC Maintenance</a>
     </div>
@@ -1130,7 +1149,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
     <div class="cx-footer__top">
       <div class="cx-footer__brand">
         <img src="https://catalysthvac.com/wp-content/uploads/2024/06/Catalyst-HVAC-Logo-2.png" alt="Catalyst A/C &amp; Heat" width="512" height="319" loading="lazy">
-        <p>Residential and commercial HVAC service across Greater Houston.</p>
+        <p>Residential, multi-family, commercial and industrial HVAC across Greater Houston.</p>
       </div>
       <div class="cx-footer__contact">
         <a class="cx-footer__phone" href="tel:+17132445070"><small>Call Catalyst</small>(713) 244-5070</a>
@@ -1147,18 +1166,19 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
           <li><a href="heating-repair.html">Heating Repair</a></li>
           <li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li>
           <li><a href="/hvac-maintenance/">HVAC Maintenance</a></li>
-          <li><a href="/indoor-air-quality/">Indoor Air Quality</a></li>
+          <li><a href="/attic-insulation/">Attic Insulation</a></li>
         </ul>
       </nav>
       <nav aria-label="Service areas">
         <p class="cx-footer__h">Service Areas</p>
         <ul>
-          <li><a href="/service-areas/south-southeast-houston/">South / Southeast Houston</a></li>
-          <li><a href="/service-areas/pasadena/">Pasadena</a></li>
-          <li><a href="/service-areas/pearland/">Pearland</a></li>
-          <li><a href="/service-areas/friendswood/">Friendswood</a></li>
-          <li><a href="/service-areas/clear-lake-webster/">Clear Lake / Webster</a></li>
-          <li><a href="/service-areas/league-city/">League City</a></li>
+          <li><a href="/service-areas/southeast-houston-bay-area/">Southeast Houston &amp; Bay Area</a></li>
+          <li><a href="/service-areas/central-houston/">Central Houston &amp; Inner Loop</a></li>
+          <li><a href="/service-areas/west-houston-katy/">West Houston, Energy Corridor &amp; Katy</a></li>
+          <li><a href="/service-areas/southwest-houston-fort-bend/">Southwest Houston &amp; Fort Bend</a></li>
+          <li><a href="/service-areas/northwest-houston-cypress/">Northwest Houston &amp; Cypress</a></li>
+          <li><a href="/service-areas/north-houston-the-woodlands/">North Houston, Spring &amp; The Woodlands</a></li>
+          <li><a href="/service-areas/northeast-east-houston/">Northeast &amp; East Houston</a></li>
           <li><a href="/service-areas/">All Service Areas</a></li>
         </ul>
       </nav>
@@ -1166,15 +1186,18 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <p class="cx-footer__h">Company</p>
         <ul>
           <li><a href="/residential-hvac/">Residential HVAC</a></li>
+          <li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li>
           <li><a href="/commercial-hvac/">Commercial HVAC</a></li>
+          <li><a href="/industrial-hvac/">Industrial HVAC</a></li>
           <li><a href="/about/">About Catalyst</a></li>
+          <li><a href="/careers/">Careers</a></li>
           <li><a href="/contact/">Contact / Request Service</a></li>
         </ul>
       </nav>
       <div class="cx-footer__meta">
-        <p class="cx-footer__h">Commercial</p>
-        <p>Property managers and facility operators: start a commercial inquiry so your request reaches the right contact.</p>
-        <p><a class="cx-link-arrow" href="/contact/#commercial">Commercial HVAC Inquiry</a></p>
+        <p class="cx-footer__h">Properties &amp; Facilities</p>
+        <p>Apartment communities, commercial properties and industrial facilities: start an inquiry so your request reaches the right contact.</p>
+        <p><a class="cx-link-arrow" href="/contact/#inquiry">Start an Inquiry</a></p>
       </div>
     </div>
 

@@ -575,3 +575,27 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 .cx-safety h2 { font-size: 30px; margin: 0 0 10px; }
 .cx-safety p { margin: 0; max-width: 820px; }
 @media (max-width: 767px) { .cx-safety { grid-template-columns: 1fr; padding: 22px; } .cx-safety h2 { font-size: 24px; } }
+
+/* ==========================================================================
+   BLOCK 2 additions
+   ========================================================================== */
+
+/* Membership card: plan name + benefits (on dark or light sections) */
+.cx-membership { background: #fff; color: var(--cx-text); border-radius: var(--cx-radius); padding: 28px; border-top: 4px solid var(--cx-red); box-shadow: 0 18px 40px rgba(10,10,40,.25); }
+.cx-membership h3 { margin: 0 0 4px; color: var(--cx-ink); }
+.cx-membership__sub { margin: 0 0 16px; color: var(--cx-muted) !important; font-size: 15px; }
+.cx-membership .cx-checklist { gap: 8px; margin-bottom: 20px; }
+.cx-membership .cx-checklist li { padding: 10px 14px 10px 44px; color: var(--cx-text); }
+.cx-dark .cx-membership p:not(.cx-membership__sub):not(.cx-ph) { color: var(--cx-text); }
+
+/* Properties band: three audience cards on the dark commercial background */
+.cx-band-commercial .cx-grid-3 { margin-top: 36px; }
+.cx-card--dark { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); box-shadow: none; }
+.cx-card--dark h3 { color: #fff; }
+.cx-card--dark p { color: #C9CDE8 !important; }
+.cx-card--dark .cx-icon { background: rgba(255,255,255,.1); color: #fff; }
+.cx-card--dark.cx-card--link:hover { border-color: #FF8A8C; background: rgba(255,255,255,.1); }
+.cx-card--dark .cx-link-arrow, .cx-card--dark .cx-link-arrow a { color: #fff; }
+
+/* Placeholders stay readable inside dark sections (beats .cx-dark p) */
+.cx-dark .cx-ph, .cx-dark p.cx-ph, .cx-band-commercial p.cx-ph, .cx-request p.cx-ph { color: #6B4A00 !important; }

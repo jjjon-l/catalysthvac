@@ -72,3 +72,23 @@ The **sub-tab copy**. These three docs are the register and summaries, and they 
 - The regional template
 - About and Contact (if changed)
 - The updated Fact Sheet (if any facts were confirmed)
+
+## Applied to the four built pages (2026-11-14)
+- **Header and footer:** new nav (Residential · Multi-Family · Commercial · Industrial · About) and Attic Insulation in place of IAQ. The footer lists the seven regions and the new Company links, and its positioning line is updated.
+- **Homepage:**
+  - new hero eyebrow and properties router
+  - Attic Insulation card
+  - "HVAC for Properties, Businesses and Industrial Facilities" band with Multi-Family, Commercial and Industrial cards
+  - "HVAC Service Across All of Greater Houston" with seven region links
+  - Daikin section slot
+  - membership card
+  - updated FAQs and final CTA
+- **AC Repair, AC Replacement, Heating Repair:**
+  - all-of-Greater-Houston coverage wording and seven region links
+  - headings "…Across Greater Houston"
+  - Attic Insulation link
+  - membership mention in the maintenance bridges
+  - Daikin, financing and warranty hold notes updated
+- **Schema and metas:** all of Greater Houston plus its counties as `areaServed`; the new positioning line; the 2B metas for Home and AC Repair.
+- **Interim copy:** some is drawn from the register and the 2A customer table (Attic card, properties cards, service-area body). It's marked in the source with HTML comments. Swap it for the sub-tab copy when it arrives.
+- **Held conflict:** the current Membership Plan page lists "24-hour emergency service" as a benefit, but 2B holds 24-hour service on every regional page. It's left off the membership card until Jerry confirms.

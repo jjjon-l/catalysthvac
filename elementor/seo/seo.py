@@ -40,7 +40,8 @@ def build_graph(site: dict, key: str, page: dict, faqs: list[tuple[str, str]]) -
     org_id, site_id, page_id = f"{origin}/#organization", f"{origin}/#website", f"{url}#webpage"
     omitted: list[str] = []
 
-    area = [{"@type": "City", "name": f"{c}, TX"} for c in (_fact(site, "areaServed", omitted) or [])]
+    area = [a if isinstance(a, dict) else {"@type": "City", "name": f"{a}, TX"}
+            for a in (_fact(site, "areaServed", omitted) or [])]
     org_ref = {"@id": org_id}
     graph = []
 

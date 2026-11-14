@@ -4,14 +4,14 @@
   "home": {
     "path": "/",
     "title": "Catalyst A/C & Heat | HVAC Service in Greater Houston",
-    "description": "Residential and commercial HVAC service across Greater Houston, including AC repair, replacement, heating, maintenance and indoor air quality. Request service from Catalyst A/C & Heat.",
+    "description": "HVAC for Greater Houston homes, apartment communities, businesses and industrial sites: AC repair, replacement, heating, maintenance and attic insulation.",
     "type": "home"
   },
 
   "ac-repair": {
     "path": "/ac-repair/",
     "title": "AC Repair in Greater Houston | Catalyst A/C & Heat",
-    "description": "Need AC repair in Greater Houston? Catalyst A/C & Heat helps homeowners evaluate cooling problems and determine the right next step. Request AC service.",
+    "description": "Need AC repair in Greater Houston? Catalyst A/C & Heat helps homeowners evaluate cooling problems and determine the appropriate next step. Request AC service.",
     "breadcrumb": [["Home", "/"], ["Residential HVAC", "/residential-hvac/"], ["AC Repair", "/ac-repair/"]],
     "service": {
       "name": "AC Repair",

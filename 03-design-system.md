@@ -122,4 +122,7 @@ Minimum tap target is 48px tall. Labels come from the brief's CTA system: **Requ
 | — | Four-up path cards | `cx-grid-4` + `cx-card cx-card--option` + `cx-tag` |
 | 12 | Membership card (plan name + benefits) | `cx-membership` (with `cx-checklist`) |
 | 4 | Properties band cards on dark | `cx-card cx-card--link cx-card--dark` inside `cx-band-commercial` |
+| 2 | Trust strip band under the hero | `cx-trust-band` > `ul.cx-trust` |
+| — | Featured product block (e.g. Daikin FIT) | `cx-feature` |
+| — | **To confirm** (yellow copy in the Build Doc) | `cx-verify` (highlight), `cx-blank` (a ____ fact only Catalyst has). **Every instance is a launch blocker**: confirm it (remove the class) or cut it. Counted in the SEO register. FAQ answers containing it stay out of schema. |
 | — | Staging placeholder | `cx-ph` (dashed amber box; **search for and remove all of these before launch**) |

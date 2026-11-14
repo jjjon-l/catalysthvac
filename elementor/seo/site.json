@@ -8,7 +8,7 @@
   "description": { "value": "Residential, multi-family, commercial and industrial HVAC across Greater Houston.", "verified": true, "source": "Block 2A positioning" },
   "logo":        { "value": "https://catalysthvac.com/wp-content/uploads/2024/06/Catalyst-HVAC-Logo-2.png", "verified": true, "source": "Current logo; swap URL when approved logo files arrive (Fact Sheet B-1)" },
 
-  "telephone":   { "value": "+1-713-244-5070", "verified": false, "source": "Fact Sheet B-2: public phone (number is from the old site)" },
+  "telephone":   { "value": "+1-832-281-4515", "verified": false, "source": "Block 2B header/footer copy (yellow); Fact Sheet B-2 still open. Old site showed (713) 244-5070." },
   "email":       { "value": null, "verified": false, "source": "Fact Sheet: public email, if used" },
 
   "address": {

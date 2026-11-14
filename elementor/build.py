@@ -98,7 +98,7 @@ def write_register():
         if l["img_no_alt"]: flags.append(f"{l['img_no_alt']} img without alt")
         cell = lambda s: s.replace("|", "\\|")
         rows.append(f"| `{meta['path']}` | {cell(meta['title'])} | {cell(meta['description'])} | {types} | "
-                    f"{l['placeholders']} | {'; '.join(flags) or 'OK'} |")
+                    f"{l['placeholders']} | {l['to_confirm']} | {'; '.join(flags) or 'OK'} |")
         if omitted:
             notes.append(f"- `{meta['path']}`: left out until verified: {', '.join(omitted)}")
     unverified = [k for k, v in site.items() if isinstance(v, dict) and v.get("value") and not v.get("verified")]
@@ -107,8 +107,10 @@ def write_register():
         "",
         "Paste **Title** and **Meta** into the SEO plugin for each page. Paste `elementor/out/seo/<page>.html` into an HTML widget on that page.",
         "",
-        "| URL | Title | Meta description | Schema | Placeholders | Checks |",
-        "|---|---|---|---|---|---|",
+        "**Launch blockers:** every *Placeholder* (`cx-ph`/`cx-held`) and every *To confirm* item (`cx-verify`/`cx-blank`, yellow copy in the Build Doc) must be resolved or removed.",
+        "",
+        "| URL | Title | Meta description | Schema | Placeholders | To confirm | Checks |",
+        "|---|---|---|---|---|---|---|",
         *rows,
         "",
         "## Facts held out of schema (flip `verified` in `elementor/seo/site.json` once approved)",

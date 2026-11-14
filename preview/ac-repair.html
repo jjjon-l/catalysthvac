@@ -793,12 +793,32 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 
 /* Placeholders stay readable inside dark sections (beats .cx-dark p) */
 .cx-dark .cx-ph, .cx-dark p.cx-ph, .cx-band-commercial p.cx-ph, .cx-request p.cx-ph { color: #6B4A00 !important; }
+
+/* Staging-only: copy Catalyst still has to confirm (yellow in the Build Doc).
+   Every instance must be confirmed (remove the class) or cut before launch. */
+.cx-verify { background: #FFF1A8; box-shadow: 0 0 0 2px #FFF1A8; border-radius: 2px; color: inherit; }
+.cx-dark .cx-verify, .cx-band-commercial .cx-verify, .cx-request .cx-verify, .cx-band-cta .cx-verify, .cx-hero .cx-verify { background: rgba(255, 225, 90, .14); box-shadow: none; border-bottom: 2px dashed #FFD84D; }
+.cx-dark .cx-membership .cx-verify, .cx-request .cx-form .cx-verify { background: #FFF1A8; border-bottom: 0; }
+.cx-blank { display: inline-block; min-width: 3.5em; border-bottom: 2px dashed currentColor; }
+
+/* Trust strip band under the hero (items hidden until verified at launch) */
+.cx-trust-band { background: #fff; border-bottom: 1px solid var(--cx-border); }
+.cx-trust-band .cx-trust { list-style: none; margin: 0 auto; padding: 18px var(--cx-gutter); border: 0; justify-content: flex-start; gap: 12px 36px; font-size: 15px; }
+.cx-trust-band .cx-trust li { display: flex; align-items: center; gap: 10px; }
+.cx-trust-band .cx-trust li::before { content: ""; width: 8px; height: 8px; background: var(--cx-red); transform: rotate(45deg); flex: none; }
+@media (max-width: 767px) { .cx-trust-band .cx-trust { flex-direction: column; gap: 10px; } }
+
+/* Featured product block (e.g. Daikin FIT): copy + image, quiet card */
+.cx-feature { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; margin-top: 40px; padding: 36px; background: var(--cx-surface); border: 1px solid var(--cx-border); border-left: 4px solid var(--cx-blue); border-radius: 0 var(--cx-radius) var(--cx-radius) 0; }
+.cx-feature h3 { margin: 10px 0 12px; font-size: 30px; }
+.cx-feature p:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .cx-feature { grid-template-columns: 1fr; padding: 24px; } }
 </style>
 
 </head>
 <body>
 <!-- CX – Header · paste into an HTML widget in the "CX – Header" saved template.
-     PHONE: (713) 244-5070 is from the current site and still unverified (Fact Sheet B-2). -->
+     PHONE: (832) 281-4515 is from the current site and still unverified (Fact Sheet B-2). -->
 <a class="cx-skip" href="#main">Skip to content</a>
 <header class="cx-header">
   <div class="cx-header__bar">
@@ -847,7 +867,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       </ul>
     </nav>
     <div class="cx-header__actions">
-      <a class="cx-phone" href="tel:+17132445070"><small>Call Catalyst</small>(713) 244-5070</a>
+      <a class="cx-phone" href="tel:+18322814515"><small>Call Catalyst</small><span class="cx-verify">(832) 281-4515</span></a>
       <a class="cx-btn" href="/contact/">Request Service</a>
       <details class="cx-menu-toggle">
         <summary>Menu</summary>
@@ -865,6 +885,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 
 
 <main id="main">
+<!-- Copy: Block 2B "AC Repair — full page copy". cx-verify / cx-blank = yellow in the doc (Catalyst to confirm before launch). -->
 
 <!-- 1 · SERVICE HERO  [cx-hero cx-hero--service cx-dark · cx-breadcrumb] -->
 <section class="cx-hero cx-hero--service cx-dark">
@@ -883,17 +904,27 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <p>If your AC isn't cooling properly, airflow is weak or the system is behaving differently than it should, start with a service evaluation. Catalyst can assess the cooling problem and help determine the right next step based on what the system actually needs.</p>
         <div class="cx-cta-pair">
           <a class="cx-btn" href="#request">Request AC Service</a>
-          <a class="cx-btn cx-btn--outline" href="tel:+17132445070">Call Catalyst</a>
+          <a class="cx-btn cx-btn--outline" href="tel:+18322814515">Call Catalyst</a>
         </div>
         <p class="cx-hero__support">Serving homeowners across all of Greater Houston.</p>
       </div>
-      <!-- TEMP stock photo: never caption or alt-text these technicians as Catalyst staff. Replace with a real Catalyst photo before launch. -->
+      <!-- TEMP stock photo: never caption or alt-text these technicians as Catalyst staff. Replace with a real Catalyst service photo before launch. -->
       <div class="cx-hero__media cx-chamfer">
         <img src="https://catalysthvac.com/wp-content/uploads/2024/06/Layer-48@2x-1.png" alt="Two HVAC technicians checking refrigerant pressures at an outdoor condenser unit" width="1366" height="1382" fetchpriority="high" style="object-position:50% 30%">
       </div>
     </div>
   </div>
 </section>
+
+<!-- 1B · TRUST STRIP  [cx-trust] -->
+<div class="cx-trust-band">
+  <ul class="cx-trust wrap">
+    <li><span class="cx-verify">Licensed Texas HVAC contractor (TDLR # <span class="cx-blank">____</span>)</span></li>
+    <li><span class="cx-verify">EPA-certified technicians</span></li>
+    <li><span class="cx-verify">Upfront repair options before work starts</span></li>
+    <li><span class="cx-verify">Repair workmanship warranty</span></li>
+  </ul>
+</div>
 
 <!-- 2 · PROBLEM RECOGNITION  [cx-grid-3 cx-symptoms · cx-card--symptom] -->
 <section class="cx-section">
@@ -904,30 +935,12 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <p class="cx-lead">You don't need to diagnose the system before requesting service. Start with what you're experiencing. Several different HVAC issues can create similar symptoms, so the purpose of the visit is to find out what's actually happening before deciding on the repair.</p>
     </div>
     <div class="cx-grid-3 cx-symptoms">
-      <article class="cx-card cx-card--symptom">
-        <h3>AC Running but Not Cooling</h3>
-        <p>The system may be running without delivering the indoor temperature you expect. That symptom can have more than one cause, so it should be evaluated rather than diagnosed from the symptom alone.</p>
-      </article>
-      <article class="cx-card cx-card--symptom">
-        <h3>Weak or Uneven Airflow</h3>
-        <p>Low airflow, rooms that are hard to cool or noticeable differences across the home can involve the equipment, the airflow system, controls or other conditions that need to be evaluated together.</p>
-      </article>
-      <article class="cx-card cx-card--symptom">
-        <h3>AC Turning On and Off Repeatedly</h3>
-        <p>Frequent or unusual cycling can signal that the system is struggling to operate normally. The cause should be identified before assuming a particular component needs replacing.</p>
-      </article>
-      <article class="cx-card cx-card--symptom">
-        <h3>Unusual Noise or System Behavior</h3>
-        <p>New noises, vibration, unexpected shutdowns or other changes in how the system runs are good reasons to have it checked before the problem becomes more disruptive.</p>
-      </article>
-      <article class="cx-card cx-card--symptom">
-        <h3>Thermostat or Control Issues</h3>
-        <p>A thermostat setting, control problem or communication issue can sometimes look like an equipment failure. A proper evaluation treats the controls as part of the system.</p>
-      </article>
-      <article class="cx-card cx-card--symptom">
-        <h3>Moisture, Drainage or Leaking Around the System</h3>
-        <p>Water or moisture around HVAC equipment can have several causes and shouldn't be ignored. Catalyst can evaluate the source as part of the service call.</p>
-      </article>
+      <article class="cx-card cx-card--symptom"><h3>AC Running but Not Cooling</h3><p>The system may be running without delivering the indoor temperature you expect. That symptom can have more than one cause, so it should be evaluated rather than diagnosed from the symptom alone.</p></article>
+      <article class="cx-card cx-card--symptom"><h3>Weak or Uneven Airflow</h3><p>Low airflow, rooms that are hard to cool or noticeable differences across the home can involve the equipment, the airflow system, controls or other conditions that need to be evaluated together.</p></article>
+      <article class="cx-card cx-card--symptom"><h3>AC Turning On and Off Repeatedly</h3><p>Frequent or unusual cycling can signal that the system is struggling to operate normally. The cause should be identified before assuming a particular component needs replacing.</p></article>
+      <article class="cx-card cx-card--symptom"><h3>Unusual Noise or System Behavior</h3><p>New noises, vibration, unexpected shutdowns or other changes in how the system runs are good reasons to have it checked before the problem becomes more disruptive.</p></article>
+      <article class="cx-card cx-card--symptom"><h3>Thermostat or Control Issues</h3><p>A thermostat setting, control problem or communication issue can sometimes look like an equipment failure. A proper evaluation treats the controls as part of the system.</p></article>
+      <article class="cx-card cx-card--symptom"><h3>Moisture, Drainage or Leaking Around the System</h3><p>Water or moisture around HVAC equipment can have several causes and shouldn't be ignored. Catalyst can evaluate the source as part of the service call.</p></article>
     </div>
     <div class="cx-after-grid">
       <a class="cx-btn" href="#request">Request AC Service</a>
@@ -936,29 +949,52 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
   </div>
 </section>
 
-<!-- 3 · SERVICE EVALUATION + 4 · REPAIR PATH  [cx-surface · cx-split] -->
+<!-- 3 · SERVICE EVALUATION  [cx-surface · cx-steps cx-steps--cards] -->
 <section class="cx-section cx-surface">
-  <div class="wrap cx-split">
-    <div>
+  <div class="wrap">
+    <div class="cx-section-head">
       <p class="cx-eyebrow">What Happens Next</p>
       <h2>The First Job Is to Find the Actual Problem</h2>
-      <p>An AC repair decision should begin with the system itself, not with a predetermined repair or replacement recommendation. The service evaluation is meant to identify the source of the cooling problem, understand the condition of the relevant equipment and determine what path makes sense from there.</p>
-      <p>A useful service conversation should leave you with a clearer understanding of what was found, what work is recommended and why.</p>
-      <div class="cx-ph" style="margin-top:24px">Process steps (3–4): Catalyst's real service-call process. Arrival, what the visit checks, diagnostic fee policy, how options are presented, parts and follow-up, documentation. Don't invent steps.</div>
+      <p class="cx-lead">An AC repair decision should begin with the system itself, not with a predetermined repair or replacement recommendation. The service evaluation is meant to identify the source of the cooling problem, understand the condition of the relevant equipment and determine what path makes sense from there.</p>
     </div>
+    <ol class="cx-steps cx-steps--cards">
+      <li><h3>Tell Us What's Happening</h3><p><span class="cx-verify">Call or send a service request with a short description of what the AC is doing. Catalyst confirms a visit window and the technician calls ahead before arriving.</span></p></li>
+      <li><h3>On-Site Diagnosis</h3><p><span class="cx-verify">The technician checks the thermostat and controls, airflow and filter, electrical components, the refrigerant circuit and the condensate drain to find the actual cause, not just the symptom.</span></p></li>
+      <li><h3>Options Before Any Work</h3><p><span class="cx-verify">You get a plain explanation of what was found and the price for each repair option before any work starts. Nothing is done without your approval.</span></p></li>
+      <li><h3>Repair and Verify</h3><p><span class="cx-verify">Once you approve, the technician completes the repair, confirms the system is cooling properly and leaves a written summary of the work.</span></p></li>
+    </ol>
+    <p class="cx-note cx-measure" style="margin-top:28px"><span class="cx-verify">The diagnostic visit is $<span class="cx-blank">____</span>, <span class="cx-blank">____</span> toward the repair if you approve the work.</span></p>
+    <p class="cx-measure">A useful service conversation should leave you with a clearer understanding of what was found, what work is recommended and why.</p>
+  </div>
+</section>
+
+<!-- 4 · REPAIR PATH  [cx-split · cx-checklist] -->
+<section class="cx-section">
+  <div class="wrap cx-split">
     <div>
       <p class="cx-eyebrow">AC Repair</p>
       <h2>Repair the Problem That Is Actually There</h2>
       <p>When repair is the right path, the goal is to fix the diagnosed problem and restore the system's operation without turning every service call into a sales pitch for new equipment.</p>
       <p>The specific repair depends on what the evaluation finds.</p>
-      <div class="cx-ph" style="margin:24px 0">Repair categories to confirm before publishing: electrical/controls · airflow · drainage · refrigerant system · motors and fans · thermostats · other mechanical. Plus equipment types and approved brand language.</div>
+      <p><span class="cx-verify">Catalyst services central split systems, heat pumps and package units from the major residential brands.</span></p>
       <a class="cx-btn" href="#request">Request AC Service</a>
+    </div>
+    <div>
+      <p class="cx-eyebrow"><span class="cx-verify">Common AC repairs include</span></p>
+      <ul class="cx-checklist">
+        <li><span class="cx-verify">Capacitors, contactors and other electrical components</span></li>
+        <li><span class="cx-verify">Blower and condenser fan motors</span></li>
+        <li><span class="cx-verify">Refrigerant leaks, repair and recharge</span></li>
+        <li><span class="cx-verify">Clogged condensate drains, pans and float switches</span></li>
+        <li><span class="cx-verify">Thermostats and controls</span></li>
+        <li><span class="cx-verify">Airflow problems, including dirty coils and restricted returns</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- 5 · REPAIR OR REPLACE  [cx-split--wide-left · cx-checklist] -->
-<section class="cx-section">
+<!-- 5 · REPAIR OR REPLACE  [cx-surface · cx-split--wide-left · cx-checklist] -->
+<section class="cx-section cx-surface">
   <div class="wrap cx-split cx-split--wide-left">
     <div>
       <p class="cx-eyebrow">Repair or Replace?</p>
@@ -984,27 +1020,32 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
   </div>
 </section>
 
-<!-- 6 · PROOF  [cx-proof: hidden at launch if empty] -->
-<section class="cx-section cx-surface">
+<!-- 6 · PROOF  [cx-grid-4 proof cards; reviews pull from Catalyst's Google reviews] -->
+<section class="cx-section">
   <div class="wrap">
     <div class="cx-section-head">
       <p class="cx-eyebrow">Why Catalyst</p>
       <h2>Clear Information Before the Next Decision</h2>
       <p class="cx-lead">When the AC isn't working, the immediate goal is simple: understand the problem and know what to do next. Catalyst connects what you're experiencing to an on-site evaluation, the findings and the right service path.</p>
     </div>
-    <div class="cx-ph">Proof module, real assets only: verified repair reviews · technician credentials (exact wording) · real Greater Houston service photography · repair warranty terms (only if offered). Cards drop out individually when empty.</div>
+    <div class="cx-grid-4">
+      <article class="cx-card"><h3>Repair Reviews</h3><p><span class="cx-verify">What Greater Houston homeowners say about Catalyst's repair visits: the diagnosis, the communication and the result.</span></p><p class="cx-ph">Google reviews widget</p></article>
+      <article class="cx-card"><h3>Licensed and Certified</h3><p><span class="cx-verify">Catalyst is a licensed Texas HVAC contractor (TDLR # <span class="cx-blank">____</span>), and our technicians hold EPA 608 certification for refrigerant work.</span></p></article>
+      <article class="cx-card"><h3>Real Service Work</h3><p><span class="cx-verify">Authentic technician and equipment photos from Greater Houston calls.</span></p><p class="cx-ph">Job photos</p></article>
+      <article class="cx-card"><h3>Repair Warranty</h3><p><span class="cx-verify">Catalyst stands behind its repair workmanship for <span class="cx-blank">____</span> days, and replacement parts carry the manufacturer's warranty.</span></p></article>
+    </div>
   </div>
 </section>
 
-<!-- 7 · SERVICE AREA  [cx-areas] -->
-<section class="cx-section">
+<!-- 7 · SERVICE AREA  [cx-areas: seven regions] -->
+<section class="cx-section cx-surface">
   <div class="wrap cx-grid-2">
     <div>
       <p class="cx-eyebrow">Greater Houston AC Repair</p>
       <h2>AC Repair Across Greater Houston</h2>
     </div>
     <div>
-      <p>Catalyst serves AC repair customers across all of Greater Houston. Find your part of the metro:</p>
+      <p>Catalyst serves AC repair customers across all of Greater Houston.</p>
       <ul class="cx-areas">
         <li><a class="cx-chip" href="/service-areas/southeast-houston-bay-area/">Southeast Houston &amp; Bay Area</a></li>
         <li><a class="cx-chip" href="/service-areas/central-houston/">Central Houston &amp; Inner Loop</a></li>
@@ -1020,14 +1061,14 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 </section>
 
 <!-- 8 · MAINTENANCE BRIDGE  [cx-bridge] -->
-<section class="cx-section cx-section--tight" style="padding-top:0">
+<section class="cx-section cx-section--tight">
   <div class="wrap">
     <div class="cx-bridge">
       <span class="cx-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="1.5"/><path d="M9 4V2.8c0-.4.3-.8.8-.8h4.4c.5 0 .8.4.8.8V4"/><path d="m8.5 12.5 2.3 2.3L15.5 10"/><path d="M8.5 18h7"/></svg></span>
       <div>
         <p class="cx-eyebrow">After the Repair</p>
         <h2>Plan for the System Beyond Today's Service Call</h2>
-        <p>Once the immediate problem is resolved, routine HVAC maintenance gives you a structured way to inspect the system, address developing issues and plan for future equipment needs. Ask about the <a href="/hvac-maintenance/">Catalyst Membership Plan</a>: two maintenance visits a year, priority scheduling and member savings on repairs.</p>
+        <p>Once the immediate problem is resolved, routine HVAC maintenance gives you a structured way to inspect the system, address developing issues and plan for future equipment needs. <span class="cx-verify">The Catalyst Membership Plan covers two maintenance visits a year, a spring cooling tune-up and a fall heating tune-up with filter changes, plus priority scheduling, 24-hour emergency service, 10% off repairs, discounted diagnostic fees and a written summary after each visit.</span></p>
       </div>
       <a class="cx-btn cx-btn--outline" href="/hvac-maintenance/">Explore HVAC Maintenance</a>
     </div>
@@ -1043,15 +1084,17 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <details><summary>Why is the airflow from my vents weak?</summary><div>Weak airflow can have different causes, including conditions within the HVAC equipment or the home's airflow system. Because several problems can produce a similar symptom, the system should be evaluated before assuming a specific repair.</div></details>
       <details><summary>Why does my AC keep turning on and off?</summary><div>Unusual or frequent cycling can happen for more than one reason. The important next step is identifying why the system is cycling that way and whether the issue involves controls, equipment operation, airflow or another condition.</div></details>
       <details><summary>Should I repair or replace my AC?</summary><div>That depends on the current repair, overall system condition, recurring problems, performance, parts availability, and the cost and value of the available options. Age can be relevant, but it shouldn't be the only factor. If you have a current cooling problem and don't already know replacement is necessary, a repair evaluation is a reasonable place to start. <a href="ac-replacement.html">Explore AC replacement</a>.</div></details>
+      <details><summary>What happens when I request AC service from Catalyst?</summary><div><span class="cx-verify">Catalyst confirms a visit window, and the technician calls ahead. On site, they diagnose the cause, explain what they found and give you the price for each option before any work starts. Once you approve, they complete the repair, check the system and leave a written summary.</span></div></details>
       <details><summary>Does Catalyst provide AC repair in my area?</summary><div>Catalyst serves all of Greater Houston. See the <a href="/service-areas/">Service Areas</a> page for current coverage, or contact Catalyst with your service address.</div></details>
+      <details><summary>Does Catalyst offer emergency or after-hours AC repair?</summary><div><span class="cx-verify">Our office is open <span class="cx-blank">____</span>. For an urgent no-cooling problem outside those hours, call <span class="cx-blank">____</span> and Catalyst will get a technician out as soon as one is available.</span></div></details>
+      <details><summary>Does Catalyst repair all AC brands and system types?</summary><div><span class="cx-verify">Catalyst services most major residential AC brands, including Carrier, Trane, Lennox, Goodman, Rheem and American Standard, across split systems, heat pumps and package units. If your system is less common, mention the brand when you request service.</span></div></details>
     </div>
-    <p class="cx-ph" style="margin-top:24px;max-width:880px">Held FAQs: what happens when I request service · emergency / after-hours AC repair · brands and system types serviced (never "all makes and models")</p>
   </div>
 </section>
 
 <!-- 10 · FINAL CTA + REQUEST FORM  [cx-request · cx-form]
      In Elementor: Elementor Pro Form widget with class cx-form.
-     Hidden fields: service_intent=AC Repair, source_page, cta_placement, utm_* (Build Doc Messaging §G). -->
+     Hidden fields: service_intent=AC Repair, source_page, cta_placement, utm_* (Messaging §G). -->
 <section class="cx-request" id="request" data-cta="Request AC Service">
   <div class="wrap cx-request__grid">
     <div>
@@ -1060,7 +1103,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <p>Tell Catalyst what your AC is doing and where service is needed. The next step is to evaluate the system and determine the right repair or service path from what's actually found.</p>
       <div class="cx-request__alt">
         <p style="margin:0">Prefer to talk it through?</p>
-        <a class="cx-request__phone" href="tel:+17132445070">(713) 244-5070</a>
+        <a class="cx-request__phone" href="tel:+18322814515"><span class="cx-verify">(832) 281-4515</span></a>
         <p style="margin:18px 0 0"><a class="cx-link-arrow" href="ac-replacement.html">Already Considering Replacement? Explore AC Replacement &amp; Installation</a></p>
       </div>
     </div>
@@ -1092,10 +1135,10 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
     <div class="cx-footer__top">
       <div class="cx-footer__brand">
         <img src="https://catalysthvac.com/wp-content/uploads/2024/06/Catalyst-HVAC-Logo-2.png" alt="Catalyst A/C &amp; Heat" width="512" height="319" loading="lazy">
-        <p>Residential, multi-family, commercial and industrial HVAC across Greater Houston.</p>
+        <p>HVAC service for Greater Houston homes, apartment communities, businesses and industrial facilities.</p>
       </div>
       <div class="cx-footer__contact">
-        <a class="cx-footer__phone" href="tel:+17132445070"><small>Call Catalyst</small>(713) 244-5070</a>
+        <a class="cx-footer__phone" href="tel:+18322814515"><small>Call Catalyst</small><span class="cx-verify">(832) 281-4515</span></a>
         <a class="cx-btn" href="/contact/">Request Service</a>
       </div>
     </div>
@@ -1125,26 +1168,29 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
           <li><a href="/service-areas/">All Service Areas</a></li>
         </ul>
       </nav>
-      <nav aria-label="Company">
-        <p class="cx-footer__h">Company</p>
+      <nav aria-label="Quick links">
+        <p class="cx-footer__h">Quick Links</p>
         <ul>
           <li><a href="/residential-hvac/">Residential HVAC</a></li>
           <li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li>
           <li><a href="/commercial-hvac/">Commercial HVAC</a></li>
           <li><a href="/industrial-hvac/">Industrial HVAC</a></li>
-          <li><a href="/about/">About Catalyst</a></li>
+          <li><a href="/service-areas/">Service Areas</a></li>
+          <li><a href="/about/">About</a></li>
           <li><a href="/careers/">Careers</a></li>
           <li><a href="/contact/">Contact / Request Service</a></li>
         </ul>
       </nav>
       <div class="cx-footer__meta">
-        <p class="cx-footer__h">Properties &amp; Facilities</p>
-        <p>Apartment communities, commercial properties and industrial facilities: start an inquiry so your request reaches the right contact.</p>
-        <p><a class="cx-link-arrow" href="/contact/#inquiry">Start an Inquiry</a></p>
+        <p class="cx-footer__h">Business Information</p>
+        <p><a href="tel:+18322814515"><span class="cx-verify">(832) 281-4515</span></a></p>
+        <p><span class="cx-verify">Hours: <span class="cx-blank">____</span></span></p>
+        <p><span class="cx-verify">TDLR License # <span class="cx-blank">____</span></span></p>
+        <p>Houston, Texas</p>
       </div>
     </div>
 
-    <p class="cx-ph" style="margin:0 0 24px">Footer holds: business hours · address treatment · TDLR license and consumer notice · social links</p>
+    <p class="cx-ph" style="margin:0 0 24px">Footer holds: social links (active profiles to confirm) · TDLR consumer notice once the license is confirmed</p>
 
     <div class="cx-footer__legal">
       <span>© 2026 Catalyst A/C &amp; Heat. All rights reserved.</span>
@@ -1155,7 +1201,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 
 <!-- Mobile sticky call + request bar -->
 <div class="cx-mobilebar">
-  <a class="cx-btn cx-btn--outline" href="tel:+17132445070">Call Catalyst</a>
+  <a class="cx-btn cx-btn--outline" href="tel:+18322814515">Call Catalyst</a>
   <a class="cx-btn" href="/contact/" data-cx-request>Request Service</a>
 </div>
 <script>

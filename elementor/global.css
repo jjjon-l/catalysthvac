@@ -599,3 +599,23 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 
 /* Placeholders stay readable inside dark sections (beats .cx-dark p) */
 .cx-dark .cx-ph, .cx-dark p.cx-ph, .cx-band-commercial p.cx-ph, .cx-request p.cx-ph { color: #6B4A00 !important; }
+
+/* Staging-only: copy Catalyst still has to confirm (yellow in the Build Doc).
+   Every instance must be confirmed (remove the class) or cut before launch. */
+.cx-verify { background: #FFF1A8; box-shadow: 0 0 0 2px #FFF1A8; border-radius: 2px; color: inherit; }
+.cx-dark .cx-verify, .cx-band-commercial .cx-verify, .cx-request .cx-verify, .cx-band-cta .cx-verify, .cx-hero .cx-verify { background: rgba(255, 225, 90, .14); box-shadow: none; border-bottom: 2px dashed #FFD84D; }
+.cx-dark .cx-membership .cx-verify, .cx-request .cx-form .cx-verify { background: #FFF1A8; border-bottom: 0; }
+.cx-blank { display: inline-block; min-width: 3.5em; border-bottom: 2px dashed currentColor; }
+
+/* Trust strip band under the hero (items hidden until verified at launch) */
+.cx-trust-band { background: #fff; border-bottom: 1px solid var(--cx-border); }
+.cx-trust-band .cx-trust { list-style: none; margin: 0 auto; padding: 18px var(--cx-gutter); border: 0; justify-content: flex-start; gap: 12px 36px; font-size: 15px; }
+.cx-trust-band .cx-trust li { display: flex; align-items: center; gap: 10px; }
+.cx-trust-band .cx-trust li::before { content: ""; width: 8px; height: 8px; background: var(--cx-red); transform: rotate(45deg); flex: none; }
+@media (max-width: 767px) { .cx-trust-band .cx-trust { flex-direction: column; gap: 10px; } }
+
+/* Featured product block (e.g. Daikin FIT): copy + image, quiet card */
+.cx-feature { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; margin-top: 40px; padding: 36px; background: var(--cx-surface); border: 1px solid var(--cx-border); border-left: 4px solid var(--cx-blue); border-radius: 0 var(--cx-radius) var(--cx-radius) 0; }
+.cx-feature h3 { margin: 10px 0 12px; font-size: 30px; }
+.cx-feature p:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .cx-feature { grid-template-columns: 1fr; padding: 24px; } }

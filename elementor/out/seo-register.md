@@ -2,15 +2,17 @@
 
 Paste **Title** and **Meta** into the SEO plugin for each page. Paste `elementor/out/seo/<page>.html` into an HTML widget on that page.
 
-| URL | Title | Meta description | Schema | Placeholders | Checks |
-|---|---|---|---|---|---|
-| `/ac-repair/` | AC Repair in Greater Houston \| Catalyst A/C & Heat | Need AC repair in Greater Houston? Catalyst A/C & Heat helps homeowners evaluate cooling problems and determine the appropriate next step. Request AC service. | Organization, WebSite, BreadcrumbList, WebPage, Service, FAQPage | 4 | OK |
-| `/ac-replacement/` | AC Replacement & Installation in Greater Houston \| Catalyst A/C & Heat | Considering a new AC system in Greater Houston? Catalyst A/C & Heat can evaluate your home, current system and replacement options. Request an AC replacement consultation. | Organization, WebSite, BreadcrumbList, WebPage, Service, FAQPage | 9 | title 70 chars (may truncate); meta 171 chars |
-| `/heating-repair/` | Heating Repair in Greater Houston \| Catalyst A/C & Heat | Need help with a furnace, heat pump or home heating problem? Request heating repair from Catalyst A/C & Heat across Greater Houston. | Organization, WebSite, BreadcrumbList, WebPage, Service, FAQPage | 4 | OK |
-| `/` | Catalyst A/C & Heat \| HVAC Service in Greater Houston | HVAC for Greater Houston homes, apartment communities, businesses and industrial sites: AC repair, replacement, heating, maintenance and attic insulation. | Organization, WebSite, WebPage, FAQPage | 9 | OK |
+**Launch blockers:** every *Placeholder* (`cx-ph`/`cx-held`) and every *To confirm* item (`cx-verify`/`cx-blank`, yellow copy in the Build Doc) must be resolved or removed.
+
+| URL | Title | Meta description | Schema | Placeholders | To confirm | Checks |
+|---|---|---|---|---|---|---|
+| `/ac-repair/` | AC Repair in Greater Houston \| Catalyst A/C & Heat | Need AC repair in Greater Houston? Catalyst A/C & Heat helps homeowners evaluate cooling problems and determine the appropriate next step. Request AC service. | Organization, WebSite, BreadcrumbList, WebPage, Service, FAQPage | 2 | 40 | OK |
+| `/ac-replacement/` | AC Replacement & Installation in Greater Houston \| Catalyst A/C & Heat | Considering a new AC system in Greater Houston? Catalyst A/C & Heat can evaluate your home, current system and replacement options. Request an AC replacement consultation. | Organization, WebSite, BreadcrumbList, WebPage, Service, FAQPage | 3 | 37 | title 70 chars (may truncate); meta 171 chars |
+| `/heating-repair/` | Heating Repair in Greater Houston \| Catalyst A/C & Heat | Need help with a furnace, heat pump or home heating problem? Request heating repair from Catalyst A/C & Heat across Greater Houston. | Organization, WebSite, BreadcrumbList, WebPage, Service, FAQPage | 2 | 20 | OK |
+| `/` | Catalyst A/C & Heat \| HVAC Service in Greater Houston | HVAC for Greater Houston homes, apartment communities, businesses and industrial sites: AC repair, replacement, heating, maintenance and attic insulation. | Organization, WebSite, WebPage, FAQPage | 5 | 35 | OK |
 
 ## Facts held out of schema (flip `verified` in `elementor/seo/site.json` once approved)
-- **telephone**: Fact Sheet B-2: public phone (number is from the old site)
+- **telephone**: Block 2B header/footer copy (yellow); Fact Sheet B-2 still open. Old site showed (713) 244-5070.
 - **address**: Fact Sheet A/C: operating base. Publish only if Jerry confirms address treatment (staffed, signed, OK to show). Never add market-page addresses.
 - **sameAs**: Current social links from the old site; confirm they're Catalyst's active profiles (Instagram handle on the old site looked misspelled, left out)
 - **foundingDate**: Old site says 'early 2024'; Fact Sheet C: year founded

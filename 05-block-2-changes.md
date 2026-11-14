@@ -92,3 +92,21 @@ The **sub-tab copy**. These three docs are the register and summaries, and they 
 - **Schema and metas:** all of Greater Houston plus its counties as `areaServed`; the new positioning line; the 2B metas for Home and AC Repair.
 - **Interim copy:** some is drawn from the register and the 2A customer table (Attic card, properties cards, service-area body). It's marked in the source with HTML comments. Swap it for the sub-tab copy when it arrives.
 - **Held conflict:** the current Membership Plan page lists "24-hour emergency service" as a benefit, but 2B holds 24-hour service on every regional page. It's left off the membership card until Jerry confirms.
+
+## Full exports received (2026-11-14, later)
+The first PDFs were the cover tab only. The full exports (all Google Doc tabs) are `brief/block-2{a,b,c}-full-2026-11-14.pdf`:
+- **2B:** register and full copy for all original pages, plus About, Contact, the Service Areas hub, the regions and the local pages.
+- **2C:** Multi-Family, Commercial (Nov), Industrial and Careers.
+- **2A:** Fact Sheet, Architecture, Messaging and the Elementor spec.
+
+**Yellow = to confirm.** The docs highlight best-guess facts in yellow, and Jerry confirms or cuts each before launch. `brief/*.yellow.txt` marks them with ⟦Y …⟧ (read from the PDF's highlight colors). On the site they render with `cx-verify` / `cx-blank`.
+
+**Rebuilt from the full 2B copy:** Home, AC Repair, AC Replacement, Heating Repair. That replaces the interim copy from the earlier pass.
+- New sections: trust strips, the AC Repair 4-step process and proof cards, the AC Replacement process, tiers, Daikin FIT feature, proposal, financing and warranty copy, the Heating Repair equipment list, and the new FAQs.
+
+**Phone:** the docs now show **(832) 281-4515**, highlighted yellow (to confirm). Every phone link sitewide was switched from the old site's (713) 244-5070. It stays out of schema until verified.
+
+**Fact Sheet A additions:**
+- Daikin Pro with a national account; Goodman partner for multi-family.
+- Financing offered; partner TBD (Synchrony, or GreenSky via ServiceTitan).
+- All of Greater Houston, with no exclusions (B-8 closed).

@@ -801,12 +801,32 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 
 /* Placeholders stay readable inside dark sections (beats .cx-dark p) */
 .cx-dark .cx-ph, .cx-dark p.cx-ph, .cx-band-commercial p.cx-ph, .cx-request p.cx-ph { color: #6B4A00 !important; }
+
+/* Staging-only: copy Catalyst still has to confirm (yellow in the Build Doc).
+   Every instance must be confirmed (remove the class) or cut before launch. */
+.cx-verify { background: #FFF1A8; box-shadow: 0 0 0 2px #FFF1A8; border-radius: 2px; color: inherit; }
+.cx-dark .cx-verify, .cx-band-commercial .cx-verify, .cx-request .cx-verify, .cx-band-cta .cx-verify, .cx-hero .cx-verify { background: rgba(255, 225, 90, .14); box-shadow: none; border-bottom: 2px dashed #FFD84D; }
+.cx-dark .cx-membership .cx-verify, .cx-request .cx-form .cx-verify { background: #FFF1A8; border-bottom: 0; }
+.cx-blank { display: inline-block; min-width: 3.5em; border-bottom: 2px dashed currentColor; }
+
+/* Trust strip band under the hero (items hidden until verified at launch) */
+.cx-trust-band { background: #fff; border-bottom: 1px solid var(--cx-border); }
+.cx-trust-band .cx-trust { list-style: none; margin: 0 auto; padding: 18px var(--cx-gutter); border: 0; justify-content: flex-start; gap: 12px 36px; font-size: 15px; }
+.cx-trust-band .cx-trust li { display: flex; align-items: center; gap: 10px; }
+.cx-trust-band .cx-trust li::before { content: ""; width: 8px; height: 8px; background: var(--cx-red); transform: rotate(45deg); flex: none; }
+@media (max-width: 767px) { .cx-trust-band .cx-trust { flex-direction: column; gap: 10px; } }
+
+/* Featured product block (e.g. Daikin FIT): copy + image, quiet card */
+.cx-feature { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; margin-top: 40px; padding: 36px; background: var(--cx-surface); border: 1px solid var(--cx-border); border-left: 4px solid var(--cx-blue); border-radius: 0 var(--cx-radius) var(--cx-radius) 0; }
+.cx-feature h3 { margin: 10px 0 12px; font-size: 30px; }
+.cx-feature p:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .cx-feature { grid-template-columns: 1fr; padding: 24px; } }
 </style>
 
 </head>
 <body>
 <!-- CX – Header · paste into an HTML widget in the "CX – Header" saved template.
-     PHONE: (713) 244-5070 is from the current site and still unverified (Fact Sheet B-2). -->
+     PHONE: (832) 281-4515 is from the current site and still unverified (Fact Sheet B-2). -->
 <a class="cx-skip" href="#main">Skip to content</a>
 <header class="cx-header">
   <div class="cx-header__bar">
@@ -855,7 +875,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       </ul>
     </nav>
     <div class="cx-header__actions">
-      <a class="cx-phone" href="tel:+17132445070"><small>Call Catalyst</small>(713) 244-5070</a>
+      <a class="cx-phone" href="tel:+18322814515"><small>Call Catalyst</small><span class="cx-verify">(832) 281-4515</span></a>
       <a class="cx-btn" href="/contact/">Request Service</a>
       <details class="cx-menu-toggle">
         <summary>Menu</summary>
@@ -873,6 +893,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 
 
 <main id="main">
+<!-- Copy: Block 2B "AC Replacement & Installation — full page copy". cx-verify / cx-blank = yellow in the doc (Catalyst to confirm before launch). -->
 
 <!-- 1 · REPLACEMENT HERO  [cx-hero cx-hero--service cx-dark] -->
 <section class="cx-hero cx-hero--service cx-dark">
@@ -892,17 +913,28 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <p>Catalyst can help you evaluate those factors and compare appropriate replacement options before you make the investment.</p>
         <div class="cx-cta-pair">
           <a class="cx-btn" href="#request">Request a Replacement Consultation</a>
-          <a class="cx-btn cx-btn--outline" href="tel:+17132445070">Call Catalyst</a>
+          <a class="cx-btn cx-btn--outline" href="tel:+18322814515">Call Catalyst</a>
         </div>
         <p class="cx-hero__support">Serving homeowners across all of Greater Houston.</p>
       </div>
-      <!-- TEMP stock photo: never caption or alt-text these technicians as Catalyst staff. Replace with a real Catalyst photo before launch. -->
+      <!-- TEMP stock photo: never caption or alt-text these technicians as Catalyst staff. Replace with real Catalyst installation photos before launch. -->
       <div class="cx-hero__media cx-chamfer">
         <img src="https://catalysthvac.com/wp-content/uploads/2024/06/Layer-48@2x-1.png" alt="Two HVAC technicians checking refrigerant pressures at an outdoor condenser unit" width="1366" height="1382" fetchpriority="high" style="object-position:50% 30%">
       </div>
     </div>
   </div>
 </section>
+
+<!-- 1B · TRUST STRIP  [cx-trust] -->
+<div class="cx-trust-band">
+  <ul class="cx-trust wrap">
+    <li><span class="cx-verify">Licensed Texas HVAC contractor (TDLR # <span class="cx-blank">____</span>)</span></li>
+    <li><span class="cx-verify">Manual J sizing on every replacement</span></li>
+    <li><span class="cx-verify">Written, itemized proposals</span></li>
+    <li><span class="cx-verify">Financing available</span></li>
+    <li><span class="cx-verify">Labor warranty on every install</span></li>
+  </ul>
+</div>
 
 <!-- 2 · WHEN REPLACEMENT DESERVES A LOOK  [cx-checklist--2col · cx-note] -->
 <section class="cx-section">
@@ -936,7 +968,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <h2>The New System Should Be Selected for Your Home</h2>
       <p>Replacement is a chance to correct problems rather than automatically reproduce the old system. Equipment capacity should be based on the home's actual heating and cooling requirements, not simply the tonnage of the unit being removed or a square-footage rule of thumb.</p>
       <p>A replacement evaluation should consider what affects load and comfort, then determine the right capacity and configuration. ENERGY STAR recommends sizing from the home's actual characteristics and identifies Manual J as the calculation used to determine heating and cooling load.</p>
-      <div class="cx-ph" style="margin-top:24px">Confirm Catalyst's actual design process (Manual J, Manual S, duct or static-pressure testing). State it precisely, or don't claim it.</div>
+      <p class="cx-note"><span class="cx-verify">Catalyst sizes every replacement with a Manual J load calculation, selects matched equipment with Manual S, and checks static pressure and the existing ductwork before recommending a system.</span></p>
     </div>
     <div>
       <p class="cx-eyebrow">What should be evaluated</p>
@@ -955,7 +987,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
   </div>
 </section>
 
-<!-- 4 · EQUIPMENT OPTIONS  [cx-grid-3 · cx-card--option · cx-tag] -->
+<!-- 4 · EQUIPMENT OPTIONS  [cx-grid-3 · cx-card--option · cx-tag] + Daikin FIT feature -->
 <section class="cx-section">
   <div class="wrap">
     <div class="cx-section-head">
@@ -982,7 +1014,17 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       </article>
     </div>
     <p class="cx-note cx-measure" style="margin-top:32px"><strong>About SEER2:</strong> current central AC efficiency comparisons use SEER2 rather than the older SEER metric. Treat it as a standardized efficiency measure, not a promise of a specific utility bill. Installed performance also depends on sizing, matching, airflow, refrigerant charge, ducts, controls and installation quality.</p>
-    <p class="cx-ph" style="margin-top:20px">Daikin is confirmed as the installed brand (Catalyst is a Daikin Pro). Add the Daikin model families/tiers Catalyst offers, heat-pump offering and efficiency ranges from the AC Replacement sub-tab. Holds: Daikin Pro listing link.</p>
+    <p class="cx-measure"><span class="cx-verify">Catalyst installs Daikin equipment in three tiers: single-stage systems around 14–15 SEER2, two-stage systems around 16–17 SEER2, and variable-speed systems at 18 SEER2 and above, plus heat-pump versions of each.</span></p>
+
+    <div class="cx-feature">
+      <div>
+        <span class="cx-tag">Featured Option</span>
+        <h3>The Daikin FIT</h3>
+        <p>For homes with limited outdoor space, the Daikin FIT offers inverter comfort in a slim, side-discharge design that can be mounted on the ground or on a wall. It reaches up to 17.2 SEER2 as an air conditioner and up to 17.5 SEER2 and 8.6 HSPF2 as a heat pump, runs as quietly as 45 decibels in quiet mode, and is backed by Daikin's 12-year parts and 12-year unit replacement limited warranties when registered and maintained.</p>
+        <p>Daikin reports that inverter systems can save up to 30% energy compared with non-inverter systems, so the FIT can help pay for itself over time. Actual savings depend on the home, the sizing and the installation.</p>
+      </div>
+      <div class="cx-ph" style="aspect-ratio:4/3;display:grid;place-items:center;text-align:center">Daikin FIT product image (Daikin Pro brand assets)</div>
+    </div>
   </div>
 </section>
 
@@ -995,38 +1037,26 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <p class="cx-lead">The equipment is only part of the project. ENERGY STAR's quality-installation guidance highlights proper sizing, system airflow, refrigerant charge and duct evaluation, which connect the equipment choice to how the complete system will operate.</p>
     </div>
     <div class="cx-quality">
-      <div>
-        <h3>Is the equipment properly sized?</h3>
-        <p>Oversized equipment can cycle too often and create comfort, humidity and equipment-life problems. Bigger isn't automatically better.</p>
-      </div>
-      <div>
-        <h3>Can the duct system deliver the required airflow?</h3>
-        <p>A new condenser and air handler don't fix every duct or airflow problem. Existing duct conditions should be considered where they affect performance.</p>
-      </div>
-      <div>
-        <h3>Are the indoor and outdoor components properly matched and commissioned?</h3>
-        <p>Components, refrigerant charge, airflow and controls need to work together as one system.</p>
-      </div>
-      <div>
-        <h3>Has the installed system been checked before the job is considered complete?</h3>
-        <p class="cx-ph" style="color:#6B4A00">Replace with Catalyst's real startup, commissioning, customer orientation and documentation steps.</p>
-      </div>
+      <div><h3>Is the equipment properly sized?</h3><p>Oversized equipment can cycle too often and create comfort, humidity and equipment-life problems. Bigger isn't automatically better.</p></div>
+      <div><h3>Can the duct system deliver the required airflow?</h3><p>A new condenser and air handler don't fix every duct or airflow problem. Existing duct conditions should be considered where they affect performance.</p></div>
+      <div><h3>Are the indoor and outdoor components properly matched and commissioned?</h3><p>Components, refrigerant charge, airflow and controls need to work together as one system.</p></div>
+      <div><h3>Has the installed system been checked before the job is considered complete?</h3><p><span class="cx-verify">Catalyst verifies refrigerant charge, airflow and temperature split at startup, sets up the thermostat, walks you through the new system and registers the equipment warranty.</span></p></div>
     </div>
   </div>
 </section>
 
-<!-- 6 · REPLACEMENT PROCESS  [cx-steps cx-steps--cards] · HELD until operations confirms the workflow -->
+<!-- 6 · REPLACEMENT PROCESS  [cx-steps cx-steps--cards] -->
 <section class="cx-section cx-surface">
   <div class="wrap">
     <div class="cx-section-head">
       <p class="cx-eyebrow">What Happens Next</p>
       <h2>A Better Replacement Decision Starts Before Installation Day</h2>
     </div>
-    <ol class="cx-steps cx-steps--cards cx-held" style="margin-top:44px">
-      <li><h3>Home and System Evaluation</h3><p>Document the existing equipment, home conditions, comfort concerns and project requirements.</p></li>
-      <li><h3>System Design and Options</h3><p>Determine sizing and configuration and present the equipment choices Catalyst actually recommends.</p></li>
-      <li><h3>Installation</h3><p>What Catalyst's crew replaces, modifies, protects, removes and installs within the agreed scope.</p></li>
-      <li><h3>Startup, Verification and Handoff</h3><p>Catalyst's real commissioning checks, thermostat setup, homeowner orientation, registration and documentation, and follow-up.</p></li>
+    <ol class="cx-steps cx-steps--cards">
+      <li><h3>Home and System Evaluation</h3><p><span class="cx-verify">A Catalyst comfort advisor visits the home, documents the existing equipment, ducts and comfort concerns, and talks through what you want from the new system.</span></p></li>
+      <li><h3>System Design and Options</h3><p><span class="cx-verify">Catalyst runs a Manual J load calculation and presents two or three equipment options with an itemized, written proposal for each.</span></p></li>
+      <li><h3>Installation</h3><p><span class="cx-verify">The install crew protects floors and the work area, removes the old equipment, installs the new system and any agreed duct or electrical work, and handles the permit. Most changeouts take one day.</span></p></li>
+      <li><h3>Startup, Verification and Handoff</h3><p><span class="cx-verify">The crew checks refrigerant charge, airflow and operation, sets up the thermostat, shows you how the system works, registers the warranty and follows up after the first week.</span></p></li>
     </ol>
   </div>
 </section>
@@ -1038,7 +1068,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <p class="cx-eyebrow">Compare the Whole Project</p>
       <h2>Know What You Are Actually Comparing</h2>
       <p>Two replacement proposals can show different prices because they don't necessarily describe the same project. Before comparing totals, understand the equipment, scope, installation work, warranty and any modifications in each one.</p>
-      <p class="cx-ph" style="margin-top:24px">Confirm Catalyst's real proposal format and show what it includes, instead of generic "transparent pricing" language.</p>
+      <p class="cx-note"><span class="cx-verify">Every Catalyst proposal lists the equipment model numbers, the efficiency rating, exactly what work is included and excluded, the permit, the warranty terms and the price, so you can compare it line by line.</span></p>
     </div>
     <div class="cx-proposal">
       <div class="cx-proposal__head"><strong>Useful proposal details</strong><span>Checklist</span></div>
@@ -1083,7 +1113,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
   </div>
 </section>
 
-<!-- 9 · PROJECT BUDGET + 10 · WARRANTIES  [cx-decision layout reused as two panels] -->
+<!-- 9 · PROJECT BUDGET + 10 · WARRANTIES  [cx-decision as two panels; financing/rebates is a controlled module] -->
 <section class="cx-section">
   <div class="wrap">
     <div class="cx-decision">
@@ -1091,20 +1121,20 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <p class="cx-eyebrow">Project Budget</p>
         <h3>Understand the Installed Cost and Available Options</h3>
         <p>The useful number is the cost of the complete installed project, not an equipment price detached from the work the home needs.</p>
-        <p class="cx-ph">Financing module: a financing partner is confirmed (name held). Add partner name and required disclosures, plus any rebates/incentives, once verified and dated.</p>
+        <p><span class="cx-verify">Financing is available through <span class="cx-blank">____</span> for qualified homeowners, with terms shown in your proposal. Catalyst will also point out current manufacturer rebates, utility incentives and federal tax credits that apply to the system you choose.</span></p>
         <a class="cx-btn cx-btn--outline" href="#request">Ask About Replacement Options</a>
       </div>
       <div class="cx-decision__opt cx-decision__opt--replace">
         <p class="cx-eyebrow">After Installation</p>
         <h3>Know What Protects the New System</h3>
         <p>Warranty coverage can vary by manufacturer, equipment, registration requirements and contractor terms. The manufacturer's equipment warranty and any Catalyst workmanship or labor coverage do different things, and the page should make the difference clear.</p>
-        <p class="cx-ph">Daikin's Texas warranty terms (held) and Catalyst's labor/workmanship terms: registration process, parts, compressor, extended options, maintenance requirements, warranty contact. No "lifetime" or "worry-free".</p>
+        <p><span class="cx-verify">New systems carry the manufacturer's parts warranty (Daikin offers up to a 12-year parts limited warranty when registered, which Catalyst does for you) plus Catalyst's <span class="cx-blank">____</span>-year labor warranty. Extended coverage is available, and annual maintenance keeps the warranty in good standing. Warranty questions go straight to Catalyst.</span></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 11 · PROOF  [cx-proof: hidden at launch if empty] -->
+<!-- 11 · PROOF  [cards fill from Catalyst job photos, Google reviews and verified credentials] -->
 <section class="cx-section cx-surface">
   <div class="wrap">
     <div class="cx-section-head">
@@ -1112,11 +1142,16 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <h2>Judge the Installation by More Than the Equipment Brand</h2>
       <p class="cx-lead">You can often buy similar equipment brands from several HVAC contractors. The stronger reason to choose an installer is the complete project: how the system is evaluated, selected, installed, commissioned, documented and supported afterward.</p>
     </div>
-    <div class="cx-ph">Installation proof, real assets only: completed Catalyst replacements (community, system type, challenge, scope) · installation reviews · credentials (exact wording) · documented workmanship standards · verified warranty and support terms.</div>
+    <div class="cx-grid-4">
+      <article class="cx-card"><h3>Real Installation Projects</h3><p class="cx-ph">Completed Catalyst replacements with context: community, system type, challenge addressed, scope performed (from Catalyst job photos)</p></article>
+      <article class="cx-card"><h3>Installation Reviews</h3><p class="cx-ph">Google reviews mentioning replacement, installation quality, communication, cleanliness and post-install support</p></article>
+      <article class="cx-card"><h3>Credentials</h3><p><span class="cx-verify">TDLR # <span class="cx-blank">____</span> · EPA 608 · <span class="cx-blank">____</span> dealer</span></p></article>
+      <article class="cx-card"><h3>Warranty and Support</h3><p><span class="cx-verify">Manufacturer parts + <span class="cx-blank">____</span>-year Catalyst labor</span></p></article>
+    </div>
   </div>
 </section>
 
-<!-- 12 · SERVICE AREA  [cx-areas] -->
+<!-- 12 · SERVICE AREA  [cx-areas: seven regions] -->
 <section class="cx-section">
   <div class="wrap cx-grid-2">
     <div>
@@ -1124,7 +1159,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <h2>AC Replacement Across Greater Houston</h2>
     </div>
     <div>
-      <p>Catalyst serves residential replacement customers across all of Greater Houston. Find your part of the metro:</p>
+      <p>Catalyst serves residential replacement customers across all of Greater Houston.</p>
       <ul class="cx-areas">
         <li><a class="cx-chip" href="/service-areas/southeast-houston-bay-area/">Southeast Houston &amp; Bay Area</a></li>
         <li><a class="cx-chip" href="/service-areas/central-houston/">Central Houston &amp; Inner Loop</a></li>
@@ -1150,8 +1185,11 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <details><summary>Is a bigger AC system better in Houston?</summary><div>No. Oversizing can cause frequent cycling and contribute to comfort and humidity problems. Capacity should come from the home's needs, not from choosing a larger unit because Houston summers are hot.</div></details>
       <details><summary>Should I consider a heat pump?</summary><div>A heat pump provides both cooling and heating and can be one option to compare when replacing a central AC. Whether it makes sense depends on the home's current heating equipment, energy sources, system design, budget and your priorities.</div></details>
       <details><summary>Do I need to replace my ductwork when I replace the AC?</summary><div>Not necessarily. Existing ducts should be evaluated where their condition, sizing, leakage or airflow may affect the new system. Some homes need duct modifications or repairs; others don't. The recommendation should follow the actual condition of the system.</div></details>
+      <details><summary>How long does AC replacement take?</summary><div><span class="cx-verify">Most straight changeouts take one day. Jobs that include duct changes, a new location or a full system conversion can take two to three days; Catalyst gives you the schedule with the proposal.</span></div></details>
+      <details><summary>What AC brands does Catalyst install?</summary><div><span class="cx-verify">Catalyst is a Daikin Pro and installs Daikin systems, and can service most major brands.</span></div></details>
+      <details><summary>Does Catalyst offer financing?</summary><div><span class="cx-verify">Yes. Financing is available through <span class="cx-blank">____</span> for qualified homeowners; the terms appear in your proposal.</span></div></details>
+      <details><summary>What warranty comes with a new system?</summary><div><span class="cx-verify">The manufacturer covers parts (Daikin offers up to 12 years when registered; Catalyst registers it for you), and Catalyst covers labor for <span class="cx-blank">____</span> years. Extended plans are available.</span></div></details>
     </div>
-    <p class="cx-ph" style="margin-top:24px;max-width:880px">Held FAQs: how long replacement takes · brands Catalyst installs (Daikin confirmed; copy pending) · financing (partner name held) · warranty on a new system (Daikin Texas terms held)</p>
   </div>
 </section>
 
@@ -1166,7 +1204,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <p>Tell Catalyst about your current system, the problems you're trying to solve and where the home is. The next step is to evaluate the project and determine which replacement options fit the home and your priorities.</p>
       <div class="cx-request__alt">
         <p style="margin:0">Prefer to talk it through?</p>
-        <a class="cx-request__phone" href="tel:+17132445070">(713) 244-5070</a>
+        <a class="cx-request__phone" href="tel:+18322814515"><span class="cx-verify">(832) 281-4515</span></a>
         <p style="margin:18px 0 0"><a class="cx-link-arrow" href="ac-repair.html">Still Deciding Whether Replacement Is Necessary? Explore AC Repair</a></p>
       </div>
     </div>
@@ -1208,10 +1246,10 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
     <div class="cx-footer__top">
       <div class="cx-footer__brand">
         <img src="https://catalysthvac.com/wp-content/uploads/2024/06/Catalyst-HVAC-Logo-2.png" alt="Catalyst A/C &amp; Heat" width="512" height="319" loading="lazy">
-        <p>Residential, multi-family, commercial and industrial HVAC across Greater Houston.</p>
+        <p>HVAC service for Greater Houston homes, apartment communities, businesses and industrial facilities.</p>
       </div>
       <div class="cx-footer__contact">
-        <a class="cx-footer__phone" href="tel:+17132445070"><small>Call Catalyst</small>(713) 244-5070</a>
+        <a class="cx-footer__phone" href="tel:+18322814515"><small>Call Catalyst</small><span class="cx-verify">(832) 281-4515</span></a>
         <a class="cx-btn" href="/contact/">Request Service</a>
       </div>
     </div>
@@ -1241,26 +1279,29 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
           <li><a href="/service-areas/">All Service Areas</a></li>
         </ul>
       </nav>
-      <nav aria-label="Company">
-        <p class="cx-footer__h">Company</p>
+      <nav aria-label="Quick links">
+        <p class="cx-footer__h">Quick Links</p>
         <ul>
           <li><a href="/residential-hvac/">Residential HVAC</a></li>
           <li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li>
           <li><a href="/commercial-hvac/">Commercial HVAC</a></li>
           <li><a href="/industrial-hvac/">Industrial HVAC</a></li>
-          <li><a href="/about/">About Catalyst</a></li>
+          <li><a href="/service-areas/">Service Areas</a></li>
+          <li><a href="/about/">About</a></li>
           <li><a href="/careers/">Careers</a></li>
           <li><a href="/contact/">Contact / Request Service</a></li>
         </ul>
       </nav>
       <div class="cx-footer__meta">
-        <p class="cx-footer__h">Properties &amp; Facilities</p>
-        <p>Apartment communities, commercial properties and industrial facilities: start an inquiry so your request reaches the right contact.</p>
-        <p><a class="cx-link-arrow" href="/contact/#inquiry">Start an Inquiry</a></p>
+        <p class="cx-footer__h">Business Information</p>
+        <p><a href="tel:+18322814515"><span class="cx-verify">(832) 281-4515</span></a></p>
+        <p><span class="cx-verify">Hours: <span class="cx-blank">____</span></span></p>
+        <p><span class="cx-verify">TDLR License # <span class="cx-blank">____</span></span></p>
+        <p>Houston, Texas</p>
       </div>
     </div>
 
-    <p class="cx-ph" style="margin:0 0 24px">Footer holds: business hours · address treatment · TDLR license and consumer notice · social links</p>
+    <p class="cx-ph" style="margin:0 0 24px">Footer holds: social links (active profiles to confirm) · TDLR consumer notice once the license is confirmed</p>
 
     <div class="cx-footer__legal">
       <span>© 2026 Catalyst A/C &amp; Heat. All rights reserved.</span>
@@ -1271,7 +1312,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 
 <!-- Mobile sticky call + request bar -->
 <div class="cx-mobilebar">
-  <a class="cx-btn cx-btn--outline" href="tel:+17132445070">Call Catalyst</a>
+  <a class="cx-btn cx-btn--outline" href="tel:+18322814515">Call Catalyst</a>
   <a class="cx-btn" href="/contact/" data-cx-request>Request Service</a>
 </div>
 <script>

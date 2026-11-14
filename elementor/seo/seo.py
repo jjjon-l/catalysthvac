@@ -20,8 +20,12 @@ def _text(fragment: str) -> str:
 
 
 def extract_faqs(page_html: str) -> list[tuple[str, str]]:
-    block = re.search(r'<div class="cx-faq">(.*?)</div>\s*(?:<p|</div>)', page_html, re.S)
-    return [(_text(q), _text(a)) for q, a in FAQ_ITEM.findall(block.group(1))] if block else []
+    block = re.search(r'<div class="cx-faq">(.*?</details>)\s*</div>', page_html, re.S)
+    if not block:
+        return []
+    # Answers still marked "to confirm" (yellow in the Build Doc) stay out of schema.
+    return [(_text(q), _text(a)) for q, a in FAQ_ITEM.findall(block.group(1))
+            if "cx-verify" not in q + a and "cx-blank" not in q + a]
 
 
 def _fact(site: dict, key: str, omitted: list[str]):
@@ -149,5 +153,6 @@ def lint(page_html: str, page: dict) -> dict:
         "heading_skips": skips,
         "img_no_alt": sum(1 for i in imgs if " alt=" not in i),
         "placeholders": len(re.findall(r'class="[^"]*\bcx-(?:ph|held)\b', main)),
+        "to_confirm": len(re.findall(r'class="[^"]*\bcx-(?:verify|blank)\b', page_html)),
         "internal_links": len(set(re.findall(r'href="(/[^"#]*)"', page_html))),
     }

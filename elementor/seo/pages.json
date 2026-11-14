@@ -1,46 +1,168 @@
 {
   "_readme": "Per-page SEO: titles and metas come from the Build Doc page register (content authority). 'service' adds Service schema; 'breadcrumb' adds BreadcrumbList; FAQ schema is generated from the page's visible FAQ accordion. Key = preview file name.",
-
   "home": {
     "path": "/",
     "title": "Catalyst A/C & Heat | HVAC Service in Greater Houston",
     "description": "HVAC for Greater Houston homes, apartment communities, businesses and industrial sites: AC repair, replacement, heating, maintenance and attic insulation.",
     "type": "home"
   },
-
   "ac-repair": {
     "path": "/ac-repair/",
     "title": "AC Repair in Greater Houston | Catalyst A/C & Heat",
     "description": "Need AC repair in Greater Houston? Catalyst A/C & Heat helps homeowners evaluate cooling problems and determine the appropriate next step. Request AC service.",
-    "breadcrumb": [["Home", "/"], ["Residential HVAC", "/residential-hvac/"], ["AC Repair", "/ac-repair/"]],
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Residential HVAC",
+        "/residential-hvac/"
+      ],
+      [
+        "AC Repair",
+        "/ac-repair/"
+      ]
+    ],
     "service": {
       "name": "AC Repair",
       "serviceType": "Air conditioning repair",
       "description": "Residential AC repair for Greater Houston homes: evaluating cooling problems such as weak airflow, short cycling and systems running but not cooling, then repairing the diagnosed problem."
     }
   },
-
   "ac-replacement": {
     "path": "/ac-replacement/",
     "title": "AC Replacement & Installation in Greater Houston | Catalyst A/C & Heat",
     "description": "Considering a new AC system in Greater Houston? Catalyst A/C & Heat can evaluate your home, current system and replacement options. Request an AC replacement consultation.",
-    "breadcrumb": [["Home", "/"], ["Residential HVAC", "/residential-hvac/"], ["AC Replacement & Installation", "/ac-replacement/"]],
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Residential HVAC",
+        "/residential-hvac/"
+      ],
+      [
+        "AC Replacement & Installation",
+        "/ac-replacement/"
+      ]
+    ],
     "service": {
       "name": "AC Replacement & Installation",
       "serviceType": "Air conditioning installation",
       "description": "Residential AC replacement and installation for Greater Houston homes, starting with an evaluation of the home, the current system, sizing, airflow and comfort goals."
     }
   },
-
   "heating-repair": {
     "path": "/heating-repair/",
     "title": "Heating Repair in Greater Houston | Catalyst A/C & Heat",
     "description": "Need help with a furnace, heat pump or home heating problem? Request heating repair from Catalyst A/C & Heat across Greater Houston.",
-    "breadcrumb": [["Home", "/"], ["Residential HVAC", "/residential-hvac/"], ["Heating Repair", "/heating-repair/"]],
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Residential HVAC",
+        "/residential-hvac/"
+      ],
+      [
+        "Heating Repair",
+        "/heating-repair/"
+      ]
+    ],
     "service": {
       "name": "Heating Repair",
       "serviceType": "Heating system repair",
       "description": "Residential heating repair for Greater Houston homes, including furnace and heat pump problems such as no heat, short cycling and uneven heating, diagnosed before any repair."
+    }
+  },
+  "residential-hvac": {
+    "path": "/residential-hvac/",
+    "title": "Residential HVAC Services in Greater Houston | Catalyst A/C & Heat",
+    "description": "Explore residential AC, heating, HVAC maintenance and attic insulation services from Catalyst A/C & Heat across Greater Houston.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Residential HVAC",
+        "/residential-hvac/"
+      ]
+    ]
+  },
+  "heating-replacement": {
+    "path": "/heating-replacement/",
+    "title": "Heating Replacement & Installation in Greater Houston | Catalyst A/C & Heat",
+    "description": "Considering a new furnace, heat pump or home heating system? Explore heating replacement and installation with Catalyst A/C & Heat across Greater Houston.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Residential HVAC",
+        "/residential-hvac/"
+      ],
+      [
+        "Heating Replacement & Installation",
+        "/heating-replacement/"
+      ]
+    ],
+    "service": {
+      "name": "Heating Replacement & Installation",
+      "serviceType": "Heating system installation",
+      "description": "Residential heating replacement and installation for Greater Houston homes, covering furnace, heat pump and dual-fuel systems selected from the home's actual heating and cooling loads."
+    }
+  },
+  "hvac-maintenance": {
+    "path": "/hvac-maintenance/",
+    "title": "HVAC Maintenance in Greater Houston | Catalyst A/C & Heat",
+    "description": "Keep your home's heating and cooling system on a regular maintenance schedule. Request HVAC maintenance from Catalyst A/C & Heat in Greater Houston.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Residential HVAC",
+        "/residential-hvac/"
+      ],
+      [
+        "HVAC Maintenance",
+        "/hvac-maintenance/"
+      ]
+    ],
+    "service": {
+      "name": "HVAC Maintenance",
+      "serviceType": "HVAC maintenance",
+      "description": "Routine HVAC maintenance for Greater Houston homes that inspects thermostat and controls, electrical connections, condensate drainage, coils, blower and airflow components, refrigerant operating condition and filter condition."
+    }
+  },
+  "attic-insulation": {
+    "path": "/attic-insulation/",
+    "title": "Attic Insulation in Greater Houston | Catalyst A/C & Heat",
+    "description": "Hot rooms, a hard-working AC or high summer energy bills? Catalyst A/C & Heat assesses your attic and installs the right insulation for Greater Houston homes. Request an attic insulation assessment.",
+    "breadcrumb": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Residential HVAC",
+        "/residential-hvac/"
+      ],
+      [
+        "Attic Insulation",
+        "/attic-insulation/"
+      ]
+    ],
+    "service": {
+      "name": "Attic Insulation",
+      "serviceType": "Attic insulation installation",
+      "description": "Catalyst assesses Greater Houston attics, recommends the right insulation for the home and the budget, and installs it with the coverage, air sealing and ventilation details that make it perform."
     }
   }
 }

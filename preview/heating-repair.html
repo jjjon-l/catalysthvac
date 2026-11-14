@@ -813,6 +813,11 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 .cx-feature h3 { margin: 10px 0 12px; font-size: 30px; }
 .cx-feature p:last-child { margin-bottom: 0; }
 @media (max-width: 1024px) { .cx-feature { grid-template-columns: 1fr; padding: 24px; } }
+
+/* Checkbox pills (e.g. membership opt-in): show a checkmark when selected */
+.cx-choice input[type="checkbox"] + span { padding-left: 42px; position: relative; }
+.cx-choice input[type="checkbox"] + span::before { content: ""; position: absolute; left: 14px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); border: 2px solid #B9BECB; border-radius: 4px; background: #fff; }
+.cx-choice input[type="checkbox"]:checked + span::before { border-color: var(--cx-blue); background: var(--cx-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5 10 17.5 19 7'/%3E%3C/svg%3E") center / 14px no-repeat; }
 </style>
 
 </head>
@@ -832,10 +837,10 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
             <li><a href="ac-repair.html">AC Repair</a></li>
             <li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li>
             <li><a href="heating-repair.html">Heating Repair</a></li>
-            <li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li>
-            <li><a href="/hvac-maintenance/">HVAC Maintenance</a></li>
-            <li><a href="/attic-insulation/">Attic Insulation</a></li>
-            <li class="is-overview"><a href="/residential-hvac/">All Residential HVAC</a></li>
+            <li><a href="heating-replacement.html">Heating Replacement &amp; Installation</a></li>
+            <li><a href="hvac-maintenance.html">HVAC Maintenance</a></li>
+            <li><a href="attic-insulation.html">Attic Insulation</a></li>
+            <li class="is-overview"><a href="residential-hvac.html">All Residential HVAC</a></li>
           </ul>
         </li>
         <li><button type="button" aria-haspopup="true">Multi-Family</button>
@@ -872,7 +877,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <details class="cx-menu-toggle">
         <summary>Menu</summary>
         <div class="cx-mobile-panel">
-          <details><summary>Residential</summary><ul><li><a href="ac-repair.html">AC Repair</a></li><li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li><li><a href="heating-repair.html">Heating Repair</a></li><li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li><li><a href="/hvac-maintenance/">HVAC Maintenance</a></li><li><a href="/attic-insulation/">Attic Insulation</a></li><li><a href="/residential-hvac/"><strong>All Residential HVAC</strong></a></li></ul></details>
+          <details><summary>Residential</summary><ul><li><a href="ac-repair.html">AC Repair</a></li><li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li><li><a href="heating-repair.html">Heating Repair</a></li><li><a href="heating-replacement.html">Heating Replacement &amp; Installation</a></li><li><a href="hvac-maintenance.html">HVAC Maintenance</a></li><li><a href="attic-insulation.html">Attic Insulation</a></li><li><a href="residential-hvac.html"><strong>All Residential HVAC</strong></a></li></ul></details>
           <details><summary>Multi-Family</summary><ul><li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li><li><a href="/senior-living-hvac/">Senior Living HVAC</a></li></ul></details>
           <details><summary>Commercial</summary><ul><li><a href="/commercial-hvac/">Commercial HVAC</a></li><li><a href="/hvac-project-management/">HVAC Project Management</a></li><li><a href="/coil-cleaning-repair/">Coil Cleaning &amp; Repair</a></li></ul></details>
           <details><summary>Industrial</summary><ul><li><a href="/industrial-hvac/">Industrial HVAC</a></li></ul></details>
@@ -894,7 +899,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
     <nav class="cx-breadcrumb" aria-label="Breadcrumb">
       <ol>
         <li><a href="home.html">Home</a></li>
-        <li><a href="/residential-hvac/">Residential HVAC</a></li>
+        <li><a href="residential-hvac.html">Residential HVAC</a></li>
         <li><span aria-current="page">Heating Repair</span></li>
       </ol>
     </nav>
@@ -1028,7 +1033,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <p>If repair still makes sense, this page supports that decision. If replacement deserves a look, Catalyst moves you into a separate replacement conversation rather than forcing the decision inside a repair call.</p>
       <div class="cx-cta-pair" style="margin-top:28px">
         <a class="cx-btn" href="#request">Request Heating Repair</a>
-        <a class="cx-link-arrow" href="/heating-replacement/">Explore Heating Replacement</a>
+        <a class="cx-link-arrow" href="heating-replacement.html">Explore Heating Replacement</a>
       </div>
     </div>
     <div>
@@ -1087,7 +1092,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <h2>Heating Maintenance Can Find Problems Before the First Real Demand</h2>
         <p>ENERGY STAR recommends annual pre-season HVAC checkups, with heating equipment typically checked before winter. A heating maintenance visit can evaluate operation before the system is suddenly needed after months of limited use. If you've just had a repair, it's also a natural point to set up an ongoing maintenance schedule rather than waiting for the next failure. <span class="cx-verify">The Catalyst Membership Plan covers two maintenance visits a year, a spring cooling tune-up and a fall heating tune-up with filter changes, plus priority scheduling, 24-hour emergency service, 10% off repairs, discounted diagnostic fees and a written summary after each visit.</span></p>
       </div>
-      <a class="cx-btn cx-btn--outline" href="/hvac-maintenance/">Explore HVAC Maintenance</a>
+      <a class="cx-btn cx-btn--outline" href="hvac-maintenance.html">Explore HVAC Maintenance</a>
     </div>
   </div>
 </section>
@@ -1114,10 +1119,10 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
     <div class="cx-faq">
       <details><summary>Why is my heater running but not warming the house?</summary><div>Several conditions can cause that, including equipment performance, airflow, duct, thermostat or control, or system-capacity issues. A technician needs to evaluate the system before the cause can be identified reliably.</div></details>
       <details><summary>Can Catalyst repair both furnaces and heat pumps?</summary><div><span class="cx-verify">Yes. Catalyst repairs gas and electric furnaces, heat pumps, dual-fuel systems and package units from most major brands.</span></div></details>
-      <details><summary>When should I repair my heating system instead of replacing it?</summary><div>Repair can still be reasonable when the failure is isolated, the equipment is otherwise in serviceable condition, and the cost and expected reliability make sense. Replacement becomes more relevant when repairs are frequent, major components are failing, comfort or performance is declining, or the economics no longer support continued repair. <a href="/heating-replacement/">Explore heating replacement</a>.</div></details>
+      <details><summary>When should I repair my heating system instead of replacing it?</summary><div>Repair can still be reasonable when the failure is isolated, the equipment is otherwise in serviceable condition, and the cost and expected reliability make sense. Replacement becomes more relevant when repairs are frequent, major components are failing, comfort or performance is declining, or the economics no longer support continued repair. <a href="heating-replacement.html">Explore heating replacement</a>.</div></details>
       <details><summary>How old is too old for a furnace?</summary><div>There's no single age at which every furnace should be replaced. ENERGY STAR lists furnaces over 15 years old as one reason to consider replacement, but condition, repair history, efficiency, comfort and repair cost matter too.</div></details>
       <details><summary>Do heat pumps work for heating as well as cooling?</summary><div>Yes. Air-source heat pumps provide both heating and cooling by moving heat between indoors and outdoors. The right equipment and configuration depend on the property, the existing HVAC system and installation requirements.</div></details>
-      <details><summary>Should I have my heating system checked before winter?</summary><div>ENERGY STAR recommends annual pre-season checkups and suggests checking the heating system in the fall. The schedule should also follow the equipment manufacturer's requirements. <a href="/hvac-maintenance/">HVAC maintenance</a>.</div></details>
+      <details><summary>Should I have my heating system checked before winter?</summary><div>ENERGY STAR recommends annual pre-season checkups and suggests checking the heating system in the fall. The schedule should also follow the equipment manufacturer's requirements. <a href="hvac-maintenance.html">HVAC maintenance</a>.</div></details>
       <details><summary>Does Catalyst provide emergency or after-hours heating repair?</summary><div><span class="cx-verify">Our office is open <span class="cx-blank">____</span>. For an urgent problem outside those hours, call <span class="cx-blank">____</span> and Catalyst will get a technician out as soon as one is available.</span></div></details>
     </div>
   </div>
@@ -1135,7 +1140,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <p style="margin:0">Prefer to talk it through?</p>
         <a class="cx-request__phone" href="tel:+18322814515"><span class="cx-verify">(832) 281-4515</span></a>
         <p style="margin:12px 0 0"><span class="cx-verify">Office hours: <span class="cx-blank">____</span> · After hours: <span class="cx-blank">____</span></span></p>
-        <p style="margin:18px 0 0"><a class="cx-link-arrow" href="/heating-replacement/">Already Considering a New System? Explore Heating Replacement</a></p>
+        <p style="margin:18px 0 0"><a class="cx-link-arrow" href="heating-replacement.html">Already Considering a New System? Explore Heating Replacement</a></p>
       </div>
     </div>
     <form class="cx-form" action="#" method="post" novalidate>
@@ -1191,9 +1196,9 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
           <li><a href="ac-repair.html">AC Repair</a></li>
           <li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li>
           <li><a href="heating-repair.html">Heating Repair</a></li>
-          <li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li>
-          <li><a href="/hvac-maintenance/">HVAC Maintenance</a></li>
-          <li><a href="/attic-insulation/">Attic Insulation</a></li>
+          <li><a href="heating-replacement.html">Heating Replacement &amp; Installation</a></li>
+          <li><a href="hvac-maintenance.html">HVAC Maintenance</a></li>
+          <li><a href="attic-insulation.html">Attic Insulation</a></li>
         </ul>
       </nav>
       <nav aria-label="Service areas">
@@ -1212,7 +1217,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <nav aria-label="Quick links">
         <p class="cx-footer__h">Quick Links</p>
         <ul>
-          <li><a href="/residential-hvac/">Residential HVAC</a></li>
+          <li><a href="residential-hvac.html">Residential HVAC</a></li>
           <li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li>
           <li><a href="/commercial-hvac/">Commercial HVAC</a></li>
           <li><a href="/industrial-hvac/">Industrial HVAC</a></li>

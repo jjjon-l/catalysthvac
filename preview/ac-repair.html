@@ -813,6 +813,11 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
 .cx-feature h3 { margin: 10px 0 12px; font-size: 30px; }
 .cx-feature p:last-child { margin-bottom: 0; }
 @media (max-width: 1024px) { .cx-feature { grid-template-columns: 1fr; padding: 24px; } }
+
+/* Checkbox pills (e.g. membership opt-in): show a checkmark when selected */
+.cx-choice input[type="checkbox"] + span { padding-left: 42px; position: relative; }
+.cx-choice input[type="checkbox"] + span::before { content: ""; position: absolute; left: 14px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); border: 2px solid #B9BECB; border-radius: 4px; background: #fff; }
+.cx-choice input[type="checkbox"]:checked + span::before { border-color: var(--cx-blue); background: var(--cx-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5 10 17.5 19 7'/%3E%3C/svg%3E") center / 14px no-repeat; }
 </style>
 
 </head>
@@ -832,10 +837,10 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
             <li><a href="ac-repair.html">AC Repair</a></li>
             <li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li>
             <li><a href="heating-repair.html">Heating Repair</a></li>
-            <li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li>
-            <li><a href="/hvac-maintenance/">HVAC Maintenance</a></li>
-            <li><a href="/attic-insulation/">Attic Insulation</a></li>
-            <li class="is-overview"><a href="/residential-hvac/">All Residential HVAC</a></li>
+            <li><a href="heating-replacement.html">Heating Replacement &amp; Installation</a></li>
+            <li><a href="hvac-maintenance.html">HVAC Maintenance</a></li>
+            <li><a href="attic-insulation.html">Attic Insulation</a></li>
+            <li class="is-overview"><a href="residential-hvac.html">All Residential HVAC</a></li>
           </ul>
         </li>
         <li><button type="button" aria-haspopup="true">Multi-Family</button>
@@ -872,7 +877,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <details class="cx-menu-toggle">
         <summary>Menu</summary>
         <div class="cx-mobile-panel">
-          <details><summary>Residential</summary><ul><li><a href="ac-repair.html">AC Repair</a></li><li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li><li><a href="heating-repair.html">Heating Repair</a></li><li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li><li><a href="/hvac-maintenance/">HVAC Maintenance</a></li><li><a href="/attic-insulation/">Attic Insulation</a></li><li><a href="/residential-hvac/"><strong>All Residential HVAC</strong></a></li></ul></details>
+          <details><summary>Residential</summary><ul><li><a href="ac-repair.html">AC Repair</a></li><li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li><li><a href="heating-repair.html">Heating Repair</a></li><li><a href="heating-replacement.html">Heating Replacement &amp; Installation</a></li><li><a href="hvac-maintenance.html">HVAC Maintenance</a></li><li><a href="attic-insulation.html">Attic Insulation</a></li><li><a href="residential-hvac.html"><strong>All Residential HVAC</strong></a></li></ul></details>
           <details><summary>Multi-Family</summary><ul><li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li><li><a href="/senior-living-hvac/">Senior Living HVAC</a></li></ul></details>
           <details><summary>Commercial</summary><ul><li><a href="/commercial-hvac/">Commercial HVAC</a></li><li><a href="/hvac-project-management/">HVAC Project Management</a></li><li><a href="/coil-cleaning-repair/">Coil Cleaning &amp; Repair</a></li></ul></details>
           <details><summary>Industrial</summary><ul><li><a href="/industrial-hvac/">Industrial HVAC</a></li></ul></details>
@@ -893,7 +898,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
     <nav class="cx-breadcrumb" aria-label="Breadcrumb">
       <ol>
         <li><a href="home.html">Home</a></li>
-        <li><a href="/residential-hvac/">Residential HVAC</a></li>
+        <li><a href="residential-hvac.html">Residential HVAC</a></li>
         <li><span aria-current="page">AC Repair</span></li>
       </ol>
     </nav>
@@ -1070,7 +1075,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
         <h2>Plan for the System Beyond Today's Service Call</h2>
         <p>Once the immediate problem is resolved, routine HVAC maintenance gives you a structured way to inspect the system, address developing issues and plan for future equipment needs. <span class="cx-verify">The Catalyst Membership Plan covers two maintenance visits a year, a spring cooling tune-up and a fall heating tune-up with filter changes, plus priority scheduling, 24-hour emergency service, 10% off repairs, discounted diagnostic fees and a written summary after each visit.</span></p>
       </div>
-      <a class="cx-btn cx-btn--outline" href="/hvac-maintenance/">Explore HVAC Maintenance</a>
+      <a class="cx-btn cx-btn--outline" href="hvac-maintenance.html">Explore HVAC Maintenance</a>
     </div>
   </div>
 </section>
@@ -1150,9 +1155,9 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
           <li><a href="ac-repair.html">AC Repair</a></li>
           <li><a href="ac-replacement.html">AC Replacement &amp; Installation</a></li>
           <li><a href="heating-repair.html">Heating Repair</a></li>
-          <li><a href="/heating-replacement/">Heating Replacement &amp; Installation</a></li>
-          <li><a href="/hvac-maintenance/">HVAC Maintenance</a></li>
-          <li><a href="/attic-insulation/">Attic Insulation</a></li>
+          <li><a href="heating-replacement.html">Heating Replacement &amp; Installation</a></li>
+          <li><a href="hvac-maintenance.html">HVAC Maintenance</a></li>
+          <li><a href="attic-insulation.html">Attic Insulation</a></li>
         </ul>
       </nav>
       <nav aria-label="Service areas">
@@ -1171,7 +1176,7 @@ section[id], [id="request"] { scroll-margin-top: 100px; }
       <nav aria-label="Quick links">
         <p class="cx-footer__h">Quick Links</p>
         <ul>
-          <li><a href="/residential-hvac/">Residential HVAC</a></li>
+          <li><a href="residential-hvac.html">Residential HVAC</a></li>
           <li><a href="/multi-family-hvac/">Multi-Family HVAC</a></li>
           <li><a href="/commercial-hvac/">Commercial HVAC</a></li>
           <li><a href="/industrial-hvac/">Industrial HVAC</a></li>

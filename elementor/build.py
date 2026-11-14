@@ -62,7 +62,9 @@ def inline_icons(html: str) -> str:
 
 
 PREVIEW_LINKS = {"/": "home.html", "/ac-repair/": "ac-repair.html", "/ac-replacement/": "ac-replacement.html",
-                 "/heating-repair/": "heating-repair.html"}
+                 "/heating-repair/": "heating-repair.html",
+                 "/residential-hvac/": "residential-hvac.html", "/heating-replacement/": "heating-replacement.html",
+                 "/hvac-maintenance/": "hvac-maintenance.html", "/attic-insulation/": "attic-insulation.html"}
 
 base = FONTS + "<style>\n" + (ROOT / "preview" / "_base.css").read_text() + "</style>\n<style>\n" + css + "</style>\n"
 report = []

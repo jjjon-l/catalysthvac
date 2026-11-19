@@ -15,6 +15,7 @@ Outputs (paste these into Elementor HTML widgets):
   elementor/out/cx-footer.html   -> "CX – Footer" saved template
   elementor/out/icons/*.html     -> inline icon markup for cards
   elementor/out/seo/*.html       -> per-page JSON-LD schema (HTML widget on that page)
+  elementor/out/pages/*.html     -> whole page body + schema, paste-ready for one HTML widget
   elementor/out/seo-register.md  -> titles/metas for the SEO plugin + SEO checks
   preview/*.html                 -> local previews, everything inlined
 
@@ -77,6 +78,13 @@ for src in sorted((ROOT / "preview").glob("*.src.html")):
     graph, omitted = seo.build_graph(site, key, meta, seo.extract_faqs(page))
     schema = seo.jsonld_script(graph)
     (OUT / "seo" / f"{key}.html").write_text(GENERATED + schema)
+    # Paste-ready page body for one HTML widget in staging (header/footer come from Theme Builder,
+    # CSS from Site Settings): everything inside <main>, icons inlined, real site links, plus schema.
+    body = re.search(r"<main[^>]*>(.*)</main>", page, re.S).group(1).strip()
+    (OUT / "pages").mkdir(exist_ok=True)
+    (OUT / "pages" / f"{key}.html").write_text(
+        f"<!-- {meta['path']} · paste into one HTML widget (Elementor Full Width page). {GENERATED.strip()[5:-4].strip()} -->\n"
+        + '<div id="main">\n' + inline_icons(body) + "\n</div>\n" + schema)
     report.append((key, meta, seo.lint(page, meta), omitted, graph))
     page = (page.replace("<!--__SEO__-->", seo.head_tags(site, meta) + schema)
                 .replace("<!--__BASE__-->", base))

@@ -25,6 +25,16 @@
 7. **Plugins:** install Rank Math (SEO, sitemap, redirects), with **its Schema module turned off** (see SEO below).
 
 ## 2. Every page
+**Route A: Elementor MCP (preferred if it works).** Elementor → Elementor MCP → Enable MCP access → Claude Code tab → Generate Prompt → paste the prompt into Claude Code. Claude then builds native (Atomic) pages from the previews: global colors, fonts and classes, the header/footer, then the pages as drafts. Test on the homepage first. If SiteGround password protection blocks the connection, turn protection off while building (staging stays hidden from Google).
+
+**Route B: paste (fallback, about 2 minutes a page).** For each page:
+1. Pages → Add New, with the real title and slug. Page Layout: **Elementor Full Width**.
+2. Drag in **one HTML widget**, then paste the whole of `elementor/out/pages/<page>.html` (it includes the page's schema).
+3. Rank Math: paste the title and meta from the SEO register. Publish.
+
+Route B pages are one block of code, so editing copy later means editing HTML. Fine for launch; sections can be rebuilt as native widgets later if the client wants to self-edit.
+
+**Detailed steps (either route):**
 1. Pages → Add New, with the real title and the real slug from the register (e.g. `ac-repair`). Page Layout: **Elementor Full Width**, so the Theme Builder header and footer show.
 2. Build the sections (below), following that page's preview: `preview/<page>.html` locally, or on https://jjjon-l.github.io/catalysthvac/.
 3. Add an **HTML widget** at the bottom with the page's schema from `elementor/out/seo/<page>.html`.

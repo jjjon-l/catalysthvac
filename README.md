@@ -15,6 +15,7 @@ Working files for the catalysthvac.com rebuild (WordPress + Elementor Pro on Sit
 | `elementor/out/` | Generated paste-ready snippets for the CX saved templates |
 | `elementor/seo/` | SEO single source: `site.json` (business facts, published only when verified), `pages.json` (title/meta/breadcrumb/service per page), `seo.py` (schema + checks) |
 | `elementor/out/seo-register.md` | Generated: titles/metas for the SEO plugin, schema types, on-page checks, facts held out |
+| `elementor/out/pages/*.html` | Generated: each page's full body + schema, ready to paste into one Elementor HTML widget |
 | `elementor/out/seo/*.html` | Generated: per-page JSON-LD schema to paste into an HTML widget |
 | `preview/home.html`, `preview/ac-repair.html` | Local page previews (open in a browser): the Block 1 sample pages |
 
